@@ -22,10 +22,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          hover: "hsl(var(--secondary-hover))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -38,6 +40,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          hover: "hsl(var(--accent-hover))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -46,6 +49,18 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        // Riegomax nature-inspired colors
+        nature: {
+          green: "hsl(var(--nature-green))",
+          "light-green": "hsl(var(--nature-light-green))",
+        },
+        water: {
+          blue: "hsl(var(--water-blue))",
+        },
+        earth: {
+          brown: "hsl(var(--earth-brown))",
+          light: "hsl(var(--earth-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -62,6 +77,22 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-nature": "var(--gradient-nature)",
+        "gradient-water": "var(--gradient-water)",
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-earth": "var(--gradient-earth)",
+      },
+      boxShadow: {
+        nature: "var(--shadow-nature)",
+        water: "var(--shadow-water)",
+        elegant: "var(--shadow-elegant)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--transition-smooth)",
+        bounce: "var(--transition-bounce)",
       },
       keyframes: {
         "accordion-down": {
