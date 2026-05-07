@@ -1,17 +1,16 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
     "Sistemas de Riego",
-    "Jardinería General",
+    "Jardinería",
     "Paisajismo",
     "Mantenimiento",
-    "Diseño de Jardines",
-    "Consultoría"
+    "Instalación de bombas de agua"
   ];
 
   const quickLinks = [
@@ -33,7 +32,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="Riegomax Logo" 
-                className="h-12 w-12 rounded-lg object-contain bg-white/10 p-1"
+                className="h-15 w-15 rounded-lg object-contain bg-white/10 p-1"
               />
               <div>
                 <h3 className="text-xl font-bold">Riegomax</h3>
@@ -41,8 +40,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/90 leading-relaxed">
-              Especialistas en transformar espacios verdes con sistemas de riego eficientes, 
-              jardinería profesional y paisajismo de calidad.
+              Especialistas en transformar espacios verdes con sistemas de riego, 
+              jardinería, paisajismo e instalación de bombas de agua.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
@@ -88,22 +87,7 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a 
-                  href="#store"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-                >
-                  Tienda Online
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="#blog"
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-                >
-                  Blog & Consejos
-                </a>
-              </li>
+              
             </ul>
           </div>
 
@@ -115,7 +99,7 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-primary-foreground/70 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Zona de Trabajo:</p>
-                  <p className="text-primary-foreground/80 text-sm">CABA, Zona Norte, Tigre, Pilar, Escobar</p>
+                  <p className="text-primary-foreground/80 text-sm">Zona Oeste</p>
                 </div>
               </div>
               
@@ -123,7 +107,7 @@ const Footer = () => {
                 <Phone className="h-5 w-5 text-primary-foreground/70 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">WhatsApp</p>
-                  <p className="text-primary-foreground/80 text-sm">+54 9 11 XXXX-XXXX</p>
+                  <p className="text-primary-foreground/80 text-sm">+54 9 11 59247748</p>
                 </div>
               </div>
               
@@ -131,7 +115,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-primary-foreground/70 flex-shrink-0" />
                 <div>
                   <p className="text-primary-foreground/90 text-sm">Email</p>
-                  <p className="text-primary-foreground/80 text-sm">info@riegomax.com.ar</p>
+                  <p className="text-primary-foreground/80 text-sm">sistemasderiegomax@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -162,9 +146,11 @@ const Footer = () => {
               <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Términos de Servicio
               </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                Trabajá con Nosotros
-              </a>
+              {/*
+              
+
+              */}
+              
             </div>
           </div>
         </div>

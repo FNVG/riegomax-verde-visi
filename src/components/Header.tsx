@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,8 +12,6 @@ const Header = () => {
     { name: "Servicios", href: "#services" },
     { name: "Antes & Después", href: "#before-after" },
     { name: "Proyectos", href: "#projects" },
-    { name: "Tienda", href: "#store" },
-    { name: "Blog", href: "#blog" },
     { name: "Contacto", href: "#contact" },
   ];
 
@@ -23,9 +21,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src={logo} 
-              alt="Riegomax Logo" 
+            <img
+              src={logo}
+              alt="Riegomax Logo"
               className="h-10 w-10 rounded-lg object-contain"
             />
             <div className="hidden sm:block">
@@ -50,8 +48,15 @@ const Header = () => {
           {/* Quick Contact & CTA */}
           <div className="hidden md:flex items-center space-x-3">
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4" />
-              <span>WhatsApp</span>
+              <a
+                href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-sm text-muted-foreground cursor-pointer"
+              >
+                <Phone className="h-4 w-4" />
+                <span>WhatsApp</span>
+              </a>
             </div>
             <Button variant="default" size="sm" className="bg-gradient-primary hover:bg-primary-hover">
               Cotizar Ahora
@@ -86,8 +91,8 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-3 border-t border-border">
-                <Button 
-                  variant="default" 
+                <Button
+                  variant="default"
                   className="w-full bg-gradient-primary hover:bg-primary-hover"
                 >
                   Solicitar Cotización
