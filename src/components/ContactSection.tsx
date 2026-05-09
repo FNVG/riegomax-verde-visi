@@ -41,210 +41,168 @@ const ContactSection = () => {
           mensaje: ""
         });
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
         alert("Error al enviar la solicitud ❌");
       });
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-hero">
+    <section id="contact" className="py-10 md:py-12 bg-gradient-hero">
+
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 text-white mb-6 backdrop-blur-sm">
+
+        {/* HEADER más compacto */}
+        <div className="text-center max-w-xl mx-auto mb-8">
+
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white mb-3">
             <MessageCircle className="h-4 w-4 mr-2" />
             <span className="text-sm font-medium">Contacto</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
             Transformá tu espacio con Riegomax
           </h2>
-          <p className="text-xl text-white/90 leading-relaxed">
-            Estamos listos para hacer realidad tu proyecto. Contactanos y recibí una cotización personalizada sin costo.
+
+          <p className="text-sm md:text-lg text-white/90">
+            Cotización personalizada sin costo en menos de 24 horas.
           </p>
+
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="border-0 shadow-elegant bg-white/95 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground">
-                Solicitar Cotización Gratuita
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {/* FORM */}
+          <Card className="border-0 shadow-md bg-white/95">
+
+            <CardHeader className="pb-3">
+              <CardTitle className="text-xl">
+                Solicitar Cotización
               </CardTitle>
-              <p className="text-muted-foreground">
-                Completá el formulario y nos comunicaremos contigo en menos de 24 horas.
+              <p className="text-sm text-muted-foreground">
+                Completá el formulario y te contactamos.
               </p>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <form className="space-y-6" onSubmit={handleSubmit}>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      Nombre Completo *
-                    </label>
-                    <Input
-                      placeholder="Tu nombre"
-                      className="border-border"
-                      value={formData.nombre}
-                      onChange={(e) => handleChange("nombre", e.target.value)} />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      Teléfono *
-                    </label>
-                    <Input placeholder="Tu teléfono"
-                      value={formData.telefono}
-                      onChange={(e) => handleChange("telefono", e.target.value)}
-                      className="border-border" />
-                  </div>
-                </div>
+            <CardContent>
 
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Email *
-                  </label>
-                  <Input placeholder="tu@email.com" type="email" className="border-border"
-                    value={formData.email}
-                    onChange={(e) => handleChange("email", e.target.value)}
-                  />
-                </div>
+              <form onSubmit={handleSubmit} className="space-y-4">
 
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Tipo de Servicio *
-                  </label>
-                  <Select onValueChange={(value) => handleChange("servicio", value)}>
-                    <SelectTrigger className="border-border">
-                      <SelectValue placeholder="Seleccioná el servicio que necesitás" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="jardineria">Jardinería</SelectItem>
-                      <SelectItem value="paisajismo">Paisajismo</SelectItem>
-                      <SelectItem value="riego">Sistema de Riego</SelectItem>
-                      <SelectItem value="mantenimiento">Mantenimiento</SelectItem>
-                      <SelectItem value="multiple">Múltiples Servicios</SelectItem>
-                      <SelectItem value="consulta">Consulta General</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Ubicación del Proyecto
-                  </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <Input
-                    value={formData.ubicacion}
-                    onChange={(e) => handleChange("ubicacion", e.target.value)}
-                    placeholder="Ciudad o zona" className="border-border" />
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
-                    Contanos sobre tu proyecto
-                  </label>
-                  <Textarea
-                    placeholder="Describí tu idea, el tamaño del espacio, tus preferencias, presupuesto estimado, etc."
-                    rows={4}
-                    className="border-border"
-                    value={formData.mensaje}
-                    onChange={(e) => handleChange("mensaje", e.target.value)}
+                    placeholder="Nombre"
+                    value={formData.nombre}
+                    onChange={(e) => handleChange("nombre", e.target.value)}
+                  />
+                  <Input
+                    placeholder="Teléfono"
+                    value={formData.telefono}
+                    onChange={(e) => handleChange("telefono", e.target.value)}
                   />
                 </div>
 
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-primary hover:bg-primary-hover" size="lg">
-                  <Send className="mr-2 h-5 w-5" />
+                <Input
+                  placeholder="Email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                />
+
+                <Select onValueChange={(v) => handleChange("servicio", v)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Servicio" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="jardineria">Jardinería</SelectItem>
+                    <SelectItem value="paisajismo">Paisajismo</SelectItem>
+                    <SelectItem value="riego">Riego</SelectItem>
+                    <SelectItem value="mantenimiento">Mantenimiento</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Input
+                  placeholder="Ubicación"
+                  value={formData.ubicacion}
+                  onChange={(e) => handleChange("ubicacion", e.target.value)}
+                />
+
+                <Textarea
+                  placeholder="Contanos tu proyecto"
+                  rows={3}
+                  value={formData.mensaje}
+                  onChange={(e) => handleChange("mensaje", e.target.value)}
+                />
+
+                <Button type="submit" className="w-full">
+                  <Send className="mr-2 h-4 w-4" />
                   Enviar Solicitud
                 </Button>
 
-                <p className="text-xs text-muted-foreground text-center">
-                  Al enviar este formulario, aceptás que nos comuniquemos contigo para brindarte información sobre nuestros servicios.
-                </p>
               </form>
+
             </CardContent>
+
           </Card>
 
-          {/* Contact Info & Map */}
-          <div className="space-y-8">
-            {/* Contact Cards */}
-            <div className="grid gap-6">
+          {/* INFO */}
+          <div className="space-y-4">
 
-              {/* WhatsApp Card */}
-              <Card className="border-0 bg-white/95 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-secondary/10 rounded-xl">
-                      <Phone className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                      <p className="text-muted-foreground mb-2">Contacto directo e inmediato</p>
-                      <a
-                        href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center text-secondary border border-secondary hover:bg-secondary/10 px-4 py-2 rounded-lg text-sm font-medium"
-                      >
-                        +54 9 11 59247748
-                      </a>
-                    </div>
+            {/* WhatsApp */}
+            <Card className="border-0 bg-white/95">
+              <CardContent className="p-4">
+                <div className="flex gap-3">
+                  <Phone className="h-5 w-5 text-secondary" />
+                  <div>
+                    <p className="font-semibold">WhatsApp</p>
+                    <a
+                      href="https://wa.me/5491159247748"
+                      className="text-sm text-secondary"
+                    >
+                      +54 9 11 59247748
+                    </a>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Email Card */}
-              <Card className="border-0 bg-white/95 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-primary/10 rounded-xl">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <p className="text-muted-foreground mb-2">Envianos tu consulta</p>
-                      <p className="text-primary font-medium">sistemasderiegomax@gmail.com</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Email */}
+            <Card className="border-0 bg-white/95">
+              <CardContent className="p-4 flex gap-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="font-semibold">Email</p>
+                  <p className="text-sm">sistemasderiegomax@gmail.com</p>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Zone Card */}
-              <Card className="border-0 bg-white/95 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-accent/10 rounded-xl">
-                      <MapPin className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">Zona de Trabajo</h3>
-                      <p className="text-muted-foreground mb-2">Cubrimos toda la zona oeste</p>
-                      <p className="text-foreground">Ituzaingó, Merlo, Moreno, General Rodriguez, Luján </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Zona */}
+            <Card className="border-0 bg-white/95">
+              <CardContent className="p-4 flex gap-3">
+                <MapPin className="h-5 w-5 text-accent" />
+                <div>
+                  <p className="font-semibold">Zona</p>
+                  <p className="text-sm">Zona oeste</p>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Horarios Card */}
-              <Card className="border-0 bg-white/95 backdrop-blur-sm">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-nature-green/10 rounded-xl">
-                      <Clock className="h-6 w-6 text-nature-green" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">Horarios</h3>
-                      <p className="text-muted-foreground mb-2">Lunes a Sábados: 8:00 - 18:00</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Horarios */}
+            <Card className="border-0 bg-white/95">
+              <CardContent className="p-4 flex gap-3">
+                <Clock className="h-5 w-5 text-green-600" />
+                <div>
+                  <p className="font-semibold">Horarios</p>
+                  <p className="text-sm">Lun a Sáb 8:00 - 18:00</p>
+                </div>
+              </CardContent>
+            </Card>
 
-            </div>
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 };
