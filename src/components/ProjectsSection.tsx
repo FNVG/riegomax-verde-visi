@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       location: "Paso del Rey, Buenos Aires",
       date: "2025",
       description:
-        "Eliminación de yuyos, poda de hojas secas y mantenimiento general para mejorar el crecimiento de las plantas.",
+        "Eliminación de yuyos, poda de hojas secas y mantenimiento general.",
       image: servicio01,
       alt: "Mantenimiento de plantas"
     },
@@ -34,24 +34,24 @@ const ProjectsSection = () => {
       location: "Paso del Rey, Buenos Aires",
       date: "2025",
       description:
-        "Corte, bordeado y limpieza del césped para mantener el jardín en óptimas condiciones.",
+        "Corte, bordeado y limpieza del césped en óptimas condiciones.",
       image: servicio02,
       alt: "Mantenimiento de césped"
     },
     {
       id: 3,
-      title: "Plantación de especies ornamentales",
+      title: "Plantación de especies",
       category: "Jardinería",
       location: "Paso del Rey, Buenos Aires",
       date: "2025",
       description:
-        "Plantación de palmeras y especies ornamentales con preparación del suelo.",
+        "Plantación de especies ornamentales con preparación del suelo.",
       image: servicio03,
       alt: "Plantación ornamental"
     },
     {
       id: 4,
-      title: "Diseño de cantero decorativo",
+      title: "Cantero decorativo",
       category: "Paisajismo",
       location: "Paso del Rey, Buenos Aires",
       date: "2025",
@@ -95,24 +95,24 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
 
         {/* HEADER más compacto */}
-        <div className="text-center max-w-xl mx-auto mb-6">
+        <div className="text-center max-w-lg mx-auto mb-6">
 
           <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-primary/10 text-primary mb-3">
             <Filter className="h-4 w-4 mr-2" />
             <span className="text-xs font-medium">Proyectos</span>
           </div>
 
-          <h2 className="text-xl md:text-3xl font-bold mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">
             Jardinería, riego y paisajismo
           </h2>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm md:text-base text-muted-foreground">
             Trabajos realizados en espacios verdes.
           </p>
 
         </div>
 
-        {/* FILTERS ultra compactos */}
+        {/* FILTERS más limpios */}
         <div className="flex flex-wrap justify-center gap-1.5 mb-6">
           {filters.map((filter) => (
             <Button
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* GRID más compacto */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {filteredProjects.map((project) => (
@@ -146,7 +146,7 @@ const ProjectsSection = () => {
                   />
                 </div>
 
-                {/* INFO ultra compacta */}
+                {/* INFO más compacta */}
                 <div className="p-3">
 
                   <div className="flex justify-between text-[11px] text-muted-foreground mb-1">
@@ -163,11 +163,11 @@ const ProjectsSection = () => {
 
                   </div>
 
-                  <h3 className="text-base font-semibold mb-1">
+                  <h3 className="text-sm md:text-base font-semibold mb-1">
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-muted-foreground leading-snug">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-snug">
                     {project.description}
                   </p>
 

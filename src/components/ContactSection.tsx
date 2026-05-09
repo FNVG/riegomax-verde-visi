@@ -173,7 +173,7 @@ const ContactSection = () => {
                 <MapPin className="h-5 w-5 text-accent" />
                 <div>
                   <p className="font-semibold text-sm">Zona</p>
-                  <p className="text-xs">Zona oeste</p>
+                  <p className="text-xs">Zona oeste, provincia de Buenos Aires</p>
                 </div>
               </CardContent>
             </Card>

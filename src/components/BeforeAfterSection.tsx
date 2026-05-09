@@ -17,7 +17,7 @@ const BeforeAfterSection = () => {
     {
       id: "1",
       title: "Transformación de fondo de jardín",
-      location: "Zona oeste",
+      location: "Zona oeste, provincia de Buenos Aires",
       service: "Jardinería",
       description:
         "Corte de césped, limpieza general y recuperación de un espacio verde descuidado.",
@@ -29,7 +29,7 @@ const BeforeAfterSection = () => {
     {
       id: "2",
       title: "Recuperación de espacio verde",
-      location: "Zona oeste",
+      location: "Zona oeste, provincia de Buenos Aires",
       service: "Jardinería",
       description:
         "Desmalezado y limpieza de terreno para convertirlo en un jardín ordenado.",
@@ -41,7 +41,7 @@ const BeforeAfterSection = () => {
     {
       id: "3",
       title: "Mantenimiento de frente y vereda",
-      location: "Zona oeste",
+      location: "Zona oeste, provincia de Buenos Aires",
       service: "Jardinería",
       description:
         "Corte de césped y limpieza de entrada principal.",
@@ -73,11 +73,13 @@ const BeforeAfterSection = () => {
           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
             Transformaciones reales de jardines
           </h2>
-
-          <p className="text-base md:text-lg text-muted-foreground">
+        {/*
+           <p className="text-base md:text-lg text-muted-foreground">
             Cambios reales en espacios verdes mediante trabajos de jardinería y mantenimiento.
           </p>
 
+        */}
+         
         </div>
 
         {/* CARD principal más compacta */}

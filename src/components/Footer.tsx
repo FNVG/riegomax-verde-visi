@@ -50,8 +50,7 @@ const Footer = () => {
             </div>
 
             <p className="text-primary-foreground/85 text-sm leading-relaxed">
-              Especialistas en transformar espacios verdes con sistemas de riego,
-              jardinería, paisajismo e instalación de bombas de agua.
+              Especialistas en transformar espacios verdes con sistemas de riego y jardinería
             </p>
 
             <div className="flex space-x-3">
@@ -113,7 +112,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary-foreground/70 mt-0.5" />
                 <div>
-                  <p className="text-sm">Zona Oeste</p>
+                  <p className="text-sm">Zona Oeste, provincia de Buenos Aires</p>
                 </div>
               </div>
 

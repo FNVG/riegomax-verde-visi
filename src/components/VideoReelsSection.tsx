@@ -56,7 +56,7 @@ const reels: Reel[] = [
     id: 8,
     src: "/videos/video8.mp4",
     tipo: "Riego",
-    title: "Sistema de aspersión",
+    title: "Sistema de riego por aspersión",
   },
   {
     id: 9,
