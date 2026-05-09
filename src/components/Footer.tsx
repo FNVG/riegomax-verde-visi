@@ -129,12 +129,18 @@ const Footer = () => {
             </div>
 
             {/* CTA */}
-            <div className="mt-5 pt-5 border-t border-primary-foreground/20">
+           {
+             /*
+                <div className="mt-5 pt-5 border-t border-primary-foreground/20">
               <Button className="w-full bg-secondary hover:bg-secondary-hover text-secondary-foreground">
                 Cotización Gratuita
               </Button>
             </div>
+ 
+             */
 
+           }
+            
           </div>
 
         </div>

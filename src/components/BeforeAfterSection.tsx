@@ -58,8 +58,9 @@ const BeforeAfterSection = () => {
   const currentProject = projects[currentSlide];
 
   return (
+    <div className="scale-[0.9] origin-top w-full">
     <section id="before-after" 
-     className="py-12 md:py-14 bg-background scale-[0.8] origin-top"
+     className="py-12 md:py-14 bg-background  origin-top"
     >
 
       <div className="container mx-auto px-4">
@@ -181,6 +182,7 @@ const BeforeAfterSection = () => {
       </div>
 
     </section>
+       </div>
   );
 };
 
