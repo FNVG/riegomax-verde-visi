@@ -28,17 +28,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
-              <img 
-                src={logo} 
-                alt="Riegomax Logo" 
-                className="h-15 w-15 rounded-lg object-contain bg-white/10 p-1"
-              />
-              <div>
-                <h3 className="text-xl font-bold">Riegomax</h3>
-                <p className="text-primary-foreground/80 text-sm">Sistemas de Riego & Jardinería</p>
-              </div>
-            </div>
+            <div className="flex flex-col items-start space-y-4">
+                  <img
+                    src={logo}
+                    alt="Riegomax Logo"
+                    className="w-48 rounded-xl bg-white p-2 object-contain"
+                  />
+
+                  <div>
+                    <h3 className="text-3xl font-bold">Riegomax</h3>
+
+                    <p className="text-primary-foreground/80 text-lg leading-relaxed">
+                      Sistemas de Riego & Jardinería
+                    </p>
+                  </div>
+                </div>
             <p className="text-primary-foreground/90 leading-relaxed">
               Especialistas en transformar espacios verdes con sistemas de riego, 
               jardinería, paisajismo e instalación de bombas de agua.
