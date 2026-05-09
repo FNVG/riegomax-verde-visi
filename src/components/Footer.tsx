@@ -37,7 +37,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Riegomax Logo"
-                className="w-40 rounded-xl bg-white p-2 object-contain"
+                className="w-56 rounded-xl bg-white p-2 object-contain"
               />
 
               <div>
@@ -54,15 +54,23 @@ const Footer = () => {
             </p>
 
             <div className="flex space-x-3">
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <Facebook className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                <Mail className="h-5 w-5" />
-              </Button>
+               <Button asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
+    <a href="https://www.instagram.com/sistemaderiegomax/?hl=es-la" target="_blank" rel="noopener noreferrer">
+      <Instagram className="h-5 w-5" />
+    </a>
+  </Button>
+
+  <Button asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
+    <a href="https://www.facebook.com/profile.php?id=61580732585868" target="_blank" rel="noopener noreferrer">
+      <Facebook className="h-5 w-5" />
+    </a>
+  </Button>
+
+  <Button asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
+    <a href="sistemasderiegomax@gmail.com">
+      <Mail className="h-5 w-5" />
+    </a>
+  </Button> 
             </div>
 
           </div>
