@@ -58,7 +58,9 @@ const BeforeAfterSection = () => {
   const currentProject = projects[currentSlide];
 
   return (
-    <section id="before-after" className="py-12 md:py-14 bg-background">
+    <section id="before-after" 
+     className="py-12 md:py-14 bg-background scale-[0.8] origin-top"
+    >
 
       <div className="container mx-auto px-4">
 
