@@ -20,21 +20,21 @@ type VideoReel = {
 const reels: VideoReel[] = [
     {
     id: 1,
-    src: "src/assets/videos/video1.mp4",
+    src: "/videos/video1.mp4",
     tipo: "Riego",
     title:
       "Instalación de sistema de riego automático por aspersión",
   },
   {
     id: 2,
-    src: "src/assets/videos/video2.mov",
+    src: "/videos/video2.mov",
     tipo: "Jardinería",
     title:
       "Poda de cerco vivo",
   },
   {
     id: 3,
-    src: "src/assets/videos/video3.mp4",
+    src: "/videos/video3.mp4",
     tipo: "Paisajismo",
     title:
       "Construcción de cantero con especies Petunias, dietes, gramineas, nandinas enana y formios + chips decorativos",
@@ -43,63 +43,63 @@ const reels: VideoReel[] = [
   
   {
     id: 4,
-    src: "src/assets/videos/video4.mp4",
+    src: "/videos/video4.mp4",
     tipo: "Paisajismo",
     title:
       "Instalación de sistemas de riego automáticos por aspersión y por goteo, plantación de césped grama bahiana + cantero con oleas y chips + piedras dolomitas",
   },
   {
     id: 5,
-    src: "src/assets/videos/video5.mp4",
+    src: "/videos/video5.mp4",
     tipo: "Paisajismo",
     title:
       "Plantación de césped grama bahiana, cantero con formios y lavandas + orejas de elefante",
   },
   {
     id: 6,
-    src: "src/assets/videos/video6.mp4",
+    src: "/videos/video6.mp4",
     tipo: "Riego",
     title:
       "Instalación de sistema de riego automático por aspersión",
   },
     {
     id: 7,
-    src: "src/assets/videos/video7.mp4",
+    src: "/videos/video7.mp4",
     tipo: "Riego",
     title:
       "Instalación de sensor de lluvia para un sistema de riego",
   },
   {
     id: 8,
-    src: "src/assets/videos/video8.mp4",
+    src: "/videos/video8.mp4",
     tipo: "Riego",
     title:
       "Instalación de aspersores para un sistema de riego",
   },
 {
     id: 9,
-    src: "src/assets/videos/video9.mp4",
+    src: "/videos/video9.mp4",
     tipo: "Riego",
     title:
       "Incorporación de aspersor para un sistema de riego",
   },
   {
     id: 10,
-    src: "src/assets/videos/video10.mp4",
+    src: "/videos/video10.mp4",
     tipo: "Paisajismo",
     title:
       "Creación de cantero con lavandas y dietes bicolor con chips",
   },
   {
     id: 11,
-    src: "src/assets/videos/video11.mp4",
+    src: "/videos/video11.mp4",
     tipo: "Riego",
     title:
       "Automatización de un sistema de riego manual",
   },
   {
     id: 12,
-    src: "src/assets/videos/video12.mp4",
+    src: "/videos/video12.mp4",
     tipo: "Riego",
     title:
       "Mantenimiento de rotor aspersor dañado",
