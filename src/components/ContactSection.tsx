@@ -47,47 +47,47 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-10 md:py-12 bg-gradient-hero">
+    <section id="contact" className="py-8 md:py-10 bg-gradient-hero">
 
       <div className="container mx-auto px-4">
 
-        {/* HEADER más compacto */}
-        <div className="text-center max-w-xl mx-auto mb-8">
+        {/* HEADER */}
+        <div className="text-center max-w-lg mx-auto mb-6">
 
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white mb-3">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 text-white mb-2">
             <MessageCircle className="h-4 w-4 mr-2" />
-            <span className="text-sm font-medium">Contacto</span>
+            <span className="text-xs md:text-sm font-medium">Contacto</span>
           </div>
 
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+          <h2 className="text-xl md:text-3xl font-bold text-white mb-2 leading-tight">
             Transformá tu espacio con Riegomax
           </h2>
 
-          <p className="text-sm md:text-lg text-white/90">
+          <p className="text-sm md:text-base text-white/90">
             Cotización personalizada sin costo en menos de 24 horas.
           </p>
 
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* FORM */}
           <Card className="border-0 shadow-md bg-white/95">
 
-            <CardHeader className="pb-3">
-              <CardTitle className="text-xl">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg">
                 Solicitar Cotización
               </CardTitle>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs md:text-sm text-muted-foreground">
                 Completá el formulario y te contactamos.
               </p>
             </CardHeader>
 
-            <CardContent>
+            <CardContent className="pt-2">
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   <Input
                     placeholder="Nombre"
                     value={formData.nombre}
@@ -144,55 +144,46 @@ const ContactSection = () => {
           </Card>
 
           {/* INFO */}
-          <div className="space-y-4">
+          <div className="space-y-3">
 
-            {/* WhatsApp */}
             <Card className="border-0 bg-white/95">
-              <CardContent className="p-4">
-                <div className="flex gap-3">
-                  <Phone className="h-5 w-5 text-secondary" />
-                  <div>
-                    <p className="font-semibold">WhatsApp</p>
-                    <a
-                      href="https://wa.me/5491159247748"
-                      className="text-sm text-secondary"
-                    >
-                      +54 9 11 59247748
-                    </a>
-                  </div>
+              <CardContent className="p-3 flex gap-3 items-center">
+                <Phone className="h-5 w-5 text-secondary" />
+                <div>
+                  <p className="font-semibold text-sm">WhatsApp</p>
+                  <a href="https://wa.me/5491159247748" className="text-xs text-secondary">
+                    +54 9 11 59247748
+                  </a>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Email */}
             <Card className="border-0 bg-white/95">
-              <CardContent className="p-4 flex gap-3">
+              <CardContent className="p-3 flex gap-3 items-center">
                 <Mail className="h-5 w-5 text-primary" />
                 <div>
-                  <p className="font-semibold">Email</p>
-                  <p className="text-sm">sistemasderiegomax@gmail.com</p>
+                  <p className="font-semibold text-sm">Email</p>
+                  <p className="text-xs">sistemasderiegomax@gmail.com</p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Zona */}
             <Card className="border-0 bg-white/95">
-              <CardContent className="p-4 flex gap-3">
+              <CardContent className="p-3 flex gap-3 items-center">
                 <MapPin className="h-5 w-5 text-accent" />
                 <div>
-                  <p className="font-semibold">Zona</p>
-                  <p className="text-sm">Zona oeste</p>
+                  <p className="font-semibold text-sm">Zona</p>
+                  <p className="text-xs">Zona oeste</p>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Horarios */}
             <Card className="border-0 bg-white/95">
-              <CardContent className="p-4 flex gap-3">
+              <CardContent className="p-3 flex gap-3 items-center">
                 <Clock className="h-5 w-5 text-green-600" />
                 <div>
-                  <p className="font-semibold">Horarios</p>
-                  <p className="text-sm">Lun a Sáb 8:00 - 18:00</p>
+                  <p className="font-semibold text-sm">Horarios</p>
+                  <p className="text-xs">Lun a Sáb 8:00 - 18:00</p>
                 </div>
               </CardContent>
             </Card>
