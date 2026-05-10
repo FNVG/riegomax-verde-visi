@@ -169,14 +169,18 @@ const ProjectsSection = () => {
             <Filter className="h-4 w-4 mr-2" />
             <span className="text-xs font-medium">Proyectos</span>
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+        {
+          /*
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
             Jardinería, riego y paisajismo
           </h2>
 
           <p className="text-sm md:text-base text-muted-foreground">
             Trabajos realizados en espacios verdes.
           </p>
+          */
+        }
+          
 
         </div>
 
