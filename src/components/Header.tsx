@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpeg";
 
@@ -16,19 +16,25 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        {/* HEADER BAR */}
+        <div className="flex items-center justify-between h-20 md:h-16">
+          
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
               src={logo}
               alt="Riegomax Logo"
-              className="h-10 w-10 rounded-lg object-contain"
+              className="h-11 w-11 rounded-lg object-contain"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-primary">Riegomax</h1>
-              <p className="text-xs text-muted-foreground">Sistemas de Riego & Jardinería</p>
+            <div>
+              <h1 className="text-lg sm:text-xl font-bold text-primary leading-tight">
+                Riegomax
+              </h1>
+              <p className="text-[10px] sm:text-xs text-muted-foreground leading-tight">
+                Sistemas de Riego & Jardinería
+              </p>
             </div>
           </div>
 
@@ -45,20 +51,23 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Quick Contact & CTA */}
+          {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-3">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <a
-                href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-sm text-muted-foreground cursor-pointer"
-              >
-                <Phone className="h-4 w-4" />
-                <span>WhatsApp</span>
-              </a>
-            </div>
-            <Button variant="default" size="sm" className="bg-gradient-primary hover:bg-primary-hover">
+            <a
+              href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              <span>WhatsApp</span>
+            </a>
+
+            <Button
+              variant="default"
+              size="sm"
+              className="bg-gradient-primary hover:bg-primary-hover"
+            >
               Cotizar Ahora
             </Button>
           </div>
@@ -67,11 +76,14 @@ const Header = () => {
           <div className="lg:hidden">
             <Button
               variant="ghost"
-              size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-foreground"
+              className="p-3"
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -79,18 +91,29 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-card border-t border-border">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md transition-colors"
+                  className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="pt-3 border-t border-border">
+
+              <div className="pt-4 border-t border-border space-y-3">
+                <a
+                  href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-sm text-muted-foreground"
+                >
+                  <Phone className="h-4 w-4" />
+                  <span>WhatsApp</span>
+                </a>
+
                 <Button
                   variant="default"
                   className="w-full bg-gradient-primary hover:bg-primary-hover"
