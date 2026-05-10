@@ -171,13 +171,16 @@ const BeforeAfterSection = () => {
 
         </div>
 
-        {/* CTA más compacto */}
-        <div className="text-center">
+        {/* CTA más compacto 
+        
+          <div className="text-center">
           <Button size="default" className="bg-secondary hover:bg-secondary-hover text-secondary-foreground">
             Quiero transformar mi jardín
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
+        */}
+        
 
       </div>
 
