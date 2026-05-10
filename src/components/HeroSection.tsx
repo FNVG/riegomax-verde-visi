@@ -11,21 +11,27 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[85vh] md:min-h-[60vh] flex items-start md:items-center overflow-hidden"
+      className="relative min-h-[65vh] md:min-h-[60vh] flex items-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Jardín profesional con sistema de riego"
-          className="w-full h-full object-cover object-[center_30%] md:object-center"
+          className="
+            w-full h-full object-cover
+            object-[center_45%]
+            md:object-center
+            scale-105 md:scale-100
+          "
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-primary/85 via-primary/60 to-primary/20" />
+        {/* Overlay mejor balanceado */}
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-primary/70 via-primary/55 to-primary/20" />
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 z-10 pt-20 md:pt-0 pb-10 md:py-8">
+      <div className="relative container mx-auto px-4 z-10 pt-16 md:pt-0 pb-10 md:py-8">
         <div className="max-w-2xl">
 
           {/* Title */}
@@ -86,7 +92,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 opacity-70 hidden md:block">
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 opacity-70 hidden md:block">
         <div className="w-4 h-7 border border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-2 bg-white/60 rounded-full mt-2 animate-bounce" />
         </div>
