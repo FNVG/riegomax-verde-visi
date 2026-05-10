@@ -62,14 +62,19 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>WhatsApp</span>
             </a>
-
-            <Button
+            {
+              /*
+                <Button
               variant="default"
               size="sm"
               className="bg-gradient-primary hover:bg-primary-hover"
             >
               Cotizar Ahora
             </Button>
+              */
+
+            }
+            
           </div>
 
           {/* Mobile menu button */}
