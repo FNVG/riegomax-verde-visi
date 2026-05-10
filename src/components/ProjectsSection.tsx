@@ -80,12 +80,12 @@ const ProjectsSection = () => {
     },
     {
       id: 6,
-      title: "Diseño y mantenimiento",
+      title: "Colocación de césped y plantación de orejas de elefante",
       category: "Jardinería",
       location: "Paso del Rey, Buenos Aires",
       date: "2025",
       description:
-        "Diseño y mantenimiento general de jardín.",
+        "Orejas de elefante y césped grama bahiana.",
       image: servicio06,
       alt: "Jardín terminado"
     },
