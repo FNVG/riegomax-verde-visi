@@ -77,27 +77,27 @@ const ServicesSection = () => {
 
       <div className="container mx-auto px-4">
 
-        {/* HEADER más compacto */}
+        {/* HEADER */}
         <div className="text-center max-w-2xl mx-auto mb-8">
 
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary/10 text-secondary mb-3">
             <Scissors className="h-4 w-4 mr-2" />
-            <span className="text-xs md:text-sm font-medium">
+            <span className="text-sm md:text-sm font-medium">
               Nuestros Servicios
             </span>
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+          <h2 className="text-3xl md:text-3xl font-bold text-foreground mb-2">
             Servicios de jardinería, riego y paisajismo
           </h2>
 
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-base text-muted-foreground leading-relaxed">
             Soluciones profesionales en jardinería, sistemas de riego, paisajismo y bombas de agua para hogares y espacios verdes.
           </p>
 
         </div>
 
-        {/* GRID más compacto */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {services.map((service, index) => (
@@ -112,7 +112,7 @@ const ServicesSection = () => {
                   <service.icon className={`h-5 w-5 ${service.color}`} />
                 </div>
 
-                <CardTitle className="text-base md:text-lg font-semibold">
+                <CardTitle className="text-lg md:text-lg font-semibold">
                   {service.title}
                 </CardTitle>
 
@@ -120,13 +120,13 @@ const ServicesSection = () => {
 
               <CardContent className="space-y-2">
 
-                <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                <CardDescription className="text-base md:text-sm text-muted-foreground leading-relaxed">
                   {service.description}
                 </CardDescription>
 
                 <ul className="space-y-1">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start text-sm text-muted-foreground">
+                    <li key={i} className="flex items-start text-base md:text-sm text-muted-foreground">
                       <span className="w-1 h-1 mt-2 mr-2 bg-secondary rounded-full flex-shrink-0" />
                       {feature}
                     </li>
