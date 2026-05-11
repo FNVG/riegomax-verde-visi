@@ -8,7 +8,6 @@ const Header = () => {
 
   const navigation = [
     { name: "Inicio", href: "#home" },
-
     { name: "Servicios", href: "#services" },
     { name: "Antes & Después", href: "#before-after" },
     { name: "Proyectos", href: "#projects" },
@@ -18,21 +17,24 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
+        
         {/* HEADER BAR */}
-        <div className="flex items-center justify-between h-20 md:h-16">
+        <div className="flex items-center justify-between h-24 md:h-16">
           
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
               src={logo}
               alt="Riegomax Logo"
-              className="h-11 w-11 rounded-lg object-contain"
+              className="h-12 w-12 rounded-lg object-contain"
             />
+
             <div>
-              <h1 className="text-lg sm:text-xl font-bold text-primary leading-tight">
+              <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight">
                 Riegomax
               </h1>
-              <p className="text-[10px] sm:text-xs text-muted-foreground leading-tight">
+
+              <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
                 Sistemas de Riego & Jardinería
               </p>
             </div>
@@ -62,19 +64,16 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>WhatsApp</span>
             </a>
-            {
-              /*
-                <Button
+
+            {/*
+            <Button
               variant="default"
               size="sm"
               className="bg-gradient-primary hover:bg-primary-hover"
             >
               Cotizar Ahora
             </Button>
-              */
-
-            }
-            
+            */}
           </div>
 
           {/* Mobile menu button */}
@@ -85,9 +84,9 @@ const Header = () => {
               className="p-3"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-7 w-7" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
               )}
             </Button>
           </div>
@@ -97,11 +96,12 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-4 pt-4 pb-6 space-y-2 bg-card border-t border-border">
+              
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md transition-colors"
+                  className="block px-4 py-4 text-lg font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -113,15 +113,15 @@ const Header = () => {
                   href="https://wa.me/5491159247748?text=Hola.%20Estoy%20interesado%20en%20sus%20servicios"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-sm text-muted-foreground"
+                  className="flex items-center space-x-2 text-base text-muted-foreground"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-5 w-5" />
                   <span>WhatsApp</span>
                 </a>
 
                 <Button
                   variant="default"
-                  className="w-full bg-gradient-primary hover:bg-primary-hover"
+                  className="w-full h-12 text-base bg-gradient-primary hover:bg-primary-hover"
                 >
                   Solicitar Cotización
                 </Button>
