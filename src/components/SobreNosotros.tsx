@@ -10,13 +10,13 @@ const SobreNosotros = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary/10 text-secondary mb-3">
             <Scissors className="h-4 w-4 mr-2" />
-            <span className="text-xs md:text-sm font-medium">
+            <span className="text-sm md:text-sm font-medium">
               Sobre Nosotros
             </span>
           </div>
 
           {/* Texto */}
-          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+          <p className="text-base md:text-base text-gray-600 leading-relaxed">
             Somos una empresa de Moreno, provincia de Buenos Aires,
             <span className="font-medium text-gray-800">
               {" "}especializada en riego automático, jardinería, paisajismo y bombas de agua.
