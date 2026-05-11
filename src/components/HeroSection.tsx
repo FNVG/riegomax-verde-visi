@@ -11,7 +11,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[65vh] md:min-h-[60vh] flex items-center overflow-hidden"
+      className="relative min-h-[25vh] md:min-h-[60vh] flex items-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -26,16 +26,16 @@ const HeroSection = () => {
           "
         />
 
-        {/* Overlay mejor balanceado */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-primary/70 via-primary/55 to-primary/20" />
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 z-10 pt-16 md:pt-0 pb-10 md:py-8">
+      <div className="relative container mx-auto px-4 z-10 pt-10 md:pt-0 pb-6 md:py-8">
         <div className="max-w-2xl">
 
           {/* Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Tu jardín,
             <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
               {" "}nuestro compromiso
@@ -43,24 +43,24 @@ const HeroSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-sm md:text-lg text-white/90 mb-5 max-w-xl leading-relaxed">
+          <p className="text-base md:text-lg text-white/90 mb-5 max-w-xl leading-relaxed">
             Transformamos espacios con sistemas de riego eficientes, jardinería y paisajismo que perduran en el tiempo.
           </p>
 
           {/* Features */}
           <div className="flex flex-wrap gap-3 mb-6">
-            <div className="flex items-center gap-2 text-white/90 text-xs md:text-sm">
-              <Droplets className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-white/90 text-sm md:text-sm">
+              <Droplets className="h-4 w-4 md:h-4 md:w-4" />
               <span>Sistemas de Riego</span>
             </div>
 
-            <div className="flex items-center gap-2 text-white/90 text-xs md:text-sm">
-              <Leaf className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-white/90 text-sm md:text-sm">
+              <Leaf className="h-4 w-4 md:h-4 md:w-4" />
               <span>Jardinería & Paisajismo</span>
             </div>
 
-            <div className="flex items-center gap-2 text-white/90 text-xs md:text-sm">
-              <Settings className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-white/90 text-sm md:text-sm">
+              <Settings className="h-4 w-4 md:h-4 md:w-4" />
               <span>Mantenimiento e instalación de bombas</span>
             </div>
           </div>
@@ -70,7 +70,7 @@ const HeroSection = () => {
             <a href={quickLinks[0].href}>
               <Button
                 size="lg"
-                className="bg-secondary hover:bg-secondary-hover text-secondary-foreground font-semibold px-5 w-full sm:w-auto"
+                className="bg-secondary hover:bg-secondary-hover text-secondary-foreground font-semibold px-5 w-full sm:w-auto text-base md:text-sm"
               >
                 {quickLinks[0].name}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -81,7 +81,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border border-white/30 text-white bg-white/5 hover:bg-white/10 backdrop-blur-sm font-semibold px-5 w-full sm:w-auto"
+                className="border border-white/30 text-white bg-white/5 hover:bg-white/10 backdrop-blur-sm font-semibold px-5 w-full sm:w-auto text-base md:text-sm"
               >
                 {quickLinks[1].name}
               </Button>
