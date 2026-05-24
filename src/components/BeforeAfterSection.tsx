@@ -18,7 +18,7 @@ const BeforeAfterSection = () => {
 
   const projects = [
     {
-      id: "1",
+      id: "4",
       title: "Transformación de fondo de jardín",
       location: "Zona oeste, provincia de Buenos Aires",
       service: "Jardinería",
@@ -54,7 +54,7 @@ const BeforeAfterSection = () => {
       altAfter: "Frente de vivienda después del mantenimiento"
     },
        {
-      id: "4",
+      id: "1",
       title: "Cambio e instalación de colector nuevo",
       location: "Moreno, provincia de Buenos Aires",
       service: "Riego",
@@ -63,7 +63,7 @@ const BeforeAfterSection = () => {
       beforeImage: antes_4,
       afterImage: despues_4,
       altBefore: "Colector antes",
-      altAfter: "Colector despue"
+      altAfter: "Colector despues"
     }
   ];
 
