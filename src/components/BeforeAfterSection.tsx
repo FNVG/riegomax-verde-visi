@@ -9,6 +9,9 @@ import antes_2 from "@/assets/antes_despues/5 antes.jpeg";
 import despues_2 from "@/assets/antes_despues/5 después.jpeg";
 import antes_3 from "@/assets/antes_despues/2 antes.jpeg";
 import despues_3 from "@/assets/antes_despues/2 después.jpeg";
+import antes_4 from "@/assets/antes_despues/colector_antes.jpeg";
+import despues_4 from "@/assets/antes_despues/colector_despues.jpeg";
+
 
 const BeforeAfterSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -57,8 +60,8 @@ const BeforeAfterSection = () => {
       service: "Riego",
       description:
         "Filtro de anillas, manómetro, válvulas solenoides, presostato, y válvula de alivio.",
-      beforeImage: antes_3,
-      afterImage: despues_3,
+      beforeImage: antes_4,
+      afterImage: despues_4,
       altBefore: "Frente de vivienda antes del mantenimiento",
       altAfter: "Frente de vivienda después del mantenimiento"
     }
