@@ -72,7 +72,7 @@ const ProjectsSection = () => {
       title: "Instalación de riego",
       category: "Riego",
       location: "Paso del Rey, Buenos Aires",
-      date: "2023",
+      date: "2025",
       description:
         "Sistema de riego automático por aspersión y goteo.",
       image: servicio05,
@@ -91,12 +91,12 @@ const ProjectsSection = () => {
     },
     {
       id: 7,
-      title: "Diseño y mantenimiento",
+      title: "Paisajismo",
       category: "Paisajismo",
-      location: "Paso del Rey, Buenos Aires",
+      location: "General Rodriguez, Buenos Aires",
       date: "2026",
       description:
-        "Diseño y mantenimiento general de jardín.",
+        "Plantación de grama bahiana, instalación de piedras decorativas con oleas y chips, e implementación de sistema de riego por aspersión y goteo.",
       image: servicio07,
       alt: "Jardín terminado"
     },

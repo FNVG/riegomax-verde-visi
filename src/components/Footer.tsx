@@ -67,7 +67,7 @@ const Footer = () => {
   </Button>
 
   <Button asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-    <a href="sistemasderiegomax@gmail.com">
+    <a href="contacto@https://www.riegomax.com.ar/">
       <Mail className="h-5 w-5" />
     </a>
   </Button> 
@@ -131,7 +131,7 @@ const Footer = () => {
 
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary-foreground/70" />
-                <p className="text-sm">sistemasderiegomax@gmail.com</p>
+                <p className="text-sm">contacto@https://www.riegomax.com.ar/</p>
               </div>
 
             </div>

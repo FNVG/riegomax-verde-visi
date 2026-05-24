@@ -163,7 +163,7 @@ const ContactSection = () => {
                 <Mail className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-semibold text-sm">Email</p>
-                  <p className="text-xs">sistemasderiegomax@gmail.com</p>
+                  <p className="text-xs">contacto@https://www.riegomax.com.ar/</p>
                 </div>
               </CardContent>
             </Card>
