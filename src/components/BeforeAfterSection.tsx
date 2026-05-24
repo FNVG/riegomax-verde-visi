@@ -17,18 +17,19 @@ const BeforeAfterSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const projects = [
-    {
-      id: "4",
-      title: "Transformación de fondo de jardín",
-      location: "Zona oeste, provincia de Buenos Aires",
-      service: "Jardinería",
+     {
+      id: "1",
+      title: "Cambio e instalación de colector nuevo",
+      location: "Moreno, provincia de Buenos Aires",
+      service: "Riego",
       description:
-        "Corte de césped, limpieza general y recuperación de un espacio verde descuidado.",
-      beforeImage: antes_2,
-      afterImage: despues_2,
-      altBefore: "Jardín antes del mantenimiento",
-      altAfter: "Jardín después del mantenimiento"
+        "Filtro de anillas, manómetro, válvulas solenoides, presostato, y válvula de alivio.",
+      beforeImage: antes_4,
+      afterImage: despues_4,
+      altBefore: "Colector antes",
+      altAfter: "Colector despues"
     },
+    
     {
       id: "2",
       title: "Recuperación de espacio verde",
@@ -53,17 +54,17 @@ const BeforeAfterSection = () => {
       altBefore: "Frente de vivienda antes del mantenimiento",
       altAfter: "Frente de vivienda después del mantenimiento"
     },
-       {
-      id: "1",
-      title: "Cambio e instalación de colector nuevo",
-      location: "Moreno, provincia de Buenos Aires",
-      service: "Riego",
+    {
+      id: "4",
+      title: "Transformación de fondo de jardín",
+      location: "Zona oeste, provincia de Buenos Aires",
+      service: "Jardinería",
       description:
-        "Filtro de anillas, manómetro, válvulas solenoides, presostato, y válvula de alivio.",
-      beforeImage: antes_4,
-      afterImage: despues_4,
-      altBefore: "Colector antes",
-      altAfter: "Colector despues"
+        "Corte de césped, limpieza general y recuperación de un espacio verde descuidado.",
+      beforeImage: antes_2,
+      afterImage: despues_2,
+      altBefore: "Jardín antes del mantenimiento",
+      altAfter: "Jardín después del mantenimiento"
     }
   ];
 
