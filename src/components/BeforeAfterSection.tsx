@@ -49,6 +49,18 @@ const BeforeAfterSection = () => {
       afterImage: despues_3,
       altBefore: "Frente de vivienda antes del mantenimiento",
       altAfter: "Frente de vivienda después del mantenimiento"
+    },
+       {
+      id: "4",
+      title: "Cambio e instalación de colector nuevo",
+      location: "Moreno, provincia de Buenos Aires",
+      service: "Riego",
+      description:
+        "Filtro de anillas, manómetro, válvulas solenoides, presostato, y válvula de alivio.",
+      beforeImage: antes_3,
+      afterImage: despues_3,
+      altBefore: "Frente de vivienda antes del mantenimiento",
+      altAfter: "Frente de vivienda después del mantenimiento"
     }
   ];
 
