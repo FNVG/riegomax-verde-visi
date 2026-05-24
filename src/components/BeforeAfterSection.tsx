@@ -62,8 +62,8 @@ const BeforeAfterSection = () => {
         "Filtro de anillas, manómetro, válvulas solenoides, presostato, y válvula de alivio.",
       beforeImage: antes_4,
       afterImage: despues_4,
-      altBefore: "Frente de vivienda antes del mantenimiento",
-      altAfter: "Frente de vivienda después del mantenimiento"
+      altBefore: "Colector antes",
+      altAfter: "Colector despue"
     }
   ];
 
