@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Página principal -->
   <url>
     <loc>https://riegomax.com.ar/</loc>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://riegomax.com.ar/blog</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artículos -->
+  <url>
+    <loc>https://riegomax.com.ar/blog/como-elegir-sistema-de-riego-ideal</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/blog/riego-por-goteo-vs-aspersion</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/blog/ahorrar-agua-riego-inteligente</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/blog/errores-comunes-instalacion-riego</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/blog/automatizacion-del-riego</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/blog/mantener-filtros-y-valvulas</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Productos -->
+  <url>
+    <loc>https://riegomax.com.ar/productos/fleje-chapa-bordes-canteros-caminos-oxido-marron</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://riegomax.com.ar/productos/tela-manta-anti-helada</loc>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
