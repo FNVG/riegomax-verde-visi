@@ -40,7 +40,7 @@ const HeroSection = () => {
           {/* Title */}
           {/* h1: le dice a Google qué hace Riegomax y dónde. El eslogan queda debajo, igual de grande */}
           <h1 className="text-sm md:text-base font-semibold uppercase tracking-wide text-white/90 mb-3">
-            Riego automático, jardinería y paisajismo en Moreno y zona oeste
+            Riego automático, jardinería y paisajismo
           </h1>
           <p className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Tu jardín,
