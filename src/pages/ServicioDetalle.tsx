@@ -6,8 +6,10 @@ import Seo from "@/components/Seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ListaPreguntas from "@/components/ListaPreguntas";
 import { getServicio, servicios, type Seccion } from "@/data/servicios";
-import { breadcrumbSchema, servicioSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, servicioSchema } from "@/lib/schema";
+import { preguntasFrecuentes } from "@/data/preguntas";
 
 /**
  * Una sección de la página: texto a un lado y, si tiene, la foto o el video que ilustra
@@ -119,6 +121,7 @@ export default function ServicioDetalle() {
     { nombre: servicio.titulo },
   ];
   const ruta = `/servicios/${servicio.slug}`;
+  const preguntas = preguntasFrecuentes[servicio.slug] ?? [];
   // Las secciones con imagen alternan de lado; se cuentan solo esas
   let conMedia = 0;
 
@@ -129,7 +132,11 @@ export default function ServicioDetalle() {
         description={servicio.seoDescription}
         path={ruta}
         image={servicio.portada}
-        jsonLd={[servicioSchema(servicio), breadcrumbSchema(migas, ruta)]}
+        jsonLd={[
+          servicioSchema(servicio),
+          breadcrumbSchema(migas, ruta),
+          ...(preguntas.length > 0 ? [faqSchema(preguntas)] : []),
+        ]}
       />
 
       <Header />
@@ -160,6 +167,23 @@ export default function ServicioDetalle() {
             const invertir = tieneMedia && conMedia++ % 2 === 1;
             return <BloqueSeccion key={seccion.titulo} seccion={seccion} invertir={invertir} />;
           })}
+
+          {/* Preguntas frecuentes: preguntas reales que la gente le hace a Google sobre este servicio */}
+          {preguntas.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Preguntas frecuentes</h2>
+              <div className="mt-6">
+                <ListaPreguntas preguntas={preguntas} />
+              </div>
+              <Link
+                to="/preguntas-frecuentes"
+                className="mt-4 inline-flex min-h-[44px] items-center gap-2 font-semibold text-primary hover:underline"
+              >
+                Ver todas las preguntas frecuentes
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </section>
+          )}
 
           {/* Otros servicios: enlaces internos entre páginas de servicio */}
           <section className="border-t border-border pt-12">

@@ -13,6 +13,13 @@ import blogGranzaSobreManta from "../assets/blog/granza-sobre-manta-antimalezas.
 import blogCespedJuntoACerco from "../assets/blog/cesped-junto-a-cerco-de-alambre.jpg";
 import blogJardinAbandonado from "../assets/blog/jardin-abandonado-con-yuyos.jpg";
 import blogTerrenoEmparejado from "../assets/blog/terreno-emparejado-antes-del-cesped.jpg";
+import blogCespedConHilo from "../assets/blog/cesped-con-hilo-para-marcar-el-riego.jpg";
+import blogCaneriasAspersores from "../assets/blog/canerias-hacia-los-aspersores.jpg";
+import blogAspersorRotor from "../assets/blog/aspersor-rotor-antes-de-instalar.jpg";
+import blogSectoresSolSombra from "../assets/blog/jardin-con-sectores-de-sol-y-sombra.jpg";
+import blogInstalacionAspersor from "../assets/blog/instalacion-de-aspersor-emergente.jpg";
+import blogUnionCanos from "../assets/blog/union-de-canos-de-riego.jpg";
+import blogReflectorLed from "../assets/blog/reflector-led-de-exterior.jpg";
 
 /**
  * Artículos del blog de Riegomax.
@@ -638,6 +645,7 @@ export const articulos: Articulo[] = [
     lectura: "5 min lectura",
     descripcion:
       "Spots para destacar, balizas para circular y algunas reglas para que el jardín se vea bien de noche sin encandilar.",
+    imagen: blogReflectorLed,
     intro:
       "Un jardín bien iluminado se disfruta también de noche, se ve más grande y es más seguro para circular. La clave no es poner mucha luz, sino poner la luz justa en los lugares correctos.",
     contenido: [
@@ -1044,6 +1052,11 @@ export const articulos: Articulo[] = [
           "El goteo usa una manguera con goteros que lleva el agua directo a la raíz. Gasta menos agua porque no moja caminos ni paredes y casi no se evapora, por eso es ideal para canteros, cercos y huertas.",
       },
       {
+        tipo: "imagen",
+        src: blogCaneriasAspersores,
+        alt: "Cañerías de riego en un cantero, antes de tapar la zanja",
+      },
+      {
         tipo: "tabla",
         encabezados: ["Sector del jardín", "Sistema recomendado"],
         filas: [
@@ -1067,6 +1080,11 @@ export const articulos: Articulo[] = [
         titulo: "Un sector, un tipo de riego",
         texto:
           "Nunca mezcles aspersores y goteo en el mismo sector. El goteo necesita mucho más tiempo de riego que la aspersión, y si comparten válvula uno de los dos siempre va a quedar mal regado.",
+      },
+      {
+        tipo: "imagen",
+        src: blogCespedConHilo,
+        alt: "Hilo tendido sobre el césped para marcar el recorrido de la cañería, con un sector al sol y otro a la sombra",
       },
 
       { tipo: "h2", texto: "La presión de agua de tu casa", id: "presion" },
@@ -1146,6 +1164,11 @@ export const articulos: Articulo[] = [
         tipo: "parrafo",
         texto:
           "Hay dos tipos principales: los difusores, que riegan áreas chicas con un abanico fijo, y los rotores, que giran y alcanzan distancias mayores. Elegimos uno u otro según el tamaño de cada sector.",
+      },
+      {
+        tipo: "imagen",
+        src: blogAspersorRotor,
+        alt: "Aspersor emergente tipo rotor antes de instalarlo",
       },
 
       { tipo: "h2", texto: "Cómo funciona el riego por goteo", id: "goteo" },
@@ -1279,6 +1302,11 @@ export const articulos: Articulo[] = [
         texto:
           "En canteros y cercos, cambiar aspersión por goteo es uno de los cambios que más agua ahorran: el agua va directo a la raíz y no se pierde en caminos, paredes ni hojas.",
       },
+      {
+        tipo: "imagen",
+        src: blogSectoresSolSombra,
+        alt: "Jardín con sectores a pleno sol y sectores a la sombra de los árboles",
+      },
 
       { tipo: "h2", texto: "Sensor de lluvia y programador", id: "sensor" },
       {
@@ -1366,6 +1394,11 @@ export const articulos: Articulo[] = [
         titulo: "La regla del cabezal a cabezal",
         texto:
           "El agua de cada aspersor tiene que llegar hasta el aspersor vecino. Es la forma de que el césped reciba la misma cantidad de agua en toda su superficie.",
+      },
+      {
+        tipo: "imagen",
+        src: blogInstalacionAspersor,
+        alt: "Instalación de un aspersor emergente al nivel del césped",
       },
 
       { tipo: "h2", texto: "Mezclar distintos tipos en un mismo sector", id: "mezclar" },
@@ -1568,6 +1601,11 @@ export const articulos: Articulo[] = [
           "Un sector riega solo o no corta: limpiar o cambiar la membrana de la válvula.",
           "Hay agua en la caja de válvulas: buscar una pérdida en las uniones.",
         ],
+      },
+      {
+        tipo: "imagen",
+        src: blogUnionCanos,
+        alt: "Reparación de una unión de caños de riego",
       },
 
       { tipo: "h2", texto: "Filtros: clave en el goteo", id: "filtros" },

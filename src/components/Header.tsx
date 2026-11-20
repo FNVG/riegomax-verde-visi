@@ -14,6 +14,7 @@ const Header = () => {
     { name: "Antes & Después", href: "/#before-after" },
     { name: "Proyectos", href: "/#projects" },
     { name: "Blog", href: "/blog" },
+    { name: "Preguntas", href: "/preguntas-frecuentes" },
     { name: "Contacto", href: "/#contact" }
   ];
 

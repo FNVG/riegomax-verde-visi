@@ -143,3 +143,20 @@ export function breadcrumbSchema(items: { nombre: string; href?: string }[], rut
     })),
   };
 }
+
+/**
+ * Preguntas frecuentes (FAQPage). Describe a Google las preguntas y respuestas de la página.
+ * Aclaración: desde 2023 Google solo muestra las preguntas como resultado enriquecido para
+ * sitios de gobierno y salud, pero el marcado sigue ayudando a que entienda el contenido.
+ */
+export function faqSchema(preguntas: { pregunta: string; respuesta: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: preguntas.map((p) => ({
+      "@type": "Question",
+      name: p.pregunta,
+      acceptedAnswer: { "@type": "Answer", text: p.respuesta },
+    })),
+  };
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 
 import antes_1 from "@/assets/antes_despues/recuperacion-espacio-verde-antes.jpg";
@@ -159,6 +160,15 @@ const BeforeAfterSection = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {currentProject.description}
                   </p>
+
+                  {/* Enlace al servicio que muestra cada transformación */}
+                  <Link
+                    to={currentProject.service === "Riego" ? "/servicios/sistemas-de-riego" : "/servicios/mantenimiento"}
+                    className="mt-3 inline-flex min-h-[44px] w-fit items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                  >
+                    {currentProject.service === "Riego" ? "Ver sistemas de riego" : "Ver mantenimiento de jardines"}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
 
                 </div>
 

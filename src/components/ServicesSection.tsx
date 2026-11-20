@@ -100,6 +100,16 @@ const ServicesSection = () => {
 
         </div>
 
+        <div className="mt-8 text-center">
+          <Link
+            to="/servicios"
+            className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-primary hover:underline"
+          >
+            Ver todos los servicios
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );

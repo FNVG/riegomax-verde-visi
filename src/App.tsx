@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BlogArticulo from "./pages/BlogArticulo";
 import Blog from "./pages/Blog";
+import PreguntasFrecuentes from "./pages/PreguntasFrecuentes";
 import Servicios from "./pages/Servicios";
 import ServicioDetalle from "./pages/ServicioDetalle";
 import ScrollToTop from "./components/ScrollToTop";
@@ -25,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentes />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/servicios/:slug" element={<ServicioDetalle />} />
           <Route 

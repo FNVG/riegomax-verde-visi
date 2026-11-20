@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Filter, MapPin, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Filter, MapPin, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -21,6 +22,13 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("Todos");
 
   const filters = ["Todos", "Jardinería", "Paisajismo", "Riego"];
+
+  // Cada categoría enlaza a la página de su servicio (enlace interno con texto descriptivo)
+  const servicioDe: Record<string, { href: string; texto: string }> = {
+    "Jardinería": { href: "/servicios/jardineria", texto: "Ver servicio de jardinería" },
+    "Paisajismo": { href: "/servicios/paisajismo", texto: "Ver servicio de paisajismo" },
+    "Riego": { href: "/servicios/sistemas-de-riego", texto: "Ver sistemas de riego" },
+  };
 
   const projects = [
     {
@@ -238,6 +246,16 @@ const ProjectsSection = () => {
                   <p className="text-xs md:text-sm text-muted-foreground leading-snug">
                     {project.description}
                   </p>
+
+                  {servicioDe[project.category] && (
+                    <Link
+                      to={servicioDe[project.category].href}
+                      className="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-xs md:text-sm font-semibold text-primary hover:underline"
+                    >
+                      {servicioDe[project.category].texto}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  )}
 
                 </div>
 
