@@ -4,6 +4,15 @@ import art3 from "../assets/blog/manguera-riego-colocada-en-zanja.jpg";
 import art4 from "../assets/blog/conexion-valvulas-colector-riego.jpg";
 import art5 from "../assets/blog/programador-riego-tablero-electrico.jpg";
 import art6 from "../assets/blog/ajuste-valvulas-colector-riego.jpg";
+import blogMantaYCespedSintetico from "../assets/blog/manta-geotextil-y-cesped-sintetico.jpg";
+import blogPatioDeTierra from "../assets/blog/patio-de-tierra-para-cesped-sintetico.jpg";
+import blogGramaRecienColocada from "../assets/blog/grama-bahiana-recien-colocada-junto-a-vereda.jpg";
+import blogGramaDeCerca from "../assets/blog/grama-bahiana-de-cerca.jpg";
+import blogCanteroChips from "../assets/blog/cantero-con-chips-y-guardacantero.jpg";
+import blogGranzaSobreManta from "../assets/blog/granza-sobre-manta-antimalezas.jpg";
+import blogCespedJuntoACerco from "../assets/blog/cesped-junto-a-cerco-de-alambre.jpg";
+import blogJardinAbandonado from "../assets/blog/jardin-abandonado-con-yuyos.jpg";
+import blogTerrenoEmparejado from "../assets/blog/terreno-emparejado-antes-del-cesped.jpg";
 
 /**
  * Artículos del blog de Riegomax.
@@ -18,6 +27,9 @@ export const categorias = [
   "Ahorro de Agua",
   "Automatización",
   "Mantenimiento",
+  "Jardinería",
+  "Paisajismo",
+  "Iluminación",
 ] as const;
 
 export type Bloque =
@@ -37,7 +49,8 @@ export type Articulo = {
   fecha: string;
   lectura: string;
   descripcion: string;
-  imagen: string;
+  /** Imagen de portada. Si no hay una foto real adecuada, se deja sin imagen. */
+  imagen?: string;
   intro: string;
   contenido: Bloque[];
 
@@ -48,6 +61,933 @@ export type Articulo = {
 };
 
 export const articulos: Articulo[] = [
+  // ═════════════════════════ ARTÍCULOS SOBRE LOS DEMÁS SERVICIOS ═════════════════════════
+
+  // ─────────────────────────────────────────────────────────────  Césped sintético
+  {
+    slug: "cesped-sintetico-o-natural",
+    titulo: "Césped sintético o natural: cuál conviene para tu patio",
+    seoTitle: "Césped sintético o natural: cuál conviene | Riegomax",
+    seoDescription:
+      "Ventajas y desventajas del césped sintético y del natural: sol, sombra, uso, mantenimiento y agua. Cuándo conviene cada uno en tu patio o jardín.",
+    palabrasClave: [
+      "césped sintético o natural",
+      "pasto sintético ventajas y desventajas",
+      "conviene el césped sintético",
+      "césped sintético para patio",
+    ],
+    categoria: "Guías",
+    fecha: "16 Noviembre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Sol, sombra, uso y mantenimiento: una comparación honesta para decidir qué césped conviene en tu espacio.",
+    imagen: blogMantaYCespedSintetico,
+    intro:
+      "Cada vez más gente nos pregunta si conviene poner césped sintético. La respuesta depende del lugar: hay patios donde el sintético es la mejor solución y jardines donde un césped natural bien cuidado no tiene comparación. Te contamos en qué casos conviene cada uno.",
+    contenido: [
+      { tipo: "h2", texto: "Dónde brilla el césped sintético", id: "sintetico" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El sintético es la solución para los lugares donde el césped natural no prospera: patios con poca luz, espacios chicos entre medianeras, zonas de mucho pisoteo o terrazas. Se mantiene verde todo el año, no se corta, no se riega y no hace barro.",
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Patios con sombra o con pocas horas de sol directo.",
+          "Espacios chicos donde no vale la pena tener cortadora.",
+          "Zonas de juego de chicos o mascotas, donde el pasto natural se gasta.",
+          "Casas de fin de semana, donde nadie riega ni corta durante la semana.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Dónde conviene el césped natural", id: "natural" },
+      {
+        tipo: "parrafo",
+        texto:
+          "En jardines grandes y soleados, el césped natural sigue siendo la mejor opción. Es fresco al pisar aun en pleno verano, absorbe el agua de lluvia y forma parte del ecosistema del jardín. Con un riego automático y cortes regulares, mantenerlo no lleva tanto trabajo como parece.",
+      },
+
+      { tipo: "h2", texto: "Comparación lado a lado", id: "comparacion" },
+      {
+        tipo: "tabla",
+        encabezados: ["", "Sintético", "Natural"],
+        filas: [
+          ["Sombra", "Funciona igual", "Sufre y se ralea"],
+          ["Riego", "No necesita", "Necesita, idealmente automático"],
+          ["Corte", "No necesita", "Regular, sobre todo en verano"],
+          ["Temperatura al sol", "Se calienta bastante", "Se mantiene fresco"],
+          ["Pisoteo intenso", "Lo soporta bien", "Puede gastarse"],
+          ["Lluvia", "Drena por la base preparada", "Absorbe el agua"],
+        ],
+      },
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "El sintético no es para todo",
+        texto:
+          "En un patio a pleno sol, el césped sintético se calienta mucho en verano. Si el espacio recibe sol todo el día y va a usarse descalzo, conviene pensarlo dos veces o combinarlo con zonas de sombra.",
+      },
+
+      { tipo: "h2", texto: "La base hace la diferencia", id: "base" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un sintético mal colocado se nota rápido: aparecen ondas, charcos y uniones que se despegan. La calidad del resultado depende sobre todo de la base: un terreno firme, nivelado y con buen drenaje, cubierto con una manta antimalezas antes de extender los paños.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Si te decidiste por el sintético, en este otro artículo te explicamos cómo es la colocación paso a paso.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Colocación de césped sintético",
+            detalle: "Preparación de la base, colocación de paños y terminación.",
+            href: "/servicios/cesped-sintetico",
+          },
+          {
+            texto: "Cómo se coloca el césped sintético",
+            detalle: "El paso a paso de una colocación real.",
+            href: "/blog/como-se-coloca-el-cesped-sintetico",
+          },
+          {
+            texto: "Grama bahiana",
+            detalle: "La opción natural más elegida en zona oeste.",
+            href: "/blog/grama-bahiana-como-se-coloca",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "como-se-coloca-el-cesped-sintetico",
+    titulo: "Cómo se coloca el césped sintético: el paso a paso",
+    seoTitle: "Cómo se coloca el césped sintético paso a paso | Riegomax",
+    seoDescription:
+      "Así se coloca el césped sintético: retiro de tierra, base compactada y nivelada, manta antimalezas, colocación y unión de paños y terminación de bordes.",
+    palabrasClave: [
+      "cómo se coloca el césped sintético",
+      "colocación de césped sintético",
+      "base para césped sintético",
+      "instalar pasto sintético",
+    ],
+    categoria: "Instalación",
+    fecha: "9 Noviembre 2026",
+    lectura: "6 min lectura",
+    descripcion:
+      "De un patio de tierra a un césped verde y parejo: cada etapa de la colocación y por qué importa.",
+    imagen: blogPatioDeTierra,
+    intro:
+      "Colocar césped sintético parece simple: extender un rollo verde y listo. Pero la diferencia entre un trabajo que dura años y uno que a los meses tiene ondas y charcos está en lo que no se ve. Te mostramos cómo lo hacemos, etapa por etapa.",
+    contenido: [
+      { tipo: "h2", texto: "1. Retirar la tierra suelta", id: "retirar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El primer paso es sacar el pasto viejo, las raíces y la tierra suelta de la superficie. Si se coloca el sintético sobre tierra blanda, con el tiempo se hunde en los lugares por donde más se camina.",
+      },
+
+      { tipo: "h2", texto: "2. Definir el nivel y la pendiente", id: "nivel" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Con estacas e hilo se marca el nivel final. No conviene dejarlo perfectamente plano: una pendiente suave hacia la rejilla o el desagüe hace que el agua de lluvia escurra en vez de acumularse debajo del césped.",
+      },
+
+      { tipo: "h2", texto: "3. Compactar la base", id: "compactar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La base se compacta hasta que quede firme. Sobre ella se coloca una capa de arena o material fino que se nivela con regla. Esta es la etapa que define el resultado: cualquier pozo o lomo que quede acá se va a ver después a través del césped.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Probá caminando",
+        texto:
+          "Antes de seguir, conviene caminar toda la superficie. Si el pie marca la base, todavía le falta compactación.",
+      },
+
+      { tipo: "h2", texto: "4. Manta antimalezas", id: "manta" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Sobre la base va una manta geotextil. Deja pasar el agua pero frena el crecimiento de malezas, que de otra forma terminarían asomando entre las fibras del césped.",
+      },
+
+      { tipo: "h2", texto: "5. Colocar y unir los paños", id: "panos" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Los paños se extienden todos con la fibra orientada hacia el mismo lado. Si uno queda al revés, se nota a la vista como si fuera de otro color. Las uniones se pegan sobre una cinta especial, cuidando que las fibras no queden atrapadas para que la junta no se vea.",
+      },
+
+      { tipo: "h2", texto: "6. Terminación de bordes", id: "bordes" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Por último se recortan los bordes contra muros, solados y canteros y se fijan para que no se levanten. Según el tipo de césped, se agrega arena de relleno entre las fibras y se cepilla para que queden paradas.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Colocación de césped sintético",
+            detalle: "Mirá fotos y video de un trabajo real.",
+            href: "/servicios/cesped-sintetico",
+          },
+          {
+            texto: "Césped sintético o natural",
+            detalle: "Cuándo conviene cada uno.",
+            href: "/blog/cesped-sintetico-o-natural",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Paisajismo
+  {
+    slug: "grama-bahiana-como-se-coloca",
+    titulo: "Grama bahiana: por qué es tan elegida y cómo se coloca",
+    seoTitle: "Grama bahiana: ventajas y cómo se coloca | Riegomax",
+    seoDescription:
+      "Por qué la grama bahiana es uno de los céspedes más elegidos en zona oeste, cómo se coloca en panes y qué cuidados necesita las primeras semanas.",
+    palabrasClave: [
+      "grama bahiana",
+      "colocación de grama bahiana",
+      "césped en panes",
+      "qué césped poner en el jardín",
+    ],
+    categoria: "Paisajismo",
+    fecha: "2 Noviembre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Resistente al sol, al pisoteo y a la falta de agua: qué tiene la grama bahiana y cómo lograr que se implante bien.",
+    imagen: blogGramaRecienColocada,
+    intro:
+      "Cuando alguien quiere un césped resistente y de poco mantenimiento, la grama bahiana suele estar entre las primeras opciones. Te contamos por qué, en qué lugares conviene y cómo se coloca para que prenda bien.",
+    contenido: [
+      { tipo: "h2", texto: "Qué tiene de bueno la grama bahiana", id: "ventajas" },
+      {
+        tipo: "lista",
+        items: [
+          "Aguanta muy bien el sol fuerte del verano.",
+          "Resiste el pisoteo, ideal para jardines con chicos y mascotas.",
+          "Una vez establecida, tolera mejor la falta de riego que otros céspedes.",
+          "Forma una carpeta densa que deja poco lugar a las malezas.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Su punto débil es la sombra: debajo de árboles grandes o en patios con pocas horas de sol se ralea. En esos lugares conviene otra especie o, en espacios chicos, evaluar el césped sintético.",
+      },
+
+      { tipo: "h2", texto: "Sembrar o colocar en panes", id: "panes" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La grama se puede sembrar, pero tarda en cubrir y mientras tanto el terreno queda expuesto a las malezas y al barro. Colocarla en panes (tepes) da un césped verde desde el primer día y permite usar el jardín mucho antes.",
+      },
+
+      { tipo: "h2", texto: "Cómo se coloca", id: "colocacion" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Primero se limpia el terreno de malezas y se nivela, rellenando los bajos con tierra para que el agua no se junte en un rincón. Después se colocan los panes bien juntos, trabados como ladrillos para que las uniones no coincidan, y se pasan con rodillo para que hagan buen contacto con la tierra.",
+      },
+      {
+        tipo: "imagen",
+        src: blogGramaDeCerca,
+        alt: "Grama bahiana de cerca, con la carpeta densa que forma una vez implantada",
+      },
+
+      { tipo: "h2", texto: "Los cuidados de las primeras semanas", id: "cuidados" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Las primeras semanas son las más importantes: los panes tienen que mantenerse húmedos hasta que las raíces se agarren al suelo. Después, el riego se espacia de a poco para que las raíces bajen a buscar el agua.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "La mejor época",
+        texto:
+          "La grama bahiana crece con el calor. Colocarla en primavera o verano hace que se implante mucho más rápido que en invierno, cuando está casi detenida.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Paisajismo",
+            detalle: "Nivelación de terreno y colocación de grama bahiana.",
+            href: "/servicios/paisajismo",
+          },
+          {
+            texto: "Sistemas de riego",
+            detalle: "Riego automático para que el césped se mantenga parejo.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Cada cuánto cortar el césped",
+            detalle: "La altura justa para cada época.",
+            href: "/blog/cada-cuanto-cortar-el-cesped",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "cantero-sin-malezas",
+    titulo: "Cómo armar un cantero que no se llene de malezas",
+    seoTitle: "Cómo armar un cantero sin malezas | Riegomax",
+    seoDescription:
+      "Guardacanteros, manta antimalezas, chips y piedras: cómo armar un cantero prolijo que no se llene de yuyos y casi no necesite mantenimiento.",
+    palabrasClave: [
+      "cantero sin malezas",
+      "manta antimalezas",
+      "guardacantero",
+      "cantero con piedras",
+      "cantero con chips",
+    ],
+    categoria: "Paisajismo",
+    fecha: "26 Octubre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Guardacanteros, manta antimalezas y una buena cobertura: las tres claves de un cantero prolijo y fácil de mantener.",
+    imagen: blogCanteroChips,
+    intro:
+      "Un cantero recién armado se ve impecable, pero si no se arma bien, a los pocos meses el césped lo invade y los yuyos asoman por todos lados. Con tres decisiones simples se puede tener un cantero que se mantenga prolijo con muy poco trabajo.",
+    contenido: [
+      { tipo: "h2", texto: "1. Un guardacantero que marque el límite", id: "guardacantero" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El césped avanza por debajo de la tierra con sus estolones y raíces. Un guardacantero, enterrado unos centímetros, le pone un límite físico y además define una línea limpia entre el pasto y el cantero, que facilita mucho el bordeado.",
+      },
+
+      { tipo: "h2", texto: "2. Manta antimalezas debajo", id: "manta" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La manta antimalezas es una tela que deja pasar el agua y el aire pero no la luz. Sin luz, las semillas de malezas que hay en la tierra no pueden crecer. Se coloca sobre la tierra preparada, se le hacen cortes en cruz donde van las plantas y se cubre con la terminación elegida.",
+      },
+      {
+        tipo: "imagen",
+        src: blogGranzaSobreManta,
+        alt: "Relleno de granza sobre la manta antimalezas en un cantero lateral",
+      },
+
+      { tipo: "h2", texto: "3. Una cobertura: chips o piedras", id: "cobertura" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La cobertura protege la manta del sol y le da la terminación estética al cantero. Además, mantiene la humedad de la tierra, así que las plantas necesitan menos riego.",
+      },
+      {
+        tipo: "tabla",
+        encabezados: ["", "Chips de corteza", "Piedras"],
+        filas: [
+          ["Aspecto", "Cálido, natural", "Prolijo, moderno"],
+          ["Duración", "Se degradan y hay que reponer", "Duran indefinidamente"],
+          ["Temperatura", "Mantienen el suelo fresco", "Pueden calentarse al sol"],
+          ["Ideal para", "Canteros con muchas plantas", "Laterales y zonas sin césped"],
+        ],
+      },
+
+      { tipo: "h2", texto: "4. El riego, también por debajo", id: "riego" },
+      {
+        tipo: "parrafo",
+        texto:
+          "En canteros conviene regar con goteo: la manguera va debajo de la cobertura, lleva el agua directo a cada planta y no moja el resto del cantero, lo que también ayuda a que no germinen malezas.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Mantenimiento mínimo",
+        texto:
+          "Aunque la manta frena casi todo, alguna semilla puede germinar sobre la cobertura. Sacarla a mano apenas aparece lleva un minuto; dejarla crecer obliga a remover piedras o chips.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Paisajismo",
+            detalle: "Canteros con guardacanteros, manta, chips y piedras.",
+            href: "/servicios/paisajismo",
+          },
+          {
+            texto: "Riego por goteo o aspersión",
+            detalle: "Por qué el goteo es lo mejor para canteros.",
+            href: "/blog/riego-por-goteo-vs-aspersion",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Jardinería
+  {
+    slug: "cada-cuanto-cortar-el-cesped",
+    titulo: "Cada cuánto cortar el césped y a qué altura",
+    seoTitle: "Cada cuánto cortar el césped y a qué altura | Riegomax",
+    seoDescription:
+      "Con qué frecuencia cortar el césped según la época, a qué altura dejarlo, la regla del tercio y los errores que lo debilitan. Guía práctica.",
+    palabrasClave: [
+      "cada cuánto cortar el césped",
+      "altura de corte del césped",
+      "cortar el pasto",
+      "corte de césped",
+    ],
+    categoria: "Jardinería",
+    fecha: "19 Octubre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "La frecuencia según la época, la regla del tercio y por qué cortar muy bajo es el error más común.",
+    imagen: blogCespedJuntoACerco,
+    intro:
+      "Cortar el césped parece la tarea más simple del jardín, pero la forma de hacerlo define si el pasto queda denso y verde o ralo y lleno de malezas. Te contamos cada cuánto conviene cortarlo y a qué altura.",
+    contenido: [
+      { tipo: "h2", texto: "La regla del tercio", id: "tercio" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La regla más importante es no cortar nunca más de un tercio de la altura de la hoja en un solo corte. Si el césped creció mucho, conviene bajarlo de a poco en dos o tres cortes separados por algunos días, en lugar de rebajarlo todo de una vez.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando se corta de más, el césped pierde la parte verde que usa para alimentarse, se debilita y deja espacios por donde entran las malezas. Además, el suelo queda expuesto al sol y se seca más rápido.",
+      },
+
+      { tipo: "h2", texto: "Cada cuánto, según la época", id: "frecuencia" },
+      {
+        tipo: "tabla",
+        encabezados: ["Época", "Crecimiento", "Frecuencia orientativa"],
+        filas: [
+          ["Primavera", "Rápido", "Cada semana"],
+          ["Verano", "Rápido, según el riego", "Cada semana o cada diez días"],
+          ["Otoño", "Se desacelera", "Cada dos semanas"],
+          ["Invierno", "Casi detenido", "Solo cuando haga falta"],
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Más que el calendario, lo que manda es la regla del tercio: si el césped llega a la altura en la que un corte le sacaría más de un tercio, es momento de cortar.",
+      },
+
+      { tipo: "h2", texto: "A qué altura dejarlo", id: "altura" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un césped un poco más alto es más sano: hace sombra sobre su propio suelo, conserva la humedad y no deja lugar a las malezas. En verano conviene dejarlo algo más alto que en primavera, para que soporte mejor el calor.",
+      },
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "El error más común",
+        texto:
+          "Cortar muy bajo para espaciar los cortes. El resultado es un césped amarillento, con manchas peladas y más malezas, que además necesita mucha más agua.",
+      },
+
+      { tipo: "h2", texto: "Otros detalles que suman", id: "detalles" },
+      {
+        tipo: "lista",
+        items: [
+          "Cuchilla bien afilada: una cuchilla desafilada desgarra la hoja y las puntas quedan amarillas.",
+          "Césped seco: cortar con el pasto mojado deja un corte desparejo y apelmaza los restos.",
+          "Bordear canteros y caminos en cada corte para que el jardín se vea prolijo.",
+          "Retirar el pasto cortado si quedó en montones sobre el césped.",
+        ],
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Jardinería y corte de césped",
+            detalle: "Corte, bordeado y retiro del pasto cortado.",
+            href: "/servicios/jardineria",
+          },
+          {
+            texto: "Cómo ahorrar agua al regar el jardín",
+            detalle: "El riego también define cómo crece el césped.",
+            href: "/blog/ahorrar-agua-riego-inteligente",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "cuando-podar-cercos-y-arbustos",
+    titulo: "Cuándo podar cercos vivos, arbustos y enredaderas",
+    seoTitle: "Cuándo podar cercos, arbustos y enredaderas | Riegomax",
+    seoDescription:
+      "La época justa para podar cercos vivos, arbustos con flor y enredaderas, cómo dar forma a un cerco para que no se ralee abajo y qué errores evitar.",
+    palabrasClave: [
+      "cuándo podar",
+      "poda de cercos vivos",
+      "poda de arbustos",
+      "poda de enredaderas",
+    ],
+    categoria: "Jardinería",
+    fecha: "12 Octubre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Cercos, arbustos con flor y enredaderas: cada uno tiene su época de poda. Te explicamos cuál y por qué.",
+    intro:
+      "Podar en el momento equivocado puede dejar un arbusto sin flores todo un año o un cerco ralo en la base. Cada tipo de planta tiene su época, y conocerla es la mitad del trabajo.",
+    contenido: [
+      { tipo: "h2", texto: "Cercos vivos", id: "cercos" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Los cercos se podan para mantener su forma y para que se vuelvan más tupidos. La poda de formación más fuerte se hace a fines del invierno, antes de que empiece el crecimiento de primavera. Durante la primavera y el verano se hacen retoques para mantener la línea.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Más ancho abajo que arriba",
+        texto:
+          "Un cerco tiene que quedar levemente más ancho en la base que en la parte de arriba. Así la luz llega a las ramas de abajo y el cerco no se ralea al pie, que es el problema más común.",
+      },
+
+      { tipo: "h2", texto: "Arbustos con flor", id: "arbustos" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Acá la regla depende de cuándo florece cada planta. Los arbustos que florecen en primavera forman sus pimpollos el año anterior: si se podan en invierno, se cortan las flores. Por eso conviene podarlos justo después de la floración.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Los que florecen en verano, en cambio, lo hacen sobre las ramas nuevas del mismo año, así que se podan a fines del invierno para estimular esos brotes.",
+      },
+
+      { tipo: "h2", texto: "Enredaderas", id: "enredaderas" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Las enredaderas crecen rápido y, si no se controlan, cubren canaletas, ventanas y techos. Además de la poda anual, conviene recortarlas cada tanto para mantenerlas dentro del muro o la estructura que cubren y retirar las ramas secas que se acumulan por debajo.",
+      },
+
+      { tipo: "h2", texto: "Siempre, en cualquier época", id: "siempre" },
+      {
+        tipo: "lista",
+        items: [
+          "Quitar ramas secas, rotas o enfermas.",
+          "Sacar las flores marchitas para estimular nuevos brotes.",
+          "Usar herramientas afiladas y limpias para no desgarrar ni contagiar enfermedades.",
+          "No podar con calor extremo: la planta se estresa y se quema.",
+        ],
+      },
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "Cuidado con la poda drástica",
+        texto:
+          "Cortar un cerco hasta dejar solo ramas sin hojas puede hacer que algunas especies, como muchas coníferas, no vuelvan a brotar en esa parte. Si un cerco está muy crecido, conviene bajarlo de a poco en varias temporadas.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Jardinería",
+            detalle: "Poda de cercos, arbustos y enredaderas.",
+            href: "/servicios/jardineria",
+          },
+          {
+            texto: "Paisajismo",
+            detalle: "Plantación de cercos vivos nuevos.",
+            href: "/servicios/paisajismo",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Iluminación
+  {
+    slug: "como-iluminar-el-jardin",
+    titulo: "Cómo iluminar el jardín: balizas, spots y dónde ubicarlos",
+    seoTitle: "Cómo iluminar el jardín: balizas y spots | Riegomax",
+    seoDescription:
+      "Qué luminarias usar en el jardín y dónde ubicarlas: spots para árboles, balizas para caminos, luz LED, protección para exterior y errores a evitar.",
+    palabrasClave: [
+      "iluminación de jardines",
+      "cómo iluminar el jardín",
+      "balizas de jardín",
+      "spots para árboles",
+      "luces para exterior",
+    ],
+    categoria: "Iluminación",
+    fecha: "5 Octubre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Spots para destacar, balizas para circular y algunas reglas para que el jardín se vea bien de noche sin encandilar.",
+    intro:
+      "Un jardín bien iluminado se disfruta también de noche, se ve más grande y es más seguro para circular. La clave no es poner mucha luz, sino poner la luz justa en los lugares correctos.",
+    contenido: [
+      { tipo: "h2", texto: "Primero, pensar para qué", id: "objetivo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Antes de elegir luminarias conviene definir qué queremos lograr en cada zona: destacar un árbol o un cantero, marcar un camino, iluminar una galería para usarla de noche o sumar seguridad en un acceso. Cada objetivo pide un tipo de luz distinto.",
+      },
+
+      { tipo: "h2", texto: "Spots: para destacar", id: "spots" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un spot es una luz dirigida. Ubicado al pie de un árbol y apuntando hacia arriba, resalta el tronco y el follaje y le da profundidad al jardín. También sirve para destacar una planta escultórica, una pared con textura o un sector del cantero.",
+      },
+
+      { tipo: "h2", texto: "Balizas: para circular", id: "balizas" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Las balizas son luminarias bajas, de pie, que iluminan hacia abajo. Se ubican a lo largo de caminos, senderos y bordes de canteros para marcar el recorrido sin encandilar. Separadas de forma pareja, dibujan el camino de noche.",
+      },
+
+      { tipo: "h2", texto: "Qué tener en cuenta al elegir", id: "elegir" },
+      {
+        tipo: "lista",
+        items: [
+          "Que sean aptas para exterior: buscá un grado de protección IP alto contra el agua y el polvo.",
+          "Luz LED: consume poco y dura muchos años.",
+          "Luz cálida: se ve más acogedora en un jardín que la luz blanca fría.",
+          "Materiales que resistan la intemperie y el óxido.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Errores comunes", id: "errores" },
+      {
+        tipo: "lista",
+        items: [
+          "Apuntar los spots hacia donde la gente mira o se sienta: encandilan.",
+          "Iluminar todo de forma pareja: el jardín pierde profundidad.",
+          "Dejar cables expuestos o conexiones sin protección para exterior.",
+          "Ubicar luminarias donde las tapa el crecimiento de las plantas.",
+        ],
+      },
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "Electricidad y agua",
+        texto:
+          "Una instalación eléctrica en el jardín convive con el riego y la lluvia. Las conexiones tienen que estar protegidas y la instalación tiene que tener sus protecciones eléctricas. No es un lugar para improvisar.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Iluminación de jardines",
+            detalle: "Venta y colocación de spots y balizas, con fotos de trabajos.",
+            href: "/servicios/iluminacion-de-jardines",
+          },
+          {
+            texto: "Paisajismo",
+            detalle: "Canteros y plantas pensados junto con la iluminación.",
+            href: "/servicios/paisajismo",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Bombas de agua
+  {
+    slug: "poca-presion-de-agua-en-casa",
+    titulo: "Poca presión de agua en casa: causas y cuándo conviene una bomba",
+    seoTitle: "Poca presión de agua en casa: causas y soluciones | Riegomax",
+    seoDescription:
+      "Por qué sale poca agua en la ducha o las canillas, cómo detectar la causa y cuándo conviene instalar una bomba presurizadora. Guía simple.",
+    palabrasClave: [
+      "poca presión de agua",
+      "bomba presurizadora",
+      "sale poca agua en la ducha",
+      "aumentar presión de agua casa",
+    ],
+    categoria: "Guías",
+    fecha: "28 Septiembre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Tanque bajo, cañerías tapadas o presión de red insuficiente: cómo saber qué pasa y qué solución conviene.",
+    intro:
+      "La ducha que sale floja, la canilla que tarda en llenar un balde, el lavarropas que no carga bien. La poca presión de agua es un problema muy común, y no siempre se resuelve igual. Te ayudamos a identificar la causa antes de decidir.",
+    contenido: [
+      { tipo: "h2", texto: "Primero, ¿dónde falta presión?", id: "donde" },
+      {
+        tipo: "parrafo",
+        texto:
+          "No es lo mismo que falte en toda la casa o en una sola canilla. Si el problema está en un solo lugar, suele ser algo local: un aireador o un flexible tapado, una llave de paso semicerrada. Si falta en toda la casa, la causa está en el tanque, las cañerías o la red.",
+      },
+
+      { tipo: "h2", texto: "Causas más comunes", id: "causas" },
+      {
+        tipo: "lista",
+        items: [
+          "Tanque con poca altura: la presión en las canillas depende de cuán alto está el tanque. Si está casi a la altura de las duchas, el agua sale con poca fuerza.",
+          "Cañerías viejas con sarro o de diámetro chico, que frenan el paso del agua.",
+          "Presión de red baja, que no alcanza a llenar el tanque o a abastecer la casa directo.",
+          "Llaves de paso semicerradas o con pérdidas.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Cuándo conviene una bomba presurizadora", id: "presurizadora" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando la causa es la poca altura del tanque, la solución más directa es una bomba presurizadora. Se instala a la salida del tanque y arranca sola cuando se abre una canilla, dándole al agua la presión que le falta.",
+      },
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "Una bomba no arregla una cañería tapada",
+        texto:
+          "Si el problema son cañerías con sarro o una pérdida, la bomba solo aumenta la presión sobre esa falla. Primero conviene descartar esas causas.",
+      },
+
+      { tipo: "h2", texto: "Si el tanque no se llena", id: "tanque" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando la presión de la red no alcanza para subir el agua al tanque, lo que hace falta es una bomba que lo cargue, con un flotante que la apaga cuando el tanque está lleno.",
+      },
+
+      { tipo: "h2", texto: "Y para el riego", id: "riego" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un sistema de riego con varios aspersores necesita presión y caudal. Si la casa no los tiene, el riego lleva su propia bomba, que se enciende junto con cada sector a través de un tablero eléctrico.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Bombas de agua",
+            detalle: "Presurizadoras, centrífugas y periféricas, con su instalación.",
+            href: "/servicios/bombas-de-agua",
+          },
+          {
+            texto: "Tableros eléctricos de riego",
+            detalle: "Para conectar la bomba al riego automático.",
+            href: "/servicios/tableros-electricos-de-riego",
+          },
+          {
+            texto: "La bomba del riego no arranca",
+            detalle: "Causas más comunes y qué revisar.",
+            href: "/blog/bomba-de-riego-no-arranca",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Mantenimiento
+  {
+    slug: "como-recuperar-un-jardin-abandonado",
+    titulo: "Cómo recuperar un jardín abandonado",
+    seoTitle: "Cómo recuperar un jardín abandonado | Riegomax",
+    seoDescription:
+      "Los pasos para recuperar un jardín abandonado: desmalezar, retirar restos, evaluar qué se salva, nivelar el terreno, colocar césped y mantenerlo.",
+    palabrasClave: [
+      "recuperar jardín abandonado",
+      "limpieza de terreno",
+      "desmalezar jardín",
+      "jardín lleno de yuyos",
+    ],
+    categoria: "Mantenimiento",
+    fecha: "21 Septiembre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Yuyos altos, restos y tierra pelada: el orden de trabajo para volver a tener un jardín para usar.",
+    imagen: blogJardinAbandonado,
+    intro:
+      "Una casa recién comprada, un terreno que estuvo meses sin atención o un fondo que se fue dejando: un jardín abandonado parece no tener arreglo, pero casi siempre se recupera. Lo importante es hacerlo en el orden correcto.",
+    contenido: [
+      { tipo: "h2", texto: "1. Desmalezar y despejar", id: "desmalezar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El primer paso es cortar los yuyos altos y retirar ramas, basura y restos. Hasta que el terreno no está despejado no se puede ver qué hay debajo: desniveles, caños, plantas que vale la pena conservar.",
+      },
+
+      { tipo: "h2", texto: "2. Ver qué se salva", id: "salvar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Con el terreno a la vista, conviene recorrerlo con calma. Árboles sanos, arbustos que con una buena poda se recuperan o un césped que todavía tiene base pueden conservarse y ahorran tiempo y dinero.",
+      },
+
+      { tipo: "h2", texto: "3. Sacar las malezas de raíz", id: "raiz" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cortar los yuyos al ras no alcanza: muchos vuelven a brotar desde la raíz. En los sectores donde va a ir césped nuevo o canteros, hay que sacarlas de raíz antes de seguir.",
+      },
+
+      { tipo: "h2", texto: "4. Nivelar el terreno", id: "nivelar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un terreno con pozos y lomos junta agua en los bajos y hace que el corte quede desparejo. Se rellenan los bajos con tierra y se empareja la superficie, dejando una pendiente suave para que el agua escurra hacia afuera de la casa.",
+      },
+      {
+        tipo: "imagen",
+        src: blogTerrenoEmparejado,
+        alt: "Terreno emparejado y listo para colocar el césped",
+      },
+
+      { tipo: "h2", texto: "5. Césped nuevo, canteros y riego", id: "cesped" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Con el terreno listo, se coloca el césped (en panes, para tener un jardín verde desde el primer día) y se arman los canteros. Es el mejor momento para instalar un riego automático, antes de que el césped cubra todo y haya que abrir zanjas en un jardín terminado.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Para que no vuelva a pasar",
+        texto:
+          "Un mantenimiento periódico, aunque sea cada pocas semanas, evita que el jardín vuelva a desbordarse. Es mucho más barato mantener que recuperar.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Mantenimiento y limpieza de terrenos",
+            detalle: "Mirá el antes y después de trabajos reales.",
+            href: "/servicios/mantenimiento",
+          },
+          {
+            texto: "Paisajismo",
+            detalle: "Nivelación, césped y canteros para el jardín nuevo.",
+            href: "/servicios/paisajismo",
+          },
+          {
+            texto: "Grama bahiana",
+            detalle: "Un césped resistente para empezar de nuevo.",
+            href: "/blog/grama-bahiana-como-se-coloca",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────  Tableros eléctricos
+  {
+    slug: "bomba-de-riego-no-arranca",
+    titulo: "La bomba del riego no arranca: causas más comunes",
+    seoTitle: "La bomba del riego no arranca: causas comunes | Riegomax",
+    seoDescription:
+      "Por qué la bomba del riego automático no arranca: protecciones del tablero, programador, falta de agua, contactor o motor. Qué revisar y cuándo llamar.",
+    palabrasClave: [
+      "bomba de riego no arranca",
+      "bomba no funciona",
+      "tablero de bomba",
+      "riego automático no funciona",
+    ],
+    categoria: "Mantenimiento",
+    fecha: "14 Septiembre 2026",
+    lectura: "5 min lectura",
+    descripcion:
+      "Tablero, programador, falta de agua o el propio motor: cómo ubicar la falla de forma ordenada.",
+    intro:
+      "Llega la hora del riego, el programador marca que está regando, pero la bomba no arranca y los aspersores no suben. Es una de las consultas más frecuentes. La falla puede estar en distintos lugares, y revisarlos en orden ahorra mucho tiempo.",
+    contenido: [
+      {
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "Antes de empezar",
+        texto:
+          "El tablero y la bomba trabajan con 220 V cerca del agua. Lo que sigue sirve para entender qué puede estar pasando; abrir el tablero o el motor es trabajo para alguien con conocimientos de electricidad.",
+      },
+
+      { tipo: "h2", texto: "1. ¿Llega corriente al tablero?", id: "corriente" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Lo primero es lo más simple: revisar que no haya saltado la térmica o el disyuntor del tablero, o la del tablero general de la casa. Si saltan de nuevo apenas se suben, hay una falla eléctrica que hay que revisar antes de seguir.",
+      },
+
+      { tipo: "h2", texto: "2. ¿El programador da la orden?", id: "programador" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El programador tiene que estar configurado para encender la bomba junto con cada sector. Si se reprogramó, se reseteó por un corte de luz o se agregó un sector nuevo, puede que la orden de arranque de bomba haya quedado desactivada.",
+      },
+
+      { tipo: "h2", texto: "3. ¿Hay agua para bombear?", id: "agua" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Muchos tableros tienen una protección que impide que la bomba arranque si no hay agua en el tanque o la cisterna. Es una protección necesaria: una bomba que funciona en seco se daña en poco tiempo. Si el tanque está vacío o el flotante quedó trabado, la bomba no va a arrancar.",
+      },
+
+      { tipo: "h2", texto: "4. El contactor y las protecciones", id: "contactor" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El contactor es la pieza del tablero que conecta la bomba cuando recibe la señal. Con el uso puede desgastarse y dejar de cerrar. También puede haber actuado la protección del motor, que corta si detecta una sobrecarga.",
+      },
+
+      { tipo: "h2", texto: "5. El motor", id: "motor" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Si la bomba hace un zumbido pero no gira, en los motores monofásicos una causa frecuente es el capacitor de arranque. Si no hace ningún ruido y llega corriente, el problema puede estar en el bobinado del motor.",
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Saltan las protecciones: falla eléctrica en el tablero o el motor.",
+          "No hace nada y el programador riega: orden de arranque o contactor.",
+          "Zumba pero no gira: capacitor o motor trabado.",
+          "Arranca y corta enseguida: falta de agua o protección del motor.",
+        ],
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Para seguir",
+        items: [
+          {
+            texto: "Tableros eléctricos de riego",
+            detalle: "Revisión, reparación y armado de tableros.",
+            href: "/servicios/tableros-electricos-de-riego",
+          },
+          {
+            texto: "Bombas de agua",
+            detalle: "Instalación y automatización de bombas.",
+            href: "/servicios/bombas-de-agua",
+          },
+          {
+            texto: "Riego automático: cómo funciona",
+            detalle: "Qué hace cada parte del sistema.",
+            href: "/blog/automatizacion-del-riego",
+          },
+        ],
+      },
+    ],
+  },
+
+  // ═════════════════════════ ARTÍCULOS SOBRE RIEGO ═════════════════════════
   // ─────────────────────────────────────────────────────────────
   {
     slug: "como-elegir-sistema-de-riego-ideal",

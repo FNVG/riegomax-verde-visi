@@ -13,14 +13,23 @@ export function ArticleCard({ articulo, index = 0 }: { articulo: Articulo; index
   className="block overflow-hidden"
   aria-label={articulo.titulo}
 >
-        <img
-          src={articulo.imagen}
-          alt={articulo.titulo}
-          loading="lazy"
-          width={1024}
-          height={576}
-          className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-        />
+        {articulo.imagen ? (
+          <img
+            src={articulo.imagen}
+            alt={articulo.titulo}
+            loading="lazy"
+            width={1024}
+            height={576}
+            className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          />
+        ) : (
+          // Sin foto real adecuada: un bloque de color con la categoría, en vez de una imagen que no corresponda
+          <div className="flex aspect-video w-full items-center justify-center bg-gradient-to-br from-primary/15 to-secondary/20">
+            <span className="text-lg font-semibold uppercase tracking-wider text-primary">
+              {articulo.categoria}
+            </span>
+          </div>
+        )}
       </Link>
 
       <div className="flex flex-1 flex-col p-6">

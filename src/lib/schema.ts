@@ -90,7 +90,7 @@ export function articuloSchema(articulo: Articulo) {
     "@type": "BlogPosting",
     headline: articulo.titulo,
     description: articulo.seoDescription || articulo.descripcion,
-    image: absoluta(articulo.imagen),
+    ...(articulo.imagen && { image: absoluta(articulo.imagen) }),
     url,
     mainEntityOfPage: url,
     inLanguage: "es-AR",
