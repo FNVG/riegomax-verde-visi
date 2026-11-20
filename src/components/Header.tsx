@@ -9,7 +9,7 @@ const Header = () => {
   const navigation = [
     // Con "/" adelante funcionan desde cualquier página (blog, productos), no solo desde la home
     { name: "Inicio", href: "/#home" },
-    { name: "Servicios", href: "/#services" },
+    { name: "Servicios", href: "/servicios" },
     { name: "Productos", href: "/#productos" },
     { name: "Antes & Después", href: "/#before-after" },
     { name: "Proyectos", href: "/#projects" },

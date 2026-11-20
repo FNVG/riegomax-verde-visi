@@ -1,22 +1,18 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpeg";
+import { servicios } from "@/data/servicios";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const services = [
-    "Sistemas de Riego",
-    "Jardinería",
-    "Paisajismo",
-    "Mantenimiento",
-    "Instalación de bombas de agua"
-  ];
+  // Cada servicio enlaza a su propia página (src/data/servicios.ts)
+
 
   const quickLinks = [
     { name: "Inicio", href: "/#home" },
     { name: "Nosotros", href: "/#about" },
-    { name: "Servicios", href: "/#services" },
+    { name: "Servicios", href: "/servicios" },
     { name: "Proyectos", href: "/#projects" },
     { name: "Blog", href: "/blog" },
     { name: "Contacto", href: "/#contact" }
@@ -72,7 +68,7 @@ const Footer = () => {
   </Button>
 
   <Button asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@riegomax.com.ar"s>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@riegomax.com.ar">
       <Mail className="h-5 w-5" />
     </a>
   </Button> 
@@ -85,13 +81,13 @@ const Footer = () => {
             <h4 className="text-base font-semibold mb-4">Nuestros Servicios</h4>
 
             <ul className="space-y-0.5">
-              {services.map((service) => (
-                <li key={service}>
+              {servicios.map((s) => (
+                <li key={s.slug}>
                   <a
-                    href="/#services"
+                    href={`/servicios/${s.slug}`}
                     className="inline-block py-1.5 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                   >
-                    {service}
+                    {s.titulo}
                   </a>
                 </li>
               ))}

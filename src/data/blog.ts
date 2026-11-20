@@ -125,7 +125,7 @@ export const articulos: Articulo[] = [
   {
     tipo: "imagen",
     src: art3,
-    alt: "Sistema de riego por goteo con sensores de humedad en un cultivo",
+    alt: "Manguera de riego colocada en la zanja antes de taparla",
   },
 
   {
@@ -387,7 +387,7 @@ export const articulos: Articulo[] = [
   {
     tipo: "imagen",
     src: art2,
-    alt: "Comparación entre sistema de riego por goteo y aspersión en un cultivo",
+    alt: "Aspersor emergente regando el césped",
   },
 
   {
@@ -620,7 +620,7 @@ export const articulos: Articulo[] = [
   {
     tipo: "imagen",
     src: art5,
-    alt: "Sensor de humedad de suelo conectado a un sistema de riego inteligente",
+    alt: "Programador de riego Hunter y tablero eléctrico instalados por Riegomax",
   },
 
   {
@@ -787,7 +787,7 @@ export const articulos: Articulo[] = [
   {
     tipo: "imagen",
     src: art3,
-    alt: "Controlador automático de riego instalado en campo agrícola",
+    alt: "Manguera de riego colocada en la zanja antes de taparla",
   },
 
   {
@@ -877,7 +877,7 @@ palabrasClave: [
   {
     tipo: "imagen",
     src: art4,
-    alt: "Instalación profesional de tuberías para sistema de riego agrícola",
+    alt: "Conexión de válvulas solenoides en el colector de riego",
   },
 
   {
@@ -1012,7 +1012,7 @@ palabrasClave: [
   {
     tipo: "imagen",
     src: art4,
-    alt: "Detalle de tuberías y conexiones utilizadas en instalación de riego",
+    alt: "Conexión de válvulas solenoides en el colector de riego",
   },
 
   {
@@ -1143,7 +1143,7 @@ palabrasClave: [
   {
     tipo: "imagen",
     src: art5,
-    alt: "Controlador automático de riego conectado a válvulas y sensores",
+    alt: "Programador de riego Hunter y tablero eléctrico instalados por Riegomax",
   },
 
   {
@@ -1421,7 +1421,7 @@ palabrasClave: [
   {
     tipo: "imagen",
     src: art6,
-    alt: "Mantenimiento de filtro y válvula en sistema de riego agrícola",
+    alt: "Ajuste de válvulas en el colector de riego",
   },
 
   {

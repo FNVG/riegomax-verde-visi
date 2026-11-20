@@ -1,4 +1,5 @@
 import type { Articulo } from "@/data/blog";
+import type { Servicio } from "@/data/servicios";
 
 /**
  * Datos estructurados (Schema.org) en formato JSON-LD.
@@ -17,7 +18,7 @@ export const negocioLocal = {
   "@id": `${SITE_URL}/#negocio`,
   name: "Riegomax",
   description:
-    "Sistemas de riego automático, jardinería, paisajismo, mantenimiento e instalación de bombas de agua en Moreno y zona oeste de la provincia de Buenos Aires.",
+    "Sistemas de riego automático, jardinería, paisajismo, mantenimiento, bombas de agua, tableros eléctricos de riego, césped sintético e iluminación de jardines en Moreno y zona oeste de la provincia de Buenos Aires.",
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/logo.jpeg`,
   image: `${SITE_URL}/preview.jpg`,
@@ -54,6 +55,9 @@ export const negocioLocal = {
     "Paisajismo",
     "Mantenimiento de jardines",
     "Instalación de bombas de agua",
+    "Tableros eléctricos de riego",
+    "Colocación de césped sintético",
+    "Venta y colocación de luminarias de exterior",
   ],
 };
 
@@ -63,12 +67,16 @@ const MESES: Record<string, string> = {
   noviembre: "11", diciembre: "12",
 };
 
-/** Convierte "24 Julio 2026" en "2026-07-24". Si el formato no coincide, devuelve undefined. */
+/**
+ * Convierte "24 Julio 2026" en "2026-07-24T09:00:00-03:00".
+ * Google pide fecha, hora y zona horaria; como el blog no guarda la hora,
+ * se usa 9:00 en horario de Argentina (UTC-3). Si el formato no coincide, devuelve undefined.
+ */
 function fechaISO(fecha: string): string | undefined {
   const m = fecha.trim().match(/^(\d{1,2})\s+([a-záéíóú]+)\s+(\d{4})$/i);
   if (!m) return undefined;
   const mes = MESES[m[2].toLowerCase()];
-  return mes ? `${m[3]}-${mes}-${m[1].padStart(2, "0")}` : undefined;
+  return mes ? `${m[3]}-${mes}-${m[1].padStart(2, "0")}T09:00:00-03:00` : undefined;
 }
 
 const absoluta = (url: string) => (url.startsWith("http") ? url : `${SITE_URL}${url}`);
@@ -93,5 +101,26 @@ export function articuloSchema(articulo: Articulo) {
       name: "Riegomax",
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.jpeg` },
     },
+  };
+}
+
+/** Datos estructurados de cada página de servicio (/servicios/<slug>). */
+export function servicioSchema(servicio: Servicio) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: servicio.titulo,
+    serviceType: servicio.titulo,
+    description: servicio.seoDescription,
+    url: `${SITE_URL}/servicios/${servicio.slug}`,
+    ...(servicio.portada && { image: absoluta(servicio.portada) }),
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Riegomax",
+      url: `${SITE_URL}/`,
+      telephone: negocioLocal.telephone,
+      address: negocioLocal.address,
+    },
+    areaServed: negocioLocal.areaServed,
   };
 }

@@ -1,76 +1,29 @@
-import { Droplets, Leaf, Wrench, Camera, Scissors, Waves } from "lucide-react";
+import { Droplets, Leaf, Wrench, Camera, Scissors, Waves, Lightbulb, Sprout, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { servicios } from "@/data/servicios";
 
 const ServicesSection = () => {
-  const services = [
-    {
-      icon: Droplets,
-      title: "Sistemas de riego",
-      description:
-        "Diseño e instalación de sistemas de riego automáticos eficientes para jardines y espacios verdes, optimizando el uso del agua.",
-      features: [
-        "Riego por aspersión",
-        "Riego por goteo",
-        "Programación automática",
-        "Sensores de lluvia",
-        "Módulo Wifi"
-      ],
-      color: "text-accent",
-      bgColor: "bg-accent/10"
-    },
-    {
-      icon: Leaf,
-      title: "Jardinería",
-      description:
-        "Servicios completos de jardinería para mantener espacios verdes saludables, prolijos y en óptimas condiciones durante todo el año.",
-      features: [
-        "Corte de césped",
-        "Poda de plantas, arbustos y cercos vivos",
-        "Perfilado y bordes",
-        "Plantación y trasplantes",
-        "Fertilización"
-      ],
-      color: "text-secondary",
-      bgColor: "bg-secondary/10"
-    },
-    {
-      icon: Camera,
-      title: "Paisajismo",
-      description:
-        "Diseño y creación de espacios exteriores únicos que combinan estética, funcionalidad y armonía natural.",
-      features: [
-        "Diseño de jardines",
-        "Selección de plantas",
-        "Creación de canteros",
-        "Nivelación de terreno",
-        "Elementos decorativos"
-      ],
-      color: "text-primary",
-      bgColor: "bg-primary/10"
-    },
-    {
-      icon: Wrench,
-      title: "Mantenimiento",
-      description:
-        "Mantenimiento preventivo y correctivo de jardines para garantizar su cuidado y durabilidad.",
-      features: ["Limpieza de terrenos", "Desmalezado", "Mantenimiento periódico"],
-      color: "text-nature-green",
-      bgColor: "bg-nature-light-green"
-    },
-    {
-      icon: Waves,
-      title: "Bombas de agua",
-      description:
-        "Instalación de bombas de agua presurizadoras, centrífugas y periféricas para mejorar la presión y distribución del agua.",
-      features: [
-        "Instalaciones domiciliarias",
-        "Alimentación de tanques elevados",
-        "Automatización de bombas"
-      ],
-      color: "text-nature-green",
-      bgColor: "bg-nature-light-green"
-    }
-  ];
+  // Textos en src/data/servicios.ts; acá solo el ícono y el color de cada tarjeta
+  const estilos: Record<string, { icon: typeof Droplets; color: string; bgColor: string }> = {
+    "sistemas-de-riego": { icon: Droplets, color: "text-accent", bgColor: "bg-accent/10" },
+    jardineria: { icon: Leaf, color: "text-secondary", bgColor: "bg-secondary/10" },
+    paisajismo: { icon: Camera, color: "text-primary", bgColor: "bg-primary/10" },
+    mantenimiento: { icon: Wrench, color: "text-nature-green", bgColor: "bg-nature-light-green" },
+    "bombas-de-agua": { icon: Waves, color: "text-nature-green", bgColor: "bg-nature-light-green" },
+    "tableros-electricos-de-riego": { icon: Zap, color: "text-accent", bgColor: "bg-accent/10" },
+    "cesped-sintetico": { icon: Sprout, color: "text-secondary", bgColor: "bg-secondary/10" },
+    "iluminacion-de-jardines": { icon: Lightbulb, color: "text-primary", bgColor: "bg-primary/10" },
+  };
+
+  const services = servicios.map((s) => ({
+    slug: s.slug,
+    title: s.titulo,
+    description: s.resumen,
+    features: s.destacados,
+    ...(estilos[s.slug] ?? { icon: Leaf, color: "text-primary", bgColor: "bg-primary/10" }),
+  }));
 
   return (
     <section id="services" className="py-10 md:py-12 bg-gradient-earth">
@@ -92,18 +45,19 @@ const ServicesSection = () => {
           </h2>
 
           <p className="text-lg md:text-base text-muted-foreground leading-relaxed">
-            Soluciones profesionales en jardinería, sistemas de riego, paisajismo y bombas de agua para hogares y espacios verdes.
+            Soluciones profesionales en sistemas de riego, jardinería, paisajismo, bombas de agua, tableros eléctricos de riego, césped sintético e iluminación de jardines.
           </p>
 
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
-          {services.map((service, index) => (
+          {services.map((service) => (
+            // Toda la tarjeta es un enlace a la página del servicio
+            <Link key={service.slug} to={`/servicios/${service.slug}`} className="block">
             <Card
-              key={index}
-              className="group transition-all duration-300 hover:shadow-sm border-0 bg-card/50"
+              className="group h-full transition-all duration-300 hover:shadow-md border-0 bg-card/50"
             >
 
               <CardHeader className="pb-2">
@@ -112,7 +66,7 @@ const ServicesSection = () => {
                   <service.icon className={`h-5 w-5 ${service.color}`} />
                 </div>
 
-                <CardTitle className="text-lg md:text-lg font-semibold">
+                <CardTitle className="text-lg md:text-lg font-semibold group-hover:text-primary">
                   {service.title}
                 </CardTitle>
 
@@ -133,9 +87,15 @@ const ServicesSection = () => {
                   ))}
                 </ul>
 
+                <span className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-primary">
+                  Ver servicio
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
+
               </CardContent>
 
             </Card>
+            </Link>
           ))}
 
         </div>
