@@ -151,7 +151,7 @@ const ContactSection = () => {
                 <Phone className="h-5 w-5 text-secondary" />
                 <div>
                   <p className="font-semibold text-sm">WhatsApp</p>
-                  <a href="https://wa.me/5491159247748" className="text-xs text-secondary">
+                  <a href="https://wa.me/5491159247748" className="inline-block py-2 text-xs text-secondary">
                     +54 9 11 59247748
                   </a>
                 </div>

@@ -82,7 +82,7 @@ const ProductCard = ({ producto, index = 0 }: ProductCardProps) => {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-green-600 hover:text-green-700 hover:underline"
+            className="inline-flex min-h-[44px] items-center text-sm font-medium text-green-600 hover:text-green-700 hover:underline"
           >
             Consultar precio
           </a>

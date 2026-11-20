@@ -146,4 +146,18 @@ All colors MUST be HSL.
   html {
     font-size: 90%;
   }
+
+}
+
+/* Fuera de @layer para que se aplique después de las clases de Tailwind */
+/* En celular, ningún texto por debajo de 12 px.
+   Con la base al 90%, "text-xs" quedaba en 10,8 px, difícil de leer en pantalla chica.
+   Solo afecta a los textos más chicos; el resto del diseño no cambia. */
+@media (max-width: 639px) {
+  .text-xs,
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

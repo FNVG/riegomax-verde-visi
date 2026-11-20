@@ -84,12 +84,12 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-semibold mb-4">Nuestros Servicios</h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-0.5">
               {services.map((service) => (
                 <li key={service}>
                   <a
                     href="/#services"
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                    className="inline-block py-1.5 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                   >
                     {service}
                   </a>
@@ -102,12 +102,12 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-semibold mb-4">Enlaces Rápidos</h4>
 
-            <ul className="space-y-2">
+            <ul className="space-y-0.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
+                    className="inline-block py-1.5 text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -131,12 +131,16 @@ const Footer = () => {
 
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary-foreground/70" />
-                <p className="text-sm">+54 9 11 59247748</p>
+                <a href="tel:+5491159247748" className="inline-block py-1.5 text-sm hover:underline">
+                  +54 9 11 5924-7748
+                </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary-foreground/70" />
-                <p className="text-sm">contacto@riegomax.com.ar</p>
+                <a href="mailto:contacto@riegomax.com.ar" className="inline-block py-1.5 text-sm hover:underline">
+                  contacto@riegomax.com.ar
+                </a>
               </div>
 
             </div>

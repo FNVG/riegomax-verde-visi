@@ -173,23 +173,31 @@ const BeforeAfterSection = () => {
         {/* NAV más compacto */}
         <div className="flex items-center justify-center gap-3 mb-6">
 
-          <Button variant="outline" size="sm" onClick={prevSlide}>
+          <Button variant="outline" size="sm" onClick={prevSlide} aria-label="Proyecto anterior">
             <ChevronLeft className="h-4 w-4" />
           </Button>
 
-          <div className="flex gap-1.5">
+          <div className="flex">
             {projects.map((_, index) => (
+              // El botón mide 32 px para el dedo; el punto visible sigue siendo chico
               <button
                 key={index}
+                type="button"
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2.5 h-2.5 rounded-full ${
-                  index === currentSlide ? "bg-primary" : "bg-muted"
-                }`}
-              />
+                aria-label={`Ver proyecto ${index + 1}`}
+                aria-current={index === currentSlide ? "true" : undefined}
+                className="flex h-8 w-8 items-center justify-center"
+              >
+                <span
+                  className={`block w-2.5 h-2.5 rounded-full ${
+                    index === currentSlide ? "bg-primary" : "bg-muted"
+                  }`}
+                />
+              </button>
             ))}
           </div>
 
-          <Button variant="outline" size="sm" onClick={nextSlide}>
+          <Button variant="outline" size="sm" onClick={nextSlide} aria-label="Proyecto siguiente">
             <ChevronRight className="h-4 w-4" />
           </Button>
 

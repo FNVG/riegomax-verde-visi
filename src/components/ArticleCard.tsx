@@ -53,7 +53,7 @@ export function ArticleCard({ articulo, index = 0 }: { articulo: Articulo; index
 
        <Link
         to={`/blog/${articulo.slug}`}
-        className="mt-6 inline-flex items-center gap-2 self-start text-sm font-semibold text-primary transition-colors duration-300 hover:text-primary-strong"
+        className="mt-4 inline-flex min-h-[44px] items-center gap-2 self-start text-sm font-semibold text-primary transition-colors duration-300 hover:text-primary-strong"
       >
           Leer artículo
           <ArrowRight
