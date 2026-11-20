@@ -18,6 +18,9 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Jardín profesional con sistema de riego"
+          width={1920}
+          height={1080}
+          {...{ fetchpriority: "high" }}
           className="
             w-full h-full object-cover
             object-[center_45%]

@@ -19,6 +19,10 @@ const ProductCard = ({ producto, index = 0 }: ProductCardProps) => {
         <img
           src={producto.imagen}
           alt={producto.nombre}
+          loading="lazy"
+          decoding="async"
+          width={1024}
+          height={1024}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 

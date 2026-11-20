@@ -28,6 +28,8 @@ const Header = () => {
             <img
               src={logo}
               alt="Riegomax Logo"
+              width={48}
+              height={48}
               className="h-12 w-12 rounded-lg object-contain"
             />
 

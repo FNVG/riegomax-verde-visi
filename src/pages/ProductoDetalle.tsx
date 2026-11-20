@@ -225,6 +225,8 @@ const ProductoDetalle = () => {
                     <img
                       src={bloque.src}
                       alt={bloque.alt || producto.nombre}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full rounded-2xl shadow-sm"
                     />
 

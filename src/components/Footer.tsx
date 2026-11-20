@@ -37,6 +37,10 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Riegomax Logo"
+                loading="lazy"
+                decoding="async"
+                width={256}
+                height={171}
                 className="w-56 rounded-xl bg-white p-2 object-contain"
               />
 

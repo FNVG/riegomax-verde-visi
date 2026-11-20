@@ -116,6 +116,10 @@ const BeforeAfterSection = () => {
                   <div className="aspect-[4/3] relative overflow-hidden">
                     <img
                       src={currentProject.beforeImage}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
                       alt={currentProject.altBefore}
                       className="w-full h-full object-cover"
                     />
@@ -127,6 +131,10 @@ const BeforeAfterSection = () => {
                   <div className="aspect-[4/3] relative overflow-hidden">
                     <img
                       src={currentProject.afterImage}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
                       alt={currentProject.altAfter}
                       className="w-full h-full object-cover"
                     />
