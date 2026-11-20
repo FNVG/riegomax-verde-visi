@@ -19,7 +19,8 @@ const SobreNosotros = () => {
           <p className="text-base md:text-base text-gray-600 leading-relaxed">
             Somos una empresa de Moreno, provincia de Buenos Aires,
             <span className="font-medium text-gray-800">
-              {" "}especializada en riego automático, jardinería, paisajismo y bombas de agua.
+              {" "}especializada en riego automático, jardinería, paisajismo, bombas de agua,
+              tableros eléctricos de riego, césped sintético e iluminación de jardines.
             </span>
             {" "}Brindamos soluciones eficientes y personalizadas en cada proyecto.
           </p>

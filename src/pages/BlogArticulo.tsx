@@ -464,7 +464,7 @@ export default function BlogArticulo() {
 
 
                                 <Link
-                                  to="/"
+                                  to={item.href}
                                   className="group inline-flex items-center gap-2 font-semibold text-secondary transition-colors duration-300 hover:text-primary"
                                 >
 

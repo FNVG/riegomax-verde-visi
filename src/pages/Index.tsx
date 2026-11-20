@@ -15,8 +15,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Riegomax | Sistemas de riego, jardinería y paisajismo en Buenos Aires"
-        description="Especialistas en sistemas de riego, jardinería y paisajismo. Diseñamos y mantenemos espacios verdes con calidad profesional en Buenos Aires."
+        title="Riego automático y jardinería en Moreno, zona oeste | Riegomax"
+        description="Instalación de riego automático, jardinería, paisajismo, césped sintético e iluminación de jardines en Moreno y zona oeste de Buenos Aires."
         path="/"
         jsonLd={negocioLocal}
       />

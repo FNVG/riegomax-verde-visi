@@ -40,7 +40,7 @@ const ProductoDetalle = () => {
   return (
     <main className="bg-white min-h-screen">
       <Seo
-        title={`${producto.nombre} | Riegomax`}
+        title={producto.seoTitle || `${producto.nombre} | Riegomax`}
         description={producto.descripcion}
         path={`/productos/${producto.slug}`}
         image={producto.imagen}

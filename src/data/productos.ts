@@ -24,6 +24,8 @@ export interface BloqueProducto {
 export interface Producto {
   slug: string
   nombre: string
+  /** Título para Google (~60 caracteres). Si falta, se usa "nombre | Riegomax" */
+  seoTitle?: string
   categoria: string
   descripcion: string
   imagen: string
@@ -36,6 +38,7 @@ export const productos: Producto[] = [
   {
     slug: 'fleje-chapa-bordes-canteros-caminos-oxido-marron',
     nombre: 'Flejes de metal color óxido para delimitar canteros y caminos',
+    seoTitle: 'Fleje metálico para bordes de canteros | Riegomax',
     categoria: 'Bordes y delimitadores',
     descripcion:
       'Fleje de chapa metálica con acabado bajo óxido marrón, ideal para delimitar canteros, caminos y diferentes sectores del jardín de manera práctica y estética.',

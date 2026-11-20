@@ -5,15 +5,19 @@ import art4 from "../assets/art-4.jpg";
 import art5 from "../assets/art-5.jpg";
 import art6 from "../assets/art-6.jpg";
 
+/**
+ * Artículos del blog de Riegomax.
+ * Están escritos para quien tiene un jardín en casa o en una quinta (el cliente de Riegomax),
+ * y cada uno termina enlazando a los servicios relacionados.
+ */
+
 export const categorias = [
   "Todos",
   "Guías",
-  "Productos",
-  "Mantenimiento",
+  "Instalación",
   "Ahorro de Agua",
-  "Cultivos",
   "Automatización",
-  "Novedades",
+  "Mantenimiento",
 ] as const;
 
 export type Bloque =
@@ -24,7 +28,7 @@ export type Bloque =
   | { tipo: "imagen"; src: string; alt: string }
   | { tipo: "destacado"; variante: "consejo" | "advertencia"; titulo: string; texto: string }
   | { tipo: "tabla"; encabezados: string[]; filas: string[][] }
-  | { tipo: "enlaces"; titulo: string; items: { texto: string; detalle: string }[] };
+  | { tipo: "enlaces"; titulo: string; items: { texto: string; detalle: string; href: string }[] };
 
 export type Articulo = {
   slug: string;
@@ -44,1674 +48,658 @@ export type Articulo = {
 };
 
 export const articulos: Articulo[] = [
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "como-elegir-sistema-de-riego-ideal",
-    seoTitle:
-  "Cómo elegir el sistema de riego ideal para cada cultivo | RiegoMax",
-    titulo: "Cómo elegir el sistema de riego ideal para cada cultivo",
-
-  seoDescription:
-    "Aprendé cómo elegir el sistema de riego adecuado según el cultivo, suelo, superficie, disponibilidad de agua y presupuesto.",
-
-  palabrasClave: [
-    "sistema de riego",
-    "sistema de riego agrícola",
-    "cómo elegir sistema de riego",
-    "riego para cultivos",
-    "riego por goteo",
-    "riego por aspersión",
-  ],
+    titulo: "Cómo elegir el sistema de riego ideal para tu jardín",
+    seoTitle: "Cómo elegir el sistema de riego para tu jardín | Riegomax",
+    seoDescription:
+      "Aspersión, goteo o los dos: qué tener en cuenta para elegir el riego automático de tu jardín según el césped, los canteros, la presión de agua y el sol.",
+    palabrasClave: [
+      "sistema de riego para jardín",
+      "riego automático para jardín",
+      "cómo elegir sistema de riego",
+      "riego por aspersión",
+      "riego por goteo",
+    ],
     categoria: "Guías",
     fecha: "24 Julio 2026",
     lectura: "6 min lectura",
     descripcion:
-      "Descubrí los factores que debés tener en cuenta para seleccionar el sistema de riego más eficiente según el tipo de cultivo, la superficie y la disponibilidad de agua.",
+      "Césped, canteros, sol, sombra y presión de agua: los factores que definen qué sistema de riego automático conviene en tu jardín.",
     imagen: art1,
     intro:
-      "Elegir un sistema de riego no es solo una decisión técnica: define el rendimiento del cultivo, el consumo de agua y la rentabilidad de la campaña. En esta guía repasamos, paso a paso, los criterios que aplicamos en RiegoMax cuando asesoramos a un productor.",
+      "No hay un sistema de riego que sirva para todos los jardines. El que funciona bien en un parque grande y soleado no es el mismo que necesita un patio chico con canteros. En esta guía te contamos qué miramos en Riegomax antes de diseñar el riego de una casa o una quinta, para que sepas qué preguntar y qué esperar.",
     contenido: [
-  {
-    tipo: "h2",
-    texto: "¿Por qué es importante elegir correctamente un sistema de riego?",
-    id: "importancia",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La elección de un sistema de riego es una de las decisiones más importantes dentro de una explotación agrícola. Un diseño adecuado permite entregar la cantidad exacta de agua que el cultivo necesita, en el momento correcto y con la mayor eficiencia posible.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un sistema mal seleccionado puede generar problemas como exceso de humedad, pérdida de nutrientes por lavado, aparición de enfermedades, aumento innecesario del consumo energético y una reducción significativa del rendimiento del cultivo.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Antes de seleccionar tuberías, bombas o emisores, es fundamental analizar las características del cultivo, el tipo de suelo, la disponibilidad de agua, la topografía del terreno y los objetivos productivos a largo plazo.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Analizá el tipo de cultivo y sus necesidades de agua",
-    id: "cultivo",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Cada cultivo posee una demanda hídrica diferente y esa necesidad cambia durante las distintas etapas de desarrollo. Una planta recién implantada no requiere la misma cantidad de agua que un cultivo adulto en plena producción.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Los cultivos de alto valor comercial como tomate, frutilla, vid, arándanos y hortalizas suelen beneficiarse de sistemas de riego localizado, ya que permiten aplicar agua directamente cerca de la zona radicular y mejorar el aprovechamiento de cada litro.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "En cambio, cultivos extensivos como pasturas, cereales o algunos forrajes pueden requerir sistemas capaces de cubrir grandes superficies de manera uniforme, donde la aspersión puede ser una alternativa más conveniente.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Profundidad y distribución del sistema radicular del cultivo.",
-      "Etapas críticas donde la falta de agua afecta directamente el rendimiento.",
-      "Sensibilidad del cultivo al exceso de humedad.",
-      "Necesidad de aplicar fertilizantes mediante fertirriego.",
-      "Distancia entre plantas y distribución del cultivo en el terreno.",
-    ],
-  },
-
-  {
-    tipo: "imagen",
-    src: art3,
-    alt: "Manguera de riego colocada en la zanja antes de taparla",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Conocé los principales sistemas de riego disponibles",
-    id: "sistemas",
-  },
-
-  {
-    tipo: "h3",
-    texto: "Riego por goteo",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El riego por goteo es uno de los sistemas más eficientes disponibles actualmente. Su funcionamiento consiste en entregar pequeñas cantidades de agua directamente en la zona donde se encuentran las raíces, reduciendo pérdidas por evaporación y escurrimiento.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Es especialmente recomendado para cultivos intensivos, frutales, viveros y producciones donde el agua representa un recurso limitado o costoso. Además, facilita la aplicación precisa de fertilizantes mediante sistemas de fertirriego.",
-  },
-
-  {
-    tipo: "h3",
-    texto: "Riego por aspersión",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La aspersión distribuye el agua simulando una lluvia artificial mediante emisores que trabajan a presión. Es una solución frecuente en cultivos extensivos, pasturas, jardines deportivos y superficies donde se necesita una cobertura completa del terreno.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Su principal ventaja es la uniformidad de aplicación cuando está correctamente diseñado, aunque requiere mayor presión y puede verse afectado por condiciones climáticas como viento intenso.",
-  },
-
-  {
-    tipo: "h3",
-    texto: "Microaspersión",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La microaspersión combina características del goteo y la aspersión tradicional. Produce gotas pequeñas que cubren una zona reducida alrededor de la planta, siendo utilizada frecuentemente en viveros, frutales y cultivos sensibles.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Evaluá la superficie, el suelo y la topografía del terreno",
-    id: "superficie",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El tamaño del terreno influye directamente en el diseño hidráulico del sistema. Una pequeña huerta familiar y una explotación agrícola de varias hectáreas requieren estrategias completamente diferentes.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La pendiente del terreno también es un factor crítico. En lotes con desniveles importantes pueden aparecer diferencias de presión entre los sectores altos y bajos, generando una distribución irregular del agua.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El tipo de suelo determina la velocidad con la que el agua se infiltra. Los suelos arenosos requieren aplicaciones más frecuentes y pequeñas, mientras que los suelos arcillosos necesitan controlar mejor los tiempos para evitar acumulaciones.",
-  },
-
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Sistema",
-      "Eficiencia",
-      "Ideal para",
-      "Consideraciones",
-    ],
-    filas: [
-      [
-        "Goteo",
-        "90–95%",
-        "Hortalizas, frutales, vid",
-        "Requiere buena filtración",
-      ],
-      [
-        "Microaspersión",
-        "80–90%",
-        "Viveros y frutales",
-        "Controlar presión y viento",
-      ],
-      [
-        "Aspersión",
-        "70–85%",
-        "Pasturas y cereales",
-        "Mayor consumo energético",
-      ],
-      [
-        "Surco tradicional",
-        "45–60%",
-        "Terrenos planos",
-        "Mayor pérdida de agua",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Analizá la calidad y disponibilidad del agua",
-    id: "agua",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La fuente de agua disponible condiciona todo el sistema. Antes de diseñar una instalación es recomendable conocer el caudal disponible, la presión existente y la calidad química del agua.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un agua con exceso de sedimentos, sales o minerales puede generar obstrucciones en emisores y reducir considerablemente la vida útil del sistema.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Realizar análisis físico-químico del agua.",
-      "Seleccionar filtros adecuados según el nivel de impurezas.",
-      "Determinar el caudal real disponible.",
-      "Verificar presión antes de dimensionar bombas.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "Consejo del especialista",
-    texto:
-      "Antes de comprar cualquier equipo realizá un análisis del agua y una evaluación del suelo. Estos dos estudios permiten evitar errores costosos y diseñar un sistema realmente adaptado al terreno.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Errores frecuentes al elegir un sistema de riego",
-    id: "errores",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Elegir un sistema únicamente por el precio inicial.",
-      "No considerar la ampliación futura del terreno.",
-      "Comprar una bomba sin calcular correctamente presión y caudal.",
-      "Instalar emisores sin tener en cuenta el tipo de suelo.",
-      "No incluir filtración adecuada.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Planificá pensando en el futuro",
-    id: "futuro",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un buen sistema de riego debe acompañar el crecimiento del proyecto productivo. Dimensionar correctamente las tuberías principales, bombas y sectores desde el inicio permite ampliar la instalación sin realizar grandes modificaciones posteriormente.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La inversión inicial puede optimizarse cuando existe una planificación técnica. Muchas instalaciones terminan siendo más costosas porque fueron diseñadas únicamente para la necesidad actual y no para los próximos años.",
-  },
-
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "Atención",
-    texto:
-      "Nunca agregues nuevos sectores de riego sin recalcular el sistema hidráulico. Un aumento de demanda puede provocar pérdida de presión y afectar el rendimiento de toda la instalación.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Conclusión: el mejor sistema es el que se adapta a tu realidad",
-    id: "conclusion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "No existe un único sistema de riego perfecto para todos los cultivos. La mejor elección depende de la combinación entre cultivo, suelo, disponibilidad de agua, presupuesto y objetivos productivos.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un diseño profesional permite ahorrar agua, reducir costos operativos y aumentar la productividad del campo. Por eso, antes de realizar una inversión, es recomendable contar con asesoramiento técnico especializado.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      { tipo: "h2", texto: "Primero: qué hay en tu jardín", id: "que-hay" },
       {
-        texto: "Kits de riego por goteo",
-        detalle: "Soluciones completas para cultivos pequeños y medianos.",
+        tipo: "parrafo",
+        texto:
+          "El punto de partida es mirar qué vamos a regar. El césped, los canteros con flores, los cercos vivos y los árboles tienen necesidades distintas, y el sistema tiene que darle a cada uno lo suyo.",
       },
       {
-        texto: "Filtros de malla y anillas",
-        detalle: "Protección de emisores para mejorar la vida útil del sistema.",
+        tipo: "lista",
+        items: [
+          "Césped: necesita agua repartida en toda la superficie.",
+          "Canteros y flores: mejor regar al pie de cada planta, sin mojar las hojas.",
+          "Cercos vivos: una línea de riego a lo largo del cerco.",
+          "Árboles: riego localizado alrededor del tronco, sobre todo los primeros años.",
+        ],
       },
       {
-        texto: "Bombas y equipos de presión",
-        detalle: "Selección según caudal, altura y demanda del cultivo.",
+        tipo: "parrafo",
+        texto:
+          "En la mayoría de los jardines conviven varios de estos casos. Por eso casi siempre combinamos aspersión para el césped y goteo para canteros y cercos.",
+      },
+
+      { tipo: "h2", texto: "Aspersión, goteo o los dos", id: "aspersion-goteo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La aspersión usa aspersores emergentes que quedan escondidos bajo el pasto y suben solo cuando riegan. Es la forma de cubrir el césped de manera pareja.",
       },
       {
-        texto: "Controladores inteligentes",
-        detalle: "Automatización para optimizar tiempos y consumo de agua.",
+        tipo: "parrafo",
+        texto:
+          "El goteo usa una manguera con goteros que lleva el agua directo a la raíz. Gasta menos agua porque no moja caminos ni paredes y casi no se evapora, por eso es ideal para canteros, cercos y huertas.",
+      },
+      {
+        tipo: "tabla",
+        encabezados: ["Sector del jardín", "Sistema recomendado"],
+        filas: [
+          ["Césped", "Aspersión con aspersores emergentes"],
+          ["Canteros con flores", "Goteo"],
+          ["Cercos vivos", "Goteo a lo largo del cerco"],
+          ["Huerta", "Goteo"],
+          ["Patio sin césped natural", "Sin riego: evaluar césped sintético"],
+        ],
+      },
+
+      { tipo: "h2", texto: "Sol, sombra y sectores", id: "sectores" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un césped a pleno sol pierde mucha más agua que uno a la sombra de un árbol. Si los dos riegan el mismo tiempo, uno se encharca o el otro se seca. La solución es dividir el jardín en sectores: cada sector tiene su propia válvula y el programador le asigna su tiempo de riego.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Un sector, un tipo de riego",
+        texto:
+          "Nunca mezcles aspersores y goteo en el mismo sector. El goteo necesita mucho más tiempo de riego que la aspersión, y si comparten válvula uno de los dos siempre va a quedar mal regado.",
+      },
+
+      { tipo: "h2", texto: "La presión de agua de tu casa", id: "presion" },
+      {
+        tipo: "parrafo",
+        texto:
+          "La presión y el caudal disponibles definen cuántos aspersores pueden funcionar a la vez. Con poca presión, los aspersores no llegan a cubrir su radio y quedan zonas secas. Por eso medimos la presión antes de diseñar: si no alcanza, se arman más sectores con menos aspersores cada uno, o se suma una bomba.",
+      },
+
+      { tipo: "h2", texto: "Automatizarlo: programador y sensor de lluvia", id: "automatizar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un programador abre cada sector a la hora indicada y durante el tiempo justo. Con un sensor de lluvia, el riego se suspende cuando llueve, y con un módulo Wifi lo podés manejar desde el celular. Es lo que hace que el sistema funcione aunque no estés en casa.",
+      },
+
+      { tipo: "h2", texto: "Cuándo conviene pedir asesoramiento", id: "asesoramiento" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un riego mal diseñado se nota rápido: manchas amarillas en el césped, aspersores que mojan la pared, canteros encharcados. Corregirlo después cuesta más que diseñarlo bien desde el principio. Si estás pensando en instalar riego, lo ideal es que alguien recorra el jardín, mida la presión y te proponga un diseño por sectores.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Instalación de sistemas de riego",
+            detalle: "Diseño por sectores, aspersión, goteo y programación automática.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Bombas de agua",
+            detalle: "Para cuando la presión de la casa no alcanza.",
+            href: "/servicios/bombas-de-agua",
+          },
+          {
+            texto: "Césped sintético",
+            detalle: "Para patios donde el césped natural no prospera.",
+            href: "/servicios/cesped-sintetico",
+          },
+        ],
       },
     ],
   },
-],
-  },
+
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "riego-por-goteo-vs-aspersion",
-
-    titulo: "Riego por goteo vs aspersión: cuál conviene según tu campo",
-    seoTitle:
-    "Riego por goteo vs aspersión: diferencias y ventajas | RiegoMax",
+    titulo: "Riego por goteo o aspersión: cuál conviene en tu jardín",
+    seoTitle: "Riego por goteo o aspersión: cuál conviene | Riegomax",
     seoDescription:
-    "Compará riego por goteo y aspersión según eficiencia, consumo de agua, costos, mantenimiento y tipo de cultivo.",
+      "Diferencias entre riego por goteo y por aspersión en el jardín: dónde usar cada uno, consumo de agua, mantenimiento y por qué conviene combinarlos.",
     palabrasClave: [
-    "riego por goteo",
-    "riego por aspersión",
-    "goteo vs aspersión",
-    "diferencias entre riego por goteo y aspersión",
-    "sistema de riego agrícola",
-    "riego para cultivos",
-  ],
-    categoria: "Productos",
+      "riego por goteo",
+      "riego por aspersión",
+      "goteo o aspersión",
+      "riego por goteo para jardín",
+      "aspersores para césped",
+    ],
+    categoria: "Guías",
     fecha: "18 Julio 2026",
-    lectura: "7 min lectura",
+    lectura: "6 min lectura",
     descripcion:
-      "Comparamos eficiencia, costos, mantenimiento y rendimiento de las dos tecnologías más utilizadas para que puedas decidir con datos concretos.",
+      "Cómo funciona cada sistema, dónde conviene usarlo y por qué en la mayoría de los jardines la mejor opción es combinar los dos.",
     imagen: art2,
     intro:
-      "Goteo y aspersión no compiten: resuelven problemas distintos. Entender dónde rinde cada uno es la diferencia entre un sistema eficiente y una inversión mal aprovechada.",
+      "Es una de las preguntas que más nos hacen: ¿goteo o aspersión? La respuesta corta es que no compiten, porque cada uno sirve para una parte distinta del jardín. En este artículo te explicamos cómo funciona cada uno, dónde conviene usarlo y qué tener en cuenta.",
     contenido: [
-  {
-    tipo: "h2",
-    texto: "Cómo funciona cada tecnología",
-    id: "funcionamiento",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El riego por goteo y el riego por aspersión son dos de las tecnologías más utilizadas en agricultura moderna, pero trabajan de formas completamente diferentes. El goteo aplica pequeñas cantidades de agua directamente sobre la zona donde se encuentran las raíces, mientras que la aspersión distribuye el agua simulando una lluvia artificial sobre toda la superficie.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La elección entre ambos sistemas depende principalmente del tipo de cultivo, disponibilidad de agua, calidad del suelo, condiciones climáticas y nivel de control que necesita el productor. No existe un sistema universalmente mejor: existe un sistema mejor adaptado a cada situación.",
-  },
-  {
-    tipo: "imagen",
-    src: art2,
-    alt: "Aspersor emergente regando el césped",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Principales diferencias entre goteo y aspersión",
-    id: "diferencias",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Criterio",
-      "Riego por goteo",
-      "Riego por aspersión",
-    ],
-    filas: [
-      [
-        "Forma de aplicación",
-        "Entrega agua directamente en la zona radicular",
-        "Distribuye agua sobre toda la superficie mediante lluvia artificial",
-      ],
-      [
-        "Eficiencia del agua",
-        "90–95% en condiciones adecuadas",
-        "70–85% dependiendo del clima y viento",
-      ],
-      [
-        "Presión requerida",
-        "Baja presión (0,8 - 1,5 bar)",
-        "Media/alta presión (2,5 - 4 bar)",
-      ],
-      [
-        "Evaporación",
-        "Muy reducida al aplicar agua cerca del suelo",
-        "Mayor pérdida por viento y temperatura",
-      ],
-      [
-        "Control de malezas",
-        "Reduce crecimiento al mojar solo la zona del cultivo",
-        "Favorece mayor humedad superficial",
-      ],
-      [
-        "Mantenimiento",
-        "Requiere limpieza de filtros y control de emisores",
-        "Requiere revisión de boquillas y distribución",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Ventajas del riego por goteo",
-    id: "ventajas-goteo",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El riego por goteo es especialmente utilizado en cultivos intensivos donde cada litro de agua tiene un impacto directo sobre la producción. Al aplicar agua lentamente y cerca de las raíces, permite mantener una humedad más estable y reduce los períodos de estrés hídrico.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Mayor eficiencia en el uso del agua, especialmente en zonas con disponibilidad limitada.",
-      "Permite aplicar fertilizantes junto con el agua mediante fertirriego.",
-      "Reduce enfermedades causadas por humedad excesiva en hojas y frutos.",
-      "Mejora la uniformidad del crecimiento del cultivo.",
-      "Puede automatizarse fácilmente mediante sensores y controladores.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Cuándo conviene utilizar riego por goteo",
-    id: "cuando-goteo",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El goteo suele ser la mejor alternativa en cultivos de alto valor económico donde se busca maximizar rendimiento y reducir desperdicios. Es frecuente encontrarlo en frutales, viñedos, horticultura, invernaderos y producciones donde se necesita un control preciso del agua.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Cultivos en hileras como tomate, frutilla, vid y arándanos.",
-      "Zonas con restricciones de agua o costos elevados de bombeo.",
-      "Productores que utilizan fertirriego.",
-      "Campos donde se busca automatización y monitoreo remoto.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Ventajas del riego por aspersión",
-    id: "ventajas-aspersion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La aspersión tiene como principal ventaja la capacidad de cubrir grandes superficies de manera uniforme. Es una solución práctica para cultivos extensivos donde la distribución del agua sobre toda el área resulta más conveniente que una aplicación localizada.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Ideal para pasturas, cereales y cultivos extensivos.",
-      "Permite controlar heladas en determinadas producciones.",
-      "Facilita la implantación inicial de cultivos.",
-      "Puede utilizarse en terrenos donde instalar líneas de goteo sería poco práctico.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Cuándo conviene utilizar aspersión",
-    id: "cuando-aspersion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La aspersión suele ser elegida cuando se necesita cubrir rápidamente grandes áreas o cuando el cultivo no requiere una aplicación localizada. También es utilizada en sistemas donde la uniformidad de cobertura es más importante que la máxima eficiencia del agua.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Pasturas para alimentación animal.",
-      "Cultivos extensivos como trigo, maíz o soja.",
-      "Áreas verdes y parques.",
-      "Sistemas donde se necesita enfriamiento o protección contra heladas.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "La combinación puede ser la mejor estrategia",
-    texto:
-      "Muchos productores utilizan aspersión durante la etapa inicial del cultivo para lograr una buena implantación y luego incorporan goteo durante la fase productiva para aumentar eficiencia y reducir consumo de agua.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Factores que debés analizar antes de decidir",
-    id: "factores",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Disponibilidad y calidad del agua.",
-      "Tipo de suelo y velocidad de infiltración.",
-      "Superficie total a regar.",
-      "Pendientes del terreno.",
-      "Costo energético del bombeo.",
-      "Nivel de automatización deseado.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "Un sistema mal diseñado pierde eficiencia",
-    texto:
-      "Elegir tecnología solamente por el precio inicial puede generar mayores costos después. Un sistema correctamente dimensionado reduce consumo energético, evita pérdidas y mejora la productividad del cultivo durante toda su vida útil.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      { tipo: "h2", texto: "Cómo funciona el riego por aspersión", id: "aspersion" },
       {
-        texto: "Cintas y mangueras de goteo",
-        detalle:
-          "Diferentes espesores, espaciamientos y caudales para adaptarse a cada cultivo.",
+        tipo: "parrafo",
+        texto:
+          "Los aspersores emergentes quedan enterrados al nivel del césped. Cuando el sistema riega, la presión del agua los hace subir y largan el agua en forma de lluvia sobre un sector. Al terminar, bajan solos y desaparecen bajo el pasto, así no molestan al cortar ni al caminar.",
       },
       {
-        texto: "Aspersores agrícolas",
-        detalle:
-          "Modelos de cobertura regulable para pequeñas y grandes superficies.",
+        tipo: "parrafo",
+        texto:
+          "Hay dos tipos principales: los difusores, que riegan áreas chicas con un abanico fijo, y los rotores, que giran y alcanzan distancias mayores. Elegimos uno u otro según el tamaño de cada sector.",
+      },
+
+      { tipo: "h2", texto: "Cómo funciona el riego por goteo", id: "goteo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El goteo usa una manguera con pequeños emisores que largan el agua de a poco, justo al pie de las plantas. El agua se infiltra en la tierra sin escurrir ni evaporarse, y llega directo a las raíces.",
       },
       {
-        texto: "Filtros y sistemas de control",
-        detalle:
-          "Protección y automatización para mejorar la eficiencia del sistema.",
+        tipo: "parrafo",
+        texto:
+          "La manguera puede ir sobre la tierra, tapada con chips o corteza, o apenas enterrada. Es casi invisible y no moja hojas, flores, caminos ni paredes.",
+      },
+
+      { tipo: "h2", texto: "Comparación lado a lado", id: "comparacion" },
+      {
+        tipo: "tabla",
+        encabezados: ["", "Aspersión", "Goteo"],
+        filas: [
+          ["Ideal para", "Césped", "Canteros, cercos, huertas, macetas"],
+          ["Consumo de agua", "Mayor: parte se evapora o cae fuera", "Menor: va directo a la raíz"],
+          ["Tiempo de riego", "Corto", "Más largo"],
+          ["Moja hojas y flores", "Sí", "No"],
+          ["Visibilidad", "Aspersores escondidos bajo el pasto", "Manguera casi invisible"],
+          ["Mantenimiento", "Regular el alcance de cada aspersor", "Revisar goteros tapados"],
+        ],
+      },
+
+      { tipo: "h2", texto: "Dónde usar cada uno en tu jardín", id: "donde" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Para el césped, la aspersión es la única forma práctica de cubrir toda la superficie de manera pareja. Regar césped con goteo exigiría líneas de manguera cada pocos centímetros.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Para todo lo demás (canteros, cercos vivos, plantas en hilera, huerta) el goteo es mejor: gasta menos agua y evita hongos en las hojas, porque no las moja.",
+      },
+      {
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Lo más común: combinar los dos",
+        texto:
+          "En casi todos los jardines que hacemos, el césped lleva aspersión y los canteros y cercos llevan goteo, cada uno en su propio sector del programador.",
+      },
+
+      { tipo: "h2", texto: "Errores que conviene evitar", id: "errores" },
+      {
+        tipo: "lista",
+        items: [
+          "Poner aspersores que mojen la pared o la vereda: se desperdicia agua y se manchan los muros.",
+          "Regar canteros con aspersión: el agua cae sobre las hojas y no llega bien a la raíz.",
+          "Mezclar goteo y aspersión en la misma válvula: uno de los dos queda mal regado.",
+          "No dejar filtro en el goteo: los goteros se tapan con el tiempo.",
+        ],
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Instalación de sistemas de riego",
+            detalle: "Aspersión para el césped y goteo para canteros y cercos.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Paisajismo",
+            detalle: "Canteros y cercos diseñados junto con su riego.",
+            href: "/servicios/paisajismo",
+          },
+        ],
       },
     ],
   },
-],
-  },
+
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "ahorrar-agua-riego-inteligente",
-     // SEO
-  seoTitle:
-    "Cómo ahorrar agua con riego inteligente | RiegoMax",
-
-  seoDescription:
-    "Descubrí cómo ahorrar agua con sensores de humedad, automatización y programación inteligente del riego sin afectar el rendimiento del cultivo.",
-
-  palabrasClave: [
-    "riego inteligente",
-    "ahorro de agua",
-    "cómo ahorrar agua en riego",
-    "automatización del riego",
-    "sensores de humedad",
-    "riego automatizado",
-    "eficiencia del agua",
-    "control de riego",
-  ],
-    titulo: "Cómo ahorrar agua utilizando riego inteligente",
+    titulo: "Cómo ahorrar agua al regar el jardín",
+    seoTitle: "Cómo ahorrar agua al regar el jardín | Riegomax",
+    seoDescription:
+      "Consejos para gastar menos agua en el jardín: regar a la hora correcta, sectorizar, usar goteo, sensor de lluvia y programador. Sin que el césped se seque.",
+    palabrasClave: [
+      "ahorrar agua en el jardín",
+      "cómo regar el césped",
+      "riego inteligente",
+      "sensor de lluvia",
+      "cuándo regar el jardín",
+    ],
     categoria: "Ahorro de Agua",
     fecha: "10 Julio 2026",
     lectura: "5 min lectura",
     descripcion:
-      "Sensores de humedad, programación por evapotranspiración y control remoto: tres herramientas que reducen el consumo de agua hasta un 40% sin resignar rendimiento.",
+      "Horarios, sectores, goteo y sensor de lluvia: cómo gastar menos agua sin que el césped y las plantas sufran.",
     imagen: art3,
     intro:
-      "Regar menos no significa regar peor. Con la información correcta, cada litro se aplica en el momento en que la planta realmente lo necesita.",
+      "Regar bien no es regar mucho. La mayoría de los jardines reciben más agua de la que necesitan, y esa agua de más no solo se desperdicia: también debilita el césped y favorece los hongos. Con algunos cambios simples se puede gastar bastante menos y tener un jardín más sano.",
     contenido: [
-  {
-    tipo: "h2",
-    texto: "Medir antes de regar: la base del riego inteligente",
-    id: "medir",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Durante muchos años el riego se realizó siguiendo calendarios fijos: regar cierta cantidad de minutos cada determinado número de días. Aunque este método puede funcionar en algunos casos, no considera que las condiciones del cultivo cambian constantemente según la temperatura, humedad, viento, lluvias recientes y etapa de desarrollo de la planta.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El riego inteligente comienza con información. Mediante sensores de humedad, estaciones meteorológicas y mediciones de caudal, es posible conocer exactamente cuándo el cultivo necesita agua y aplicar únicamente la cantidad necesaria.",
-  },
-  {
-    tipo: "imagen",
-    src: art5,
-    alt: "Programador de riego Hunter y tablero eléctrico instalados por Riegomax",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Sensores de humedad: regar según la necesidad real del cultivo",
-    id: "sensores",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Los sensores de humedad permiten conocer el estado del suelo en tiempo real. En lugar de estimar cuándo regar, el productor puede tomar decisiones basadas en datos concretos y evitar tanto el déficit hídrico como el exceso de agua.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Detectan cuándo el suelo alcanza niveles bajos de humedad.",
-      "Permiten conocer el comportamiento del agua a diferentes profundidades.",
-      "Reducen riegos innecesarios después de lluvias.",
-      "Ayudan a mantener condiciones óptimas para el desarrollo radicular.",
-      "Generan registros históricos para mejorar decisiones futuras.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Programación basada en evapotranspiración (ETo)",
-    id: "eto",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La evapotranspiración representa la cantidad de agua que pierde el cultivo mediante la evaporación del suelo y la transpiración de las plantas. Utilizando datos climáticos, es posible ajustar automáticamente la cantidad de riego necesaria para cada día.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Por ejemplo, un cultivo no necesita la misma cantidad de agua durante una semana fría y nublada que durante una semana con temperaturas superiores a 35 °C, viento fuerte y alta radiación solar.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Tecnologías que ayudan a reducir el consumo de agua",
-    id: "tecnologias",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Tecnología",
-      "Función",
-      "Beneficio",
-    ],
-    filas: [
-      [
-        "Sensores de humedad",
-        "Miden agua disponible en el suelo",
-        "Evitan riegos innecesarios",
-      ],
-      [
-        "Estaciones meteorológicas",
-        "Registran temperatura, viento y lluvia",
-        "Ajustan la programación automáticamente",
-      ],
-      [
-        "Caudalímetros digitales",
-        "Controlan consumo y detectan fugas",
-        "Reducen pérdidas de agua",
-      ],
-      [
-        "Controladores inteligentes",
-        "Gestionan sectores automáticamente",
-        "Mayor precisión y ahorro energético",
-      ],
-      [
-        "Aplicaciones móviles",
-        "Permiten supervisión remota",
-        "Control desde cualquier ubicación",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Cuánta agua se puede ahorrar con un sistema inteligente",
-    id: "ahorro",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El ahorro depende del tipo de cultivo, sistema existente y nivel de automatización incorporado. En instalaciones correctamente diseñadas, combinar riego localizado, sensores y programación inteligente puede reducir significativamente el consumo sin afectar el rendimiento.",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Práctica implementada",
-      "Ahorro aproximado",
-      "Complejidad",
-    ],
-    filas: [
-      [
-        "Riego en horarios de menor evaporación",
-        "8–12%",
-        "Baja",
-      ],
-      [
-        "Sensores de humedad",
-        "20–30%",
-        "Media",
-      ],
-      [
-        "Programación mediante ETo",
-        "15–25%",
-        "Media",
-      ],
-      [
-        "Detección automática de fugas",
-        "5–15%",
-        "Media",
-      ],
-      [
-        "Automatización completa",
-        "30–40%",
-        "Alta",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Automatización del riego: menos trabajo y más control",
-    id: "automatizacion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un sistema automatizado permite controlar válvulas, bombas y sectores de riego sin necesidad de realizar aperturas manuales diariamente. Esto mejora la precisión y permite que el sistema funcione incluso fuera del horario habitual de trabajo.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Programación automática de horarios de riego.",
-      "Control remoto desde celular o computadora.",
-      "Alertas ante consumo anormal de agua.",
-      "Registro del historial de funcionamiento.",
-      "Integración con sensores y estaciones climáticas.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Errores comunes que generan desperdicio de agua",
-    id: "errores",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Regar por costumbre sin analizar la humedad del suelo.",
-      "Mantener tiempos de riego antiguos aunque cambie el clima.",
-      "No detectar pérdidas en tuberías o conexiones.",
-      "Utilizar emisores con caudales incorrectos.",
-      "No realizar mantenimiento de filtros.",
-    ],
-  },
-
-  {
-    tipo: "imagen",
-    src: art3,
-    alt: "Manguera de riego colocada en la zanja antes de taparla",
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "La información es la herramienta más importante",
-    texto:
-      "Un sistema inteligente no necesariamente significa instalar la tecnología más costosa. Muchas mejoras importantes comienzan con pequeños cambios: medir humedad, controlar presión y ajustar correctamente los tiempos de riego.",
-  },
-
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "Más agua no significa más producción",
-    texto:
-      "El exceso de riego puede reducir la disponibilidad de oxígeno en las raíces, favorecer enfermedades y provocar pérdida de nutrientes por lavado del suelo.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      { tipo: "h2", texto: "Regá a la hora correcta", id: "hora" },
       {
-        texto: "Sensores de humedad de suelo",
-        detalle:
-          "Medición precisa del estado hídrico del cultivo.",
+        tipo: "parrafo",
+        texto:
+          "El mejor momento es temprano a la mañana, antes de que salga el sol fuerte. A esa hora casi no hay evaporación ni viento, y el césped se seca durante el día, lo que reduce los hongos. Regar al mediodía es lo peor: buena parte del agua se evapora antes de llegar a la raíz.",
       },
       {
-        texto: "Controladores inteligentes",
-        detalle:
-          "Automatización por sectores con programación avanzada.",
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "Cuidado con regar de noche",
+        texto:
+          "Regar a la noche evita la evaporación, pero el césped queda húmedo muchas horas y eso favorece los hongos. Si no podés regar temprano, preferí el atardecer antes que la noche cerrada.",
+      },
+
+      { tipo: "h2", texto: "Menos veces, pero más profundo", id: "profundo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Regar un poco todos los días hace que las raíces se queden en la superficie, y el césped sufre apenas hace calor. Regar menos veces pero con más agua obliga a las raíces a bajar a buscarla, y el césped se vuelve más resistente a la sequía.",
+      },
+
+      { tipo: "h2", texto: "Cada sector con su tiempo", id: "sectores" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Un sector a la sombra necesita mucho menos riego que uno a pleno sol. Si todo el jardín riega el mismo tiempo, alguna parte siempre recibe agua de más. Dividir el riego en sectores, cada uno con su válvula, permite darle a cada zona solo lo que necesita.",
+      },
+
+      { tipo: "h2", texto: "Goteo en canteros y cercos", id: "goteo" },
+      {
+        tipo: "parrafo",
+        texto:
+          "En canteros y cercos, cambiar aspersión por goteo es uno de los cambios que más agua ahorran: el agua va directo a la raíz y no se pierde en caminos, paredes ni hojas.",
+      },
+
+      { tipo: "h2", texto: "Sensor de lluvia y programador", id: "sensor" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Pocas cosas desperdician tanta agua como un riego automático funcionando bajo la lluvia. Un sensor de lluvia es una pieza económica que corta el riego cuando llueve y lo vuelve a habilitar cuando el suelo se seca.",
       },
       {
-        texto: "Caudalímetros digitales",
-        detalle:
-          "Control del consumo y detección temprana de fugas.",
+        tipo: "parrafo",
+        texto:
+          "Con el programador también conviene ajustar los tiempos según la estación: en invierno el jardín necesita mucha menos agua que en verano. Con un módulo Wifi lo podés cambiar desde el celular.",
+      },
+
+      { tipo: "h2", texto: "Revisá que no haya pérdidas", id: "perdidas" },
+      {
+        tipo: "lista",
+        items: [
+          "Un aspersor roto o torcido que moja la vereda.",
+          "Una zona del césped siempre encharcada: puede haber una pérdida en la cañería.",
+          "Una válvula que no cierra del todo y gotea aunque el riego esté apagado.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cualquiera de estas fallas puede hacer gastar mucha agua sin que lo notes. Una revisión del sistema cada tanto las detecta a tiempo.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Sistemas de riego",
+            detalle: "Sectores, goteo, programador y sensor de lluvia.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Mantenimiento",
+            detalle: "Revisión y reparación de pérdidas en el riego.",
+            href: "/servicios/mantenimiento",
+          },
+        ],
       },
     ],
   },
-],
-      
-  },
+
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "errores-comunes-instalacion-riego",
-    // SEO
-seoTitle:
-  "Errores comunes al instalar un sistema de riego | RiegoMax",
-
-seoDescription:
-  "Conocé los errores más frecuentes al instalar un sistema de riego y cómo evitarlos para mejorar la eficiencia, presión y vida útil del equipo.",
-
-palabrasClave: [
-  "errores instalación sistema de riego",
-  "instalación de riego",
-  "sistema de riego agrícola",
-  "instalación riego agrícola",
-  "diseño hidráulico",
-  "mantenimiento sistema de riego",
-  "problemas de riego",
-],
-    titulo: "Errores comunes al instalar un sistema de riego",
-    categoria: "Mantenimiento",
+    titulo: "Errores comunes al instalar un riego en el jardín",
+    seoTitle: "Errores comunes al instalar riego en el jardín | Riegomax",
+    seoDescription:
+      "Los errores más frecuentes al instalar un riego automático en casa: aspersores mal ubicados, sectores mal armados, presión insuficiente y caños mal unidos.",
+    palabrasClave: [
+      "errores instalación riego",
+      "instalar riego automático",
+      "riego automático jardín",
+      "aspersores mal regulados",
+    ],
+    categoria: "Instalación",
     fecha: "2 Julio 2026",
-    lectura: "8 min lectura",
+    lectura: "6 min lectura",
     descripcion:
-      "Repasamos las fallas de instalación que vemos con más frecuencia a campo y cómo evitarlas para no perder eficiencia ni vida útil del equipo.",
+      "Aspersores que mojan la pared, zonas secas y válvulas que fallan: los errores que más vemos y cómo evitarlos.",
     imagen: art4,
     intro:
-      "La mayoría de los problemas de riego que atendemos no son fallas de producto: son decisiones de instalación que se pagan durante todo el ciclo del equipo.",
-     contenido: [
-  {
-    tipo: "h2",
-    texto: "Una instalación correcta define la eficiencia del sistema",
-    id: "importancia",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un sistema de riego puede contar con equipos de excelente calidad y aun así entregar malos resultados si fue instalado sin un diseño hidráulico adecuado. La mayoría de los problemas que aparecen durante la operación no se deben a fallas de fabricación, sino a errores de cálculo, montaje o selección de componentes.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Una instalación profesional debe considerar la fuente de agua, presión disponible, caudal requerido, características del terreno, tipo de cultivo y necesidades futuras de ampliación.",
-  },
-
-  {
-    tipo: "imagen",
-    src: art4,
-    alt: "Conexión de válvulas solenoides en el colector de riego",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 1: No realizar un diseño hidráulico previo",
-    id: "diseno",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Uno de los errores más frecuentes es instalar tuberías, bombas y emisores sin calcular correctamente las necesidades hidráulicas del sistema. Cada componente genera pérdidas de presión que afectan la uniformidad del riego.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "No calcular el caudal disponible de la fuente de agua.",
-      "Seleccionar una bomba con potencia insuficiente o excesiva.",
-      "Instalar demasiados emisores en un mismo sector.",
-      "No considerar pérdidas por longitud y diámetro de tuberías.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "Un sistema sin cálculo hidráulico pierde eficiencia",
-    texto:
-      "Cuando la presión no es uniforme, algunos sectores reciben exceso de agua mientras otros quedan con déficit. Esto genera diferencias de crecimiento y desperdicio de recursos.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 2: Mala sectorización del sistema",
-    id: "sectores",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Dividir correctamente los sectores de riego permite que cada zona trabaje dentro de sus parámetros ideales. Un error común es conectar demasiados emisores en una misma línea, provocando una caída progresiva de presión.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Separar cultivos con diferentes necesidades de agua.",
-      "Evitar mezclar zonas con distinta presión requerida.",
-      "Dimensionar cada sector según el caudal disponible.",
-      "Dejar posibilidad de futuras ampliaciones.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 3: Elegir filtros incorrectos o subdimensionados",
-    id: "filtracion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La filtración es uno de los puntos más importantes en cualquier sistema de riego localizado. Un filtro mal seleccionado puede provocar obstrucciones en goteros, pérdida de rendimiento y reducción de la vida útil del sistema.",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Problema",
-      "Causa frecuente",
-      "Consecuencia",
-    ],
-    filas: [
-      [
-        "Goteros obstruidos",
-        "Filtración insuficiente",
-        "Riego desigual",
-      ],
-      [
-        "Caída de presión",
-        "Filtro saturado",
-        "Menor cobertura",
-      ],
-      [
-        "Daño en componentes",
-        "Falta de mantenimiento",
-        "Mayor costo operativo",
-      ],
-      [
-        "Variación de caudal",
-        "Suciedad acumulada",
-        "Cultivo irregular",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 4: No controlar la calidad del agua",
-    id: "calidad-agua",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Antes de instalar un sistema de riego es recomendable analizar la calidad del agua. La presencia de sedimentos, sales, hierro o microorganismos puede afectar directamente tuberías, filtros y emisores.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Analizar partículas suspendidas.",
-      "Evaluar niveles de sales y minerales.",
-      "Determinar si es necesario tratamiento químico.",
-      "Seleccionar filtros adecuados según el tipo de contaminación.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 5: Instalar tuberías sin protección adecuada",
-    id: "tuberias",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Las tuberías y conexiones representan gran parte de la inversión del sistema. Una instalación incorrecta puede provocar roturas, fugas y reparaciones frecuentes durante los ciclos de producción.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "No proteger tuberías expuestas al sol cuando corresponde.",
-      "Realizar uniones sin limpieza adecuada.",
-      "Enterrar tuberías sin preparación del terreno.",
-      "No instalar válvulas de purga o puntos de limpieza.",
-    ],
-  },
-
-  {
-    tipo: "imagen",
-    src: art4,
-    alt: "Conexión de válvulas solenoides en el colector de riego",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Error 6: No instalar instrumentos de medición",
-    id: "medicion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Los manómetros, caudalímetros y sensores permiten conocer el estado real del sistema. Sin mediciones es difícil detectar problemas antes de que afecten al cultivo.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Manómetros antes y después de filtros.",
-      "Medidores de caudal para detectar fugas.",
-      "Sensores de humedad para ajustar riegos.",
-      "Controladores para automatización.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Checklist antes de poner el sistema en funcionamiento",
-    id: "checklist",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Verificar presión en todos los sectores.",
-      "Realizar limpieza inicial de tuberías.",
-      "Comprobar funcionamiento de válvulas.",
-      "Revisar uniformidad de emisores.",
-      "Configurar correctamente tiempos de riego.",
-      "Registrar planos y ubicación de componentes.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "Documentar la instalación evita problemas futuros",
-    texto:
-      "Guardar planos, ubicación de válvulas, modelos de filtros y configuraciones del controlador facilita cualquier mantenimiento o ampliación posterior.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "El mantenimiento comienza desde la instalación",
-    id: "mantenimiento",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un buen diseño debe permitir realizar mantenimiento fácilmente. Accesos adecuados, válvulas correctamente ubicadas y componentes de calidad reducen tiempos de reparación y aumentan la vida útil del sistema.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      "Muchos de los trabajos que hacemos no son instalaciones nuevas, sino arreglos de riegos que se instalaron mal. Los problemas casi siempre se repiten. Si estás por instalar riego en tu jardín, o el que tenés no funciona como debería, estos son los errores a revisar.",
+    contenido: [
+      { tipo: "h2", texto: "No medir la presión antes de diseñar", id: "presion" },
       {
-        texto: "Filtros de malla y anillas",
-        detalle:
-          "Protección eficiente para sistemas de riego localizado.",
+        tipo: "parrafo",
+        texto:
+          "Es el error de base. Si se ponen más aspersores de los que la presión de la casa puede mover, ninguno llega a su alcance y quedan franjas secas entre uno y otro. La presión y el caudal se miden antes de decidir cuántos aspersores lleva cada sector.",
+      },
+
+      { tipo: "h2", texto: "Aspersores mal ubicados", id: "ubicacion" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cada aspersor tiene que alcanzar al de al lado, para que el agua se superponga y el riego quede parejo. Si quedan muy separados, aparecen manchas amarillas en el medio. Si quedan mal orientados, mojan paredes, ventanas y veredas.",
       },
       {
-        texto: "Manómetros y controladores",
-        detalle:
-          "Monitoreo y control preciso del funcionamiento.",
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "La regla del cabezal a cabezal",
+        texto:
+          "El agua de cada aspersor tiene que llegar hasta el aspersor vecino. Es la forma de que el césped reciba la misma cantidad de agua en toda su superficie.",
+      },
+
+      { tipo: "h2", texto: "Mezclar distintos tipos en un mismo sector", id: "mezclar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Difusores, rotores y goteo riegan a ritmos muy distintos. Si comparten válvula, lo que alcanza para uno es demasiado o muy poco para el otro. Cada sector tiene que tener un solo tipo de emisor.",
+      },
+
+      { tipo: "h2", texto: "Colectores y válvulas mal armados", id: "colector" },
+      {
+        tipo: "parrafo",
+        texto:
+          "El colector es donde se juntan las válvulas de todos los sectores. Si se arma con materiales que no son para riego, sin llave de corte o enterrado sin una caja que permita acceder, cualquier arreglo futuro se complica. Lo vemos seguido: caños oxidados, uniones con pérdidas y válvulas imposibles de sacar sin romper.",
       },
       {
-        texto: "Válvulas y accesorios",
-        detalle:
-          "Componentes confiables para instalaciones agrícolas.",
+        tipo: "lista",
+        items: [
+          "Usar materiales aptos para riego y para estar a la intemperie.",
+          "Dejar una llave de corte general antes del colector.",
+          "Dejar las válvulas accesibles para poder cambiarlas.",
+          "Identificar qué válvula corresponde a cada sector.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Zanjas poco profundas", id: "zanjas" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Si la cañería queda muy cerca de la superficie, se puede romper al airear el césped, al plantar o al clavar una estaca. Las zanjas tienen que tener la profundidad adecuada, y al taparlas hay que reponer el pasto para que no queden marcas.",
+      },
+
+      { tipo: "h2", texto: "No probar antes de tapar", id: "probar" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cada sector se prueba con las zanjas todavía abiertas, para detectar pérdidas y regular el alcance de los aspersores. Encontrar una pérdida después de tapar significa volver a abrir el jardín.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Instalación de sistemas de riego",
+            detalle: "Diseño, instalación y prueba de cada sector.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Mantenimiento y reparación",
+            detalle: "Arreglamos riegos que no funcionan bien.",
+            href: "/servicios/mantenimiento",
+          },
+        ],
       },
     ],
   },
-], 
-      
-  },
+
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "automatizacion-del-riego",
-    // SEO
-seoTitle:
-  "Automatización del riego: guía para empezar | RiegoMax",
-
-seoDescription:
-  "Conocé cómo automatizar un sistema de riego desde un temporizador hasta el control remoto con sensores, electroválvulas y tecnología IoT.",
-
-palabrasClave: [
-  "automatización del riego",
-  "riego automatizado",
-  "control de riego",
-  "controlador de riego",
-  "riego inteligente",
-  "electroválvulas",
-  "sensores de riego",
-  "IoT agrícola",
-],
-    titulo: "Automatización del riego: del temporizador al control remoto",
+    titulo: "Riego automático: cómo funciona y qué necesitás",
+    seoTitle: "Riego automático: cómo funciona y qué necesitás | Riegomax",
+    seoDescription:
+      "Qué es un riego automático y qué partes tiene: programador, válvulas, sensor de lluvia, módulo Wifi y tablero eléctrico si hay bomba. Guía simple.",
+    palabrasClave: [
+      "riego automático",
+      "programador de riego",
+      "automatizar el riego del jardín",
+      "válvula solenoide",
+      "riego con Wifi",
+    ],
     categoria: "Automatización",
     fecha: "26 Junio 2026",
     lectura: "6 min lectura",
     descripcion:
-      "Qué niveles de automatización existen, cuánto cuesta cada etapa y cómo empezar sin rehacer toda la instalación existente.",
+      "Programador, válvulas, sensor de lluvia y Wifi: las partes de un riego automático explicadas de forma simple.",
     imagen: art5,
     intro:
-      "Automatizar no requiere cambiar todo de una vez. Se puede avanzar por etapas, empezando por lo que más tiempo y agua ahorra.",
+      "Un riego automático riega el jardín solo, a la hora y con el tiempo que vos definas. Pero ¿cómo funciona por dentro? En esta guía te explicamos cada parte del sistema de forma simple, para que sepas qué hace cada una y qué necesita tu jardín.",
     contenido: [
-  {
-    tipo: "h2",
-    texto: "La evolución del riego: de la operación manual al control inteligente",
-    id: "evolucion",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Durante décadas, muchos sistemas de riego dependieron completamente de la intervención manual: abrir válvulas, encender bombas y controlar tiempos de funcionamiento de forma presencial. Aunque este método todavía se utiliza, limita la precisión y aumenta el riesgo de errores humanos.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "La automatización del riego permite transformar un sistema tradicional en una instalación capaz de tomar decisiones basadas en horarios, sensores, condiciones climáticas y datos del cultivo. El objetivo no es solamente ahorrar agua, sino aplicar la cantidad correcta en el momento adecuado.",
-  },
-
-  {
-    tipo: "imagen",
-    src: art5,
-    alt: "Programador de riego Hunter y tablero eléctrico instalados por Riegomax",
-  },
-
-  {
-    tipo: "h2",
-    texto: "¿Qué componentes forman un sistema de riego automatizado?",
-    id: "componentes",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un sistema automatizado combina diferentes elementos hidráulicos y electrónicos que trabajan juntos para controlar la aplicación de agua. La complejidad puede variar desde una programación básica hasta sistemas inteligentes con monitoreo remoto.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Controladores programables para gestionar sectores de riego.",
-      "Electroválvulas que permiten abrir y cerrar automáticamente el paso del agua.",
-      "Sensores de humedad para conocer el estado del suelo.",
-      "Estaciones meteorológicas para analizar condiciones climáticas.",
-      "Caudalímetros para detectar consumos anormales o fugas.",
-      "Aplicaciones móviles para supervisión y control remoto.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Los tres niveles de automatización del riego",
-    id: "niveles",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Nivel",
-      "Equipamiento",
-      "Características",
-      "Beneficio principal",
-    ],
-    filas: [
-      [
-        "Básico",
-        "Programador + electroválvulas",
-        "Horarios automáticos de riego",
-        "Reduce trabajo manual",
-      ],
-      [
-        "Intermedio",
-        "Controlador + sensores",
-        "Ajuste según condiciones del cultivo",
-        "Mayor ahorro de agua",
-      ],
-      [
-        "Avanzado",
-        "IoT + telemetría + plataforma web",
-        "Control remoto y análisis de datos",
-        "Gestión completa del sistema",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Nivel básico: automatización mediante programación",
-    id: "basico",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El primer paso hacia la automatización consiste en reemplazar la operación manual por un controlador programable. El usuario define días, horarios y duración del riego, permitiendo que el sistema funcione automáticamente incluso cuando no hay presencia en el campo.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Ideal para jardines, pequeñas producciones y sistemas simples.",
-      "Reduce tareas repetitivas.",
-      "Permite regar en horarios de menor evaporación.",
-      "Es una alternativa económica para comenzar.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Nivel intermedio: riego basado en datos",
-    id: "intermedio",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Cuando se incorporan sensores y mediciones, el sistema deja de funcionar únicamente por horarios y comienza a responder a las necesidades reales del cultivo.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Sensores de humedad que activan el riego cuando es necesario.",
-      "Control según temperatura y condiciones climáticas.",
-      "Ajuste automático de tiempos según demanda hídrica.",
-      "Mayor uniformidad y reducción de desperdicios.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Nivel avanzado: agricultura conectada e IoT",
-    id: "iot",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Los sistemas más avanzados utilizan conectividad para enviar información en tiempo real desde el campo hacia plataformas digitales. Esto permite administrar varios sectores desde un celular o computadora sin necesidad de desplazarse constantemente.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Control remoto desde cualquier ubicación.",
-      "Alertas por fallas, fugas o consumo excesivo.",
-      "Historial de funcionamiento del sistema.",
-      "Análisis de datos para mejorar decisiones.",
-      "Integración con estaciones meteorológicas.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Beneficios de automatizar un sistema de riego",
-    id: "beneficios",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Beneficio",
-      "Cómo se logra",
-    ],
-    filas: [
-      [
-        "Ahorro de agua",
-        "Aplicando solamente la cantidad necesaria",
-      ],
-      [
-        "Menor consumo energético",
-        "Reduciendo tiempos innecesarios de bombeo",
-      ],
-      [
-        "Mayor productividad",
-        "Manteniendo condiciones ideales del cultivo",
-      ],
-      [
-        "Menos trabajo operativo",
-        "Eliminando tareas manuales repetitivas",
-      ],
-      [
-        "Detección temprana de problemas",
-        "Mediante sensores y alarmas",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Qué analizar antes de automatizar tu sistema",
-    id: "antes",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Cantidad de sectores existentes.",
-      "Disponibilidad eléctrica o alternativa solar.",
-      "Presión y caudal del sistema actual.",
-      "Compatibilidad con sensores.",
-      "Posibilidad de ampliaciones futuras.",
-      "Nivel de control que realmente necesita el productor.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "Automatizar por etapas suele ser la mejor estrategia",
-    texto:
-      "No siempre es necesario reemplazar todo el sistema. Muchas instalaciones pueden comenzar con un controlador básico y luego incorporar sensores, conectividad y nuevas funciones según las necesidades del cultivo.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Errores frecuentes al automatizar un sistema de riego",
-    id: "errores",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Comprar tecnología sin revisar compatibilidad hidráulica.",
-      "Instalar sensores sin una correcta ubicación.",
-      "No calibrar tiempos de riego después de automatizar.",
-      "Ignorar el mantenimiento de válvulas y filtros.",
-      "No capacitar al usuario sobre el funcionamiento del sistema.",
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "La tecnología no reemplaza un buen diseño hidráulico",
-    texto:
-      "Un sistema automatizado puede mejorar mucho la eficiencia, pero si la instalación inicial tiene problemas de presión, filtración o dimensionamiento, la automatización solamente controlará un sistema incorrecto.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      { tipo: "h2", texto: "El programador: el cerebro del sistema", id: "programador" },
       {
-        texto: "Controladores de riego inteligentes",
-        detalle:
-          "Programación automática y gestión avanzada de sectores.",
+        tipo: "parrafo",
+        texto:
+          "El programador es un aparato que se instala en una pared, protegido de la lluvia. En él se configura qué sector riega, qué días, a qué hora y durante cuántos minutos. Cuando llega el horario, le manda una señal eléctrica a la válvula de ese sector para que se abra.",
       },
       {
-        texto: "Electroválvulas",
-        detalle:
-          "Control automático del paso de agua en cada zona.",
+        tipo: "parrafo",
+        texto:
+          "Cada programador admite una cantidad de sectores, que se llaman estaciones. Por eso, al elegirlo, conviene prever si el jardín va a crecer.",
+      },
+
+      { tipo: "h2", texto: "Las válvulas: una por sector", id: "valvulas" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Las válvulas solenoides son las que abren y cierran el paso del agua hacia cada sector. Reciben la señal del programador y se abren durante el tiempo indicado. Normalmente se agrupan todas en un colector, cerca de la entrada de agua.",
+      },
+
+      { tipo: "h2", texto: "Sensor de lluvia", id: "sensor" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Se conecta al programador y suspende el riego cuando llueve. Es una pieza chica que evita uno de los desperdicios de agua más comunes: el riego funcionando bajo la lluvia.",
+      },
+
+      { tipo: "h2", texto: "Módulo Wifi: el riego desde el celular", id: "wifi" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Con un módulo Wifi podés encender o apagar el riego, cambiar tiempos o suspenderlo desde una aplicación en el celular, estés donde estés. Es muy práctico si te vas de vacaciones o si el programador quedó en un lugar incómodo.",
+      },
+
+      { tipo: "h2", texto: "Si hay bomba: el tablero eléctrico", id: "tablero" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando la presión de la casa no alcanza, el sistema lleva una bomba. El programador no puede encenderla directamente, porque maneja señales de baja tensión. Entre los dos va un tablero eléctrico que recibe la señal del programador y enciende la bomba junto con cada sector, con las protecciones necesarias para que el motor no se dañe.",
       },
       {
-        texto: "Sensores agrícolas",
-        detalle:
-          "Medición de humedad y condiciones del cultivo.",
+        tipo: "destacado",
+        variante: "advertencia",
+        titulo: "El tablero no se improvisa",
+        texto:
+          "Un tablero mal armado puede dejar la bomba funcionando en seco o quemar el motor. Es un trabajo eléctrico que tiene que hacerse con las protecciones correctas.",
+      },
+
+      { tipo: "h2", texto: "Cómo se programa", id: "programar" },
+      {
+        tipo: "lista",
+        items: [
+          "Elegí horarios temprano a la mañana.",
+          "Dale más tiempo a los sectores con sol y menos a los de sombra.",
+          "El goteo necesita más minutos que la aspersión.",
+          "Ajustá los tiempos según la estación: menos en invierno, más en verano.",
+        ],
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Cuando instalamos un sistema, lo dejamos programado según tu jardín y te explicamos cómo cambiar los tiempos.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Sistemas de riego",
+            detalle: "Instalación completa con programador, válvulas y sensor de lluvia.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Tableros eléctricos de riego",
+            detalle: "Armado y reparación de tableros para la bomba.",
+            href: "/servicios/tableros-electricos-de-riego",
+          },
+          {
+            texto: "Bombas de agua",
+            detalle: "Para sistemas que necesitan más presión.",
+            href: "/servicios/bombas-de-agua",
+          },
+        ],
       },
     ],
   },
-]
 
-      ,
-  },
+  // ─────────────────────────────────────────────────────────────
   {
     slug: "mantener-filtros-y-valvulas",
-    // SEO
-seoTitle:
-  "Cómo mantener filtros y válvulas de riego | RiegoMax",
-
-seoDescription:
-  "Aprendé cómo realizar el mantenimiento de filtros y válvulas de riego para evitar obstrucciones, pérdidas de presión y fallas en el sistema.",
-
-palabrasClave: [
-  "mantenimiento sistema de riego",
-  "mantenimiento de filtros de riego",
-  "mantenimiento de válvulas",
-  "filtros de riego",
-  "válvulas de riego",
-  "limpieza de filtros",
-  "problemas de riego",
-  "riego agrícola",
-],
-    titulo: "Cómo mantener filtros y válvulas en óptimo estado",
+    titulo: "Mantenimiento del riego automático: válvulas, filtros y aspersores",
+    seoTitle: "Mantenimiento del riego automático del jardín | Riegomax",
+    seoDescription:
+      "Cómo mantener el riego automático de tu jardín: revisión de válvulas, limpieza de filtros, aspersores y goteros, y qué hacer al empezar cada temporada.",
+    palabrasClave: [
+      "mantenimiento riego automático",
+      "válvulas de riego",
+      "filtro de riego",
+      "aspersor no funciona",
+      "riego no anda",
+    ],
     categoria: "Mantenimiento",
     fecha: "20 Junio 2026",
-    lectura: "5 min lectura",
+    lectura: "6 min lectura",
     descripcion:
-      "Una rutina de mantenimiento simple extiende la vida útil del equipo y evita paradas justo en los momentos críticos del cultivo.",
+      "Qué revisar en las válvulas, filtros, aspersores y goteros para que el riego funcione bien todo el año.",
     imagen: art6,
     intro:
-      "El mantenimiento preventivo de filtros y válvulas es la tarea de menor costo y mayor retorno en cualquier sistema de riego.",
+      "Un riego automático funciona solo, pero no es eterno sin cuidados. Con una revisión simple al empezar la temporada y algunos controles durante el año, se evitan la mayoría de las fallas. Te contamos qué mirar en cada parte del sistema.",
     contenido: [
-  {
-    tipo: "h2",
-    texto: "Por qué el mantenimiento define la vida útil del sistema de riego",
-    id: "importancia",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un sistema de riego correctamente instalado puede funcionar durante muchos años, pero necesita mantenimiento periódico para conservar su eficiencia. Con el tiempo, partículas presentes en el agua, acumulación de minerales y desgaste mecánico afectan filtros, válvulas, tuberías y emisores.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "El mantenimiento preventivo permite detectar pequeños problemas antes de que se conviertan en fallas costosas. Una limpieza de filtros realizada a tiempo puede evitar pérdidas de presión, mientras que una revisión de válvulas puede prevenir sectores completos sin riego.",
-  },
-
-  {
-    tipo: "imagen",
-    src: art6,
-    alt: "Ajuste de válvulas en el colector de riego",
-  },
-
-  {
-    tipo: "h2",
-    texto: "El filtro: el componente que protege todo el sistema",
-    id: "filtro",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Los filtros cumplen una función fundamental: retener partículas que podrían obstruir emisores, válvulas y conductos internos. En sistemas de riego localizado, especialmente goteo y microaspersión, la calidad de filtración determina directamente la uniformidad del riego.",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Un filtro saturado no solamente reduce el caudal disponible, también obliga a la bomba a trabajar con mayor esfuerzo, aumentando el consumo energético y reduciendo la eficiencia general del sistema.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Tipos principales de filtros utilizados en riego",
-    id: "tipos-filtros",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Tipo de filtro",
-      "Uso recomendado",
-      "Mantenimiento",
-    ],
-    filas: [
-      [
-        "Filtro de malla",
-        "Agua con partículas minerales y sedimentos pequeños",
-        "Limpieza periódica de la malla",
-      ],
-      [
-        "Filtro de anillas",
-        "Sistemas agrícolas con mayor carga de partículas",
-        "Lavado y separación de anillas",
-      ],
-      [
-        "Filtro de arena",
-        "Agua con materia orgánica o algas",
-        "Retrolavado del medio filtrante",
-      ],
-      [
-        "Filtros automáticos",
-        "Grandes instalaciones agrícolas",
-        "Control y revisión del sistema automático",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Rutina semanal de mantenimiento",
-    id: "semanal",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Las revisiones semanales permiten detectar rápidamente cambios en el comportamiento del sistema. Son tareas simples que requieren pocos minutos, pero tienen un impacto importante en la continuidad del riego.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Revisar presión antes y después del filtro.",
-      "Observar si existen diferencias respecto al funcionamiento habitual.",
-      "Verificar pérdidas de agua en conexiones y válvulas.",
-      "Controlar que todos los sectores funcionen correctamente.",
-      "Limpiar filtros cuando exista acumulación visible de suciedad.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Cómo saber cuándo limpiar un filtro",
-    id: "limpieza",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "No todos los sistemas necesitan la misma frecuencia de limpieza. La cantidad de sedimentos depende de la fuente de agua, la época del año y las condiciones del terreno. Por eso es recomendable utilizar indicadores de presión para conocer cuándo intervenir.",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Síntoma observado",
-      "Posible causa",
-      "Acción recomendada",
-    ],
-    filas: [
-      [
-        "Menor presión después del filtro",
-        "Filtro saturado",
-        "Realizar limpieza",
-      ],
-      [
-        "Sectores con menos caudal",
-        "Obstrucción parcial",
-        "Revisar filtración y emisores",
-      ],
-      [
-        "Mayor consumo energético",
-        "Restricción del flujo",
-        "Inspeccionar pérdidas de carga",
-      ],
-      [
-        "Riego irregular",
-        "Suciedad acumulada",
-        "Limpiar y verificar componentes",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Mantenimiento correcto de válvulas",
-    id: "valvulas",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Las válvulas son responsables de controlar el paso del agua hacia cada sector de riego. Una falla en una válvula puede afectar grandes áreas del cultivo, por eso requieren inspección periódica.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Verificar que abran y cierren completamente.",
-      "Controlar pérdidas alrededor de conexiones.",
-      "Revisar funcionamiento de solenoides.",
-      "Limpiar componentes internos cuando sea necesario.",
-      "Cambiar membranas o repuestos desgastados.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Problemas frecuentes en válvulas y sus causas",
-    id: "problemas-valvulas",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Problema",
-      "Causa probable",
-      "Solución",
-    ],
-    filas: [
-      [
-        "La válvula no abre",
-        "Falla eléctrica o solenoide dañado",
-        "Revisar conexión o reemplazar componente",
-      ],
-      [
-        "La válvula queda parcialmente abierta",
-        "Suciedad interna",
-        "Limpiar mecanismo",
-      ],
-      [
-        "La válvula pierde agua",
-        "Desgaste de membrana",
-        "Cambiar kit de reparación",
-      ],
-      [
-        "Funcionamiento irregular",
-        "Presión incorrecta",
-        "Verificar diseño hidráulico",
-      ],
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Mantenimiento de fin de campaña",
-    id: "fin-campana",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "Al finalizar una campaña agrícola es recomendable realizar una revisión completa del sistema antes de dejarlo fuera de operación. Este mantenimiento evita encontrar problemas al iniciar el siguiente ciclo productivo.",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Realizar limpieza profunda de filtros.",
-      "Purgar tuberías principales y laterales.",
-      "Revisar conexiones y accesorios.",
-      "Proteger componentes electrónicos.",
-      "Registrar reparaciones realizadas.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Limpieza química y tratamiento de obstrucciones",
-    id: "limpieza-quimica",
-  },
-  {
-    tipo: "parrafo",
-    texto:
-      "En algunos sistemas pueden aparecer obstrucciones causadas por acumulación de minerales, algas o materia orgánica. En estos casos puede ser necesario realizar tratamientos específicos, siempre siguiendo recomendaciones técnicas.",
-  },
-  {
-    tipo: "destacado",
-    variante: "advertencia",
-    titulo: "Seguridad durante tratamientos químicos",
-    texto:
-      "Nunca manipules productos químicos sin conocer previamente su aplicación correcta. Utilizá protección adecuada y seguí siempre las indicaciones técnicas del fabricante.",
-  },
-
-  {
-    tipo: "h2",
-    texto: "Errores comunes que reducen la vida útil del sistema",
-    id: "errores",
-  },
-  {
-    tipo: "lista",
-    items: [
-      "Esperar a que aparezcan fallas antes de limpiar filtros.",
-      "Utilizar filtros incorrectos para la calidad del agua disponible.",
-      "Ignorar cambios de presión del sistema.",
-      "No revisar válvulas durante largos períodos.",
-      "Realizar reparaciones sin identificar la causa del problema.",
-    ],
-  },
-
-  {
-    tipo: "h2",
-    texto: "Calendario recomendado de mantenimiento",
-    id: "calendario",
-  },
-  {
-    tipo: "tabla",
-    encabezados: [
-      "Frecuencia",
-      "Actividad",
-    ],
-    filas: [
-      [
-        "Diaria",
-        "Observar funcionamiento general del sistema",
-      ],
-      [
-        "Semanal",
-        "Revisar presión, filtros y válvulas",
-      ],
-      [
-        "Mensual",
-        "Inspección completa de componentes",
-      ],
-      [
-        "Fin de campaña",
-        "Limpieza profunda y preparación del sistema",
-      ],
-    ],
-  },
-
-  {
-    tipo: "destacado",
-    variante: "consejo",
-    titulo: "El mantenimiento cuesta menos que una reparación",
-    texto:
-      "Una rutina preventiva permite mantener la eficiencia del sistema, reducir costos operativos y evitar pérdidas de producción causadas por fallas inesperadas.",
-  },
-
-  {
-    tipo: "enlaces",
-    titulo: "Productos RiegoMax relacionados",
-    items: [
+      { tipo: "h2", texto: "Válvulas: el corazón del colector", id: "valvulas" },
       {
-        texto: "Filtros de malla y anillas",
-        detalle:
-          "Protección eficiente para sistemas de riego agrícola.",
+        tipo: "parrafo",
+        texto:
+          "Las válvulas abren y cierran cada sector. Las fallas más comunes son que un sector no riegue (la válvula no abre) o que siga goteando con el riego apagado (la válvula no cierra del todo). Muchas veces la causa es suciedad o arena dentro de la válvula, que se resuelve limpiándola.",
       },
       {
-        texto: "Repuestos para válvulas",
-        detalle:
-          "Membranas, solenoides y kits de reparación.",
+        tipo: "lista",
+        items: [
+          "Un sector no riega: revisar la conexión eléctrica de la válvula y si le llega la señal del programador.",
+          "Un sector riega solo o no corta: limpiar o cambiar la membrana de la válvula.",
+          "Hay agua en la caja de válvulas: buscar una pérdida en las uniones.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Filtros: clave en el goteo", id: "filtros" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Los goteros tienen salidas muy chicas y se tapan con facilidad. Por eso los sectores de goteo llevan un filtro que retiene la arena y las impurezas del agua. Ese filtro se tiene que abrir y lavar cada tanto; si se satura, el goteo pierde presión y las plantas del final de la línea reciben poca agua.",
       },
       {
-        texto: "Manómetros y accesorios",
-        detalle:
-          "Control de presión para diagnóstico del sistema.",
+        tipo: "destacado",
+        variante: "consejo",
+        titulo: "Si el agua es de pozo, revisá más seguido",
+        texto:
+          "El agua de pozo suele traer más arena que la de red. En esos casos el filtro se ensucia más rápido y conviene limpiarlo con más frecuencia.",
+      },
+
+      { tipo: "h2", texto: "Aspersores", id: "aspersores" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Con el corte del césped, los pisotones y el paso del tiempo, los aspersores se desalinean, se hunden o se tapan con tierra. Un aspersor que no sube o que moja la vereda deja una zona del césped sin regar.",
+      },
+      {
+        tipo: "lista",
+        items: [
+          "Verificar que cada aspersor suba y baje bien.",
+          "Corregir la orientación de los que mojan paredes o caminos.",
+          "Limpiar las boquillas tapadas.",
+          "Levantar los que quedaron hundidos bajo el pasto.",
+        ],
+      },
+
+      { tipo: "h2", texto: "Goteros y mangueras", id: "goteros" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Recorré las líneas de goteo con el sector funcionando: los goteros tapados se reconocen porque la tierra a su alrededor queda seca. También revisá que la manguera no esté cortada por herramientas o mordida por mascotas.",
+      },
+
+      { tipo: "h2", texto: "Al empezar cada temporada", id: "temporada" },
+      {
+        tipo: "parrafo",
+        texto:
+          "Antes del calor conviene hacer una revisión completa: encender cada sector, mirar que todos los aspersores funcionen, limpiar los filtros, revisar el sensor de lluvia y ajustar los tiempos del programador para el verano.",
+      },
+      {
+        tipo: "parrafo",
+        texto:
+          "Si encontrás una falla que no podés resolver, o preferís que lo revise alguien con experiencia, lo hacemos nosotros.",
+      },
+      {
+        tipo: "enlaces",
+        titulo: "Servicios relacionados",
+        items: [
+          {
+            texto: "Mantenimiento y reparación de riego",
+            detalle: "Revisamos el sistema y arreglamos lo que falla.",
+            href: "/servicios/mantenimiento",
+          },
+          {
+            texto: "Sistemas de riego",
+            detalle: "Ampliaciones y reubicación de aspersores.",
+            href: "/servicios/sistemas-de-riego",
+          },
+          {
+            texto: "Tableros eléctricos de riego",
+            detalle: "Si el problema está en la bomba o el tablero.",
+            href: "/servicios/tableros-electricos-de-riego",
+          },
+        ],
       },
     ],
-  },
-]
-      ,
   },
 ];
 
