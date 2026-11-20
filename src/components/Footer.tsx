@@ -14,11 +14,12 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: "Inicio", href: "#home" },
-    { name: "Nosotros", href: "#about" },
-    { name: "Servicios", href: "#services" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" }
+    { name: "Inicio", href: "/#home" },
+    { name: "Nosotros", href: "/#about" },
+    { name: "Servicios", href: "/#services" },
+    { name: "Proyectos", href: "/#projects" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contacto", href: "/#contact" }
   ];
 
   return (
@@ -87,7 +88,7 @@ const Footer = () => {
               {services.map((service) => (
                 <li key={service}>
                   <a
-                    href="#services"
+                    href="/#services"
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
                   >
                     {service}

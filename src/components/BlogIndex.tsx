@@ -1,5 +1,6 @@
 
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
 import heroImg from "../assets/hero-riego.jpg";
 import { ArticleCard } from "../components/ArticleCard";
@@ -151,6 +152,18 @@ export default function BlogIndex() {
               Siguiente
             </button>
           </nav>
+
+          {/* Enlace real al listado completo: Google no hace clic en los botones de paginación,
+              pero sí sigue este enlace y llega a todos los artículos */}
+          <div className="mt-8 text-center">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-base font-semibold text-primary transition-colors duration-300 hover:text-primary-strong"
+            >
+              Ver todos los artículos
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
         </section>
 
         <div id="newsletter" className="scroll-mt-24">

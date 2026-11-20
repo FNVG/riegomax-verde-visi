@@ -78,7 +78,7 @@ export default function BlogArticulo() {
 
 
               <Link
-                to="/"
+                to="/blog"
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
               >
 
@@ -519,7 +519,21 @@ export default function BlogArticulo() {
 
 
 
-        {/* CTA */}
+        {/* Artículos relacionados: enlaces internos entre artículos */}
+        {relacionados.length > 0 && (
+          <section className="border-t border-border bg-surface">
+            <div className="mx-auto max-w-6xl px-6 py-14">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                Seguí leyendo
+              </h2>
+              <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {relacionados.map((a, i) => (
+                  <ArticleCard key={a.slug} articulo={a} index={i} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
      
 

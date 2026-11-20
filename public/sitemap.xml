@@ -8,7 +8,11 @@
   </url>
 
   <!-- Blog -->
-  
+  <url>
+    <loc>https://www.riegomax.com.ar/blog</loc>
+    <priority>0.8</priority>
+  </url>
+
 
   <!-- Artículos -->
   <url>

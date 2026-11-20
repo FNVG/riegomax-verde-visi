@@ -7,13 +7,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: "Inicio", href: "#home" },
-    { name: "Servicios", href: "#services" },
-    { name: "Productos", href: "#productos" },
-    { name: "Antes & Después", href: "#before-after" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Contacto", href: "#contact" }
- 
+    // Con "/" adelante funcionan desde cualquier página (blog, productos), no solo desde la home
+    { name: "Inicio", href: "/#home" },
+    { name: "Servicios", href: "/#services" },
+    { name: "Productos", href: "/#productos" },
+    { name: "Antes & Después", href: "/#before-after" },
+    { name: "Proyectos", href: "/#projects" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contacto", href: "/#contact" }
   ];
 
   return (
@@ -34,9 +35,10 @@ const Header = () => {
             />
 
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-primary leading-tight">
+              {/* No es <h1>: el título principal de cada página va en su propio contenido */}
+              <span className="block text-xl sm:text-2xl font-bold text-primary leading-tight">
                 Riegomax
-              </h1>
+              </span>
 
               <p className="text-xs sm:text-sm text-muted-foreground leading-tight">
                 Sistemas de Riego & Jardinería
