@@ -1,4 +1,5 @@
 import Seo from "@/components/Seo";
+import { negocioLocal } from "@/lib/schema";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -17,6 +18,7 @@ const Index = () => {
         title="Riegomax | Sistemas de riego, jardinería y paisajismo en Buenos Aires"
         description="Especialistas en sistemas de riego, jardinería y paisajismo. Diseñamos y mantenemos espacios verdes con calidad profesional en Buenos Aires."
         path="/"
+        jsonLd={negocioLocal}
       />
       <Header />
       <main>

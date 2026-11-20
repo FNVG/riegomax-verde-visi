@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Seo from "@/components/Seo";
+import { articuloSchema } from "@/lib/schema";
 import {
   ArrowLeft,
   ArrowRight,
@@ -65,6 +66,7 @@ export default function BlogArticulo() {
         image={articulo.imagen}
         type="article"
         keywords={articulo.palabrasClave}
+        jsonLd={articuloSchema(articulo)}
       />
 
       <main>
