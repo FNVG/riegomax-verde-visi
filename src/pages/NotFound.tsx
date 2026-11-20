@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   const location = useLocation();
@@ -10,11 +11,16 @@ const NotFound = () => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      {/* Evita que Google indexe direcciones que no existen */}
+      <Helmet>
+        <title>Página no encontrada | Riegomax</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
+        <p className="mb-4 text-xl text-gray-600">La página que buscás no existe.</p>
         <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
+          Volver al inicio
         </a>
       </div>
     </div>
