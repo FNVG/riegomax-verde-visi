@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
+import { paginas } from "@/data/paginas";
 
 const migas = [{ nombre: "Inicio", href: "/" }, { nombre: "Servicios" }];
 import { servicios } from "@/data/servicios";
@@ -15,8 +16,8 @@ export default function Servicios() {
   return (
     <div className="min-h-screen bg-background">
       <Seo
-        title="Servicios de riego, jardinería y paisajismo | Riegomax"
-        description="Sistemas de riego, jardinería, paisajismo, mantenimiento, bombas de agua, tableros eléctricos de riego, césped sintético e iluminación de jardines en zona oeste."
+        title={paginas.servicios.title}
+        description={paginas.servicios.description}
         path="/servicios"
         jsonLd={breadcrumbSchema(migas, "/servicios")}
       />

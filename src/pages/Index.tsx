@@ -1,5 +1,6 @@
 import Seo from "@/components/Seo";
 import { negocioLocal } from "@/lib/schema";
+import { paginas } from "@/data/paginas";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -15,8 +16,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Seo
-        title="Riego automático y jardinería en Moreno, zona oeste | Riegomax"
-        description="Instalación de riego automático, jardinería, paisajismo, césped sintético e iluminación de jardines en Moreno y zona oeste de Buenos Aires."
+        title={paginas.inicio.title}
+        description={paginas.inicio.description}
         path="/"
         jsonLd={negocioLocal}
       />

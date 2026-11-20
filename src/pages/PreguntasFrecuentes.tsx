@@ -9,6 +9,7 @@ import ListaPreguntas from "@/components/ListaPreguntas";
 import { servicios } from "@/data/servicios";
 import { preguntasFrecuentes } from "@/data/preguntas";
 import { breadcrumbSchema } from "@/lib/schema";
+import { paginas } from "@/data/paginas";
 
 const migas = [{ nombre: "Inicio", href: "/" }, { nombre: "Preguntas frecuentes" }];
 const ruta = "/preguntas-frecuentes";
@@ -26,8 +27,8 @@ export default function PreguntasFrecuentes() {
   return (
     <div className="min-h-screen bg-background">
       <Seo
-        title="Preguntas frecuentes sobre riego y jardinería | Riegomax"
-        description="Respuestas a las preguntas más buscadas sobre riego automático, césped sintético, grama bahiana, jardinería, bombas de agua e iluminación de jardines."
+        title={paginas.preguntas.title}
+        description={paginas.preguntas.description}
         path={ruta}
         jsonLd={breadcrumbSchema(migas, ruta)}
       />

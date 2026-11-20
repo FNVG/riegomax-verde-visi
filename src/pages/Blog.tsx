@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { breadcrumbSchema } from "@/lib/schema";
+import { paginas } from "@/data/paginas";
 
 const migas = [{ nombre: "Inicio", href: "/" }, { nombre: "Blog" }];
 import { ArticleCard } from "@/components/ArticleCard";
@@ -17,8 +18,8 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
       <Seo
-        title="Blog de riego y jardinería | Riegomax"
-        description="Guías y consejos sobre sistemas de riego, riego por goteo y aspersión, ahorro de agua y mantenimiento de jardines, escritos por el equipo de Riegomax."
+        title={paginas.blog.title}
+        description={paginas.blog.description}
         path="/blog"
         jsonLd={breadcrumbSchema(migas, "/blog")}
       />
