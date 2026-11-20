@@ -1,4 +1,6 @@
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import Seo from "@/components/Seo";
 import {
   ArrowLeft,
   ArrowRight,
@@ -28,6 +30,11 @@ export default function BlogArticulo() {
   if (!articulo) {
     return (
       <div className="min-h-screen flex items-center justify-center">
+        {/* Evita que Google indexe URLs de artículos que no existen */}
+        <Helmet>
+          <title>Artículo no encontrado | Riegomax</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <h1 className="text-2xl font-bold">
           Artículo no encontrado
         </h1>
@@ -51,8 +58,14 @@ export default function BlogArticulo() {
   return (
     <div className="min-h-screen bg-background">
 
-
-
+      <Seo
+        title={articulo.seoTitle || `${articulo.titulo} | Riegomax`}
+        description={articulo.seoDescription || articulo.descripcion}
+        path={`/blog/${articulo.slug}`}
+        image={articulo.imagen}
+        type="article"
+        keywords={articulo.palabrasClave}
+      />
 
       <main>
 

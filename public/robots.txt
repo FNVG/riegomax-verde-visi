@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://riegomax.com.ar/sitemap.xml
+Sitemap: https://www.riegomax.com.ar/sitemap.xml

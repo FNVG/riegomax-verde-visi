@@ -1,5 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { getProducto } from '../data/productos'
+import { Helmet } from 'react-helmet-async'
+import Seo from '@/components/Seo'
 
 const ProductoDetalle = () => {
   const { slug } = useParams<{ slug: string }>()
@@ -10,6 +12,11 @@ const ProductoDetalle = () => {
   if (!producto) {
     return (
       <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+        {/* Evita que Google indexe URLs de productos que no existen */}
+        <Helmet>
+          <title>Producto no encontrado | Riegomax</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Producto no encontrado
@@ -32,6 +39,13 @@ const ProductoDetalle = () => {
 
   return (
     <main className="bg-white min-h-screen">
+      <Seo
+        title={`${producto.nombre} | Riegomax`}
+        description={producto.descripcion}
+        path={`/productos/${producto.slug}`}
+        image={producto.imagen}
+        type="product"
+      />
 
       {/* Hero del producto */}
       <section className="bg-gray-50 py-12 md:py-16">

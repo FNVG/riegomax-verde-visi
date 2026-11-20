@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ReelType = "Riego" | "Paisajismo" | "Jardinería";
 
 type Reel = {
   id: number;
   src: string;
+  poster: string;
   title: string;
   tipo: ReelType;
 };
@@ -13,54 +14,63 @@ const reels: Reel[] = [
   {
     id: 1,
     src: "/videos/video1.mp4",
+    poster: "/videos/video1.jpg",
     tipo: "Riego",
     title: "Instalación de sistema de riego automático por aspersión",
   },
   {
     id: 2,
-    src: "/videos/video2.mov",
+    src: "/videos/video2.mp4",
+    poster: "/videos/video2.jpg",
     tipo: "Jardinería",
     title: "Poda de cerco vivo",
   },
   {
     id: 3,
     src: "/videos/video3.mp4",
+    poster: "/videos/video3.jpg",
     tipo: "Paisajismo",
     title: "Construcción de cantero decorativo",
   },
   {
     id: 4,
     src: "/videos/video4.mp4",
+    poster: "/videos/video4.jpg",
     tipo: "Paisajismo",
     title: "Instalación de riego y césped",
   },
   {
     id: 5,
     src: "/videos/video5.mp4",
+    poster: "/videos/video5.jpg",
     tipo: "Paisajismo",
     title: "Plantación de grama bahiana",
   },
   {
     id: 6,
     src: "/videos/video6.mp4",
+    poster: "/videos/video6.jpg",
     tipo: "Riego",
     title: "Instalación de aspersores",
   },
   {
     id: 7,
     src: "/videos/video7.mp4",
+    poster: "/videos/video7.jpg",
     tipo: "Riego",
     title: "Sensor de lluvia",
   },
   {
     id: 8,
     src: "/videos/video8.mp4",
+    poster: "/videos/video8.jpg",
     tipo: "Riego",
     title: "Sistema de riego por aspersión",
   },
   {
     id: 9,
     src: "/videos/video9.mp4",
+    poster: "/videos/video9.jpg",
     tipo: "Riego",
     title: "Incorporación de aspersor",
   },
@@ -74,6 +84,59 @@ const styles = {
 
 const arrow =
   "absolute top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white/80 backdrop-blur text-black text-2xl shadow-xl transition hover:scale-110 disabled:opacity-30";
+
+/**
+ * Reproduce el video solo si está en la página visible del carrusel
+ * Y además en pantalla. Antes, los 9 videos se descargaban y reproducían
+ * a la vez al abrir el sitio (cerca de 200 MB).
+ */
+function ReelVideo({ src, poster, active }: { src: string; poster: string; active: boolean }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [inView, setInView] = useState(false);
+
+  // Detecta si el video está dentro de la pantalla
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Reproduce o pausa según corresponda
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (active && inView) {
+      el.play().catch(() => {
+        /* el navegador puede bloquear la reproducción; se queda el poster */
+      });
+    } else {
+      el.pause();
+    }
+  }, [active, inView]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      preload="none"
+      muted
+      loop
+      playsInline
+      aria-hidden="true"
+      className="
+        h-full w-full object-cover
+        transition duration-700
+        group-hover:scale-110
+      "
+    />
+  );
+}
 
 export default function VideoReelsSection() {
   const itemsPerPage = 3;
@@ -94,6 +157,7 @@ export default function VideoReelsSection() {
             onClick={() => setPage((p) => Math.max(p - 1, 0))}
             disabled={page === 0}
             className={`${arrow} -left-5`}
+            aria-label="Videos anteriores"
           >
             ‹
           </button>
@@ -103,6 +167,7 @@ export default function VideoReelsSection() {
             onClick={() => setPage((p) => Math.min(p + 1, maxPage))}
             disabled={page === maxPage}
             className={`${arrow} -right-5`}
+            aria-label="Videos siguientes"
           >
             ›
           </button>
@@ -138,17 +203,10 @@ export default function VideoReelsSection() {
                         "
                       >
                         {/* Video */}
-                        <video
+                        <ReelVideo
                           src={reel.src}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="
-                            h-full w-full object-cover
-                            transition duration-700
-                            group-hover:scale-110
-                          "
+                          poster={reel.poster}
+                          active={index === page}
                         />
 
                         {/* Overlay */}
