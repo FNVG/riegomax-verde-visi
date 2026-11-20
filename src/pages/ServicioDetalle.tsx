@@ -140,7 +140,7 @@ export default function ServicioDetalle() {
           <div className="mx-auto max-w-5xl px-6 pt-12 pb-10">
             <Breadcrumbs items={migas} />
 
-            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[42px]">
+            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[2.625rem]">
               {servicio.titulo}
             </h1>
 

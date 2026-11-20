@@ -47,7 +47,7 @@ export function ArticleCard({ articulo, index = 0 }: { articulo: Articulo; index
           </span>
         </div>
 
-        <h3 className="mt-4 line-clamp-2 text-[22px] font-bold leading-snug tracking-tight">
+        <h3 className="mt-4 line-clamp-2 text-[1.375rem] font-bold leading-snug tracking-tight">
           <Link
           to={`/blog/${articulo.slug}`}
           className="transition-colors duration-300 hover:text-primary"

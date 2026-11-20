@@ -142,7 +142,7 @@ export default function BlogArticulo() {
 
 
               <h1
-                className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-[42px]"
+                className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:text-[2.625rem]"
               >
                 {articulo.titulo}
               </h1>
@@ -316,7 +316,7 @@ export default function BlogArticulo() {
                         >
 
                           <table
-                            className="w-full min-w-[520px] border-collapse text-left text-sm"
+                            className="w-full min-w-[32.5rem] border-collapse text-left text-sm"
                           >
 
                             <thead className="bg-surface">

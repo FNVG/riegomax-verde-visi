@@ -27,7 +27,7 @@ export default function Servicios() {
         <section className="border-b border-border bg-white">
           <div className="mx-auto max-w-6xl px-6 pt-10 pb-10">
             <Breadcrumbs items={migas} />
-            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[42px]">
+            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[2.625rem]">
               Nuestros servicios
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">

@@ -143,8 +143,17 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  /* Tamaño base de todo el sitio: los textos, márgenes y anchos se calculan a partir de este valor.
+     Celular y tablet: 90%. Computadora (desde 1024 px de ancho): 70%, para que el sitio no se vea
+     tan grande en notebooks. Para agrandar o achicar todo en computadora, se cambia solo ese número. */
   html {
     font-size: 90%;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 70%;
+    }
   }
 
 }
