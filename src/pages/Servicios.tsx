@@ -4,6 +4,10 @@ import { ArrowRight } from "lucide-react";
 import Seo from "@/components/Seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { breadcrumbSchema } from "@/lib/schema";
+
+const migas = [{ nombre: "Inicio", href: "/" }, { nombre: "Servicios" }];
 import { servicios } from "@/data/servicios";
 
 /** Listado de servicios en /servicios: cada tarjeta enlaza a la página del servicio. */
@@ -14,14 +18,16 @@ export default function Servicios() {
         title="Servicios de riego, jardinería y paisajismo | Riegomax"
         description="Sistemas de riego, jardinería, paisajismo, mantenimiento, bombas de agua, tableros eléctricos de riego, césped sintético e iluminación de jardines en zona oeste."
         path="/servicios"
+        jsonLd={breadcrumbSchema(migas, "/servicios")}
       />
 
       <Header />
 
       <main>
         <section className="border-b border-border bg-white">
-          <div className="mx-auto max-w-6xl px-6 pt-14 pb-10">
-            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-[42px]">
+          <div className="mx-auto max-w-6xl px-6 pt-10 pb-10">
+            <Breadcrumbs items={migas} />
+            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[42px]">
               Nuestros servicios
             </h1>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">

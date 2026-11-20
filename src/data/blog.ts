@@ -1,9 +1,9 @@
-import art1 from "../assets/art-1.jpg";
-import art2 from "../assets/art-2.jpg";
-import art3 from "../assets/art-3.jpg";
-import art4 from "../assets/art-4.jpg";
-import art5 from "../assets/art-5.jpg";
-import art6 from "../assets/art-6.jpg";
+import art1 from "../assets/blog/zanja-caneria-riego-cesped.jpg";
+import art2 from "../assets/blog/aspersor-emergente-regando-cesped.jpg";
+import art3 from "../assets/blog/manguera-riego-colocada-en-zanja.jpg";
+import art4 from "../assets/blog/conexion-valvulas-colector-riego.jpg";
+import art5 from "../assets/blog/programador-riego-tablero-electrico.jpg";
+import art6 from "../assets/blog/ajuste-valvulas-colector-riego.jpg";
 
 /**
  * Artículos del blog de Riegomax.

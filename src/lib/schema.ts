@@ -124,3 +124,22 @@ export function servicioSchema(servicio: Servicio) {
     areaServed: negocioLocal.areaServed,
   };
 }
+
+/**
+ * Migas de pan para Google (BreadcrumbList). Recibe las mismas migas que el componente
+ * <Breadcrumbs> y la ruta de la página actual. Las migas que apuntan a una sección de la
+ * home (/#productos) no son páginas propias, así que no se incluyen.
+ */
+export function breadcrumbSchema(items: { nombre: string; href?: string }[], rutaActual: string) {
+  const validos = items.filter((m, i) => i === items.length - 1 || (m.href && !m.href.includes("#")));
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: validos.map((m, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: m.nombre,
+      item: `${SITE_URL}${i === validos.length - 1 ? rutaActual : m.href}`,
+    })),
+  };
+}

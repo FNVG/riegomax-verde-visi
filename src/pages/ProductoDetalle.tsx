@@ -2,6 +2,8 @@ import { Link, useParams } from 'react-router-dom'
 import { getProducto } from '../data/productos'
 import { Helmet } from 'react-helmet-async'
 import Seo from '@/components/Seo'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import { breadcrumbSchema } from '@/lib/schema'
 
 const ProductoDetalle = () => {
   const { slug } = useParams<{ slug: string }>()
@@ -45,6 +47,10 @@ const ProductoDetalle = () => {
         path={`/productos/${producto.slug}`}
         image={producto.imagen}
         type="product"
+        jsonLd={breadcrumbSchema(
+          [{ nombre: 'Inicio', href: '/' }, { nombre: 'Productos', href: '/#productos' }, { nombre: producto.nombre }],
+          `/productos/${producto.slug}`
+        )}
       />
 
       {/* Hero del producto */}
@@ -53,12 +59,13 @@ const ProductoDetalle = () => {
 
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link
-              to="/"
-              className="text-sm text-green-600 hover:text-green-700 font-medium"
-            >
-              ← Volver 
-            </Link>
+            <Breadcrumbs
+              items={[
+                { nombre: 'Inicio', href: '/' },
+                { nombre: 'Productos', href: '/#productos' },
+                { nombre: producto.nombre },
+              ]}
+            />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">

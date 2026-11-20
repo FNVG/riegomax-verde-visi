@@ -3,18 +3,18 @@ import { Filter, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-import servicio01 from "@/assets/trabajos/1.jpeg";
-import servicio02 from "@/assets/trabajos/2.jpeg";
-import servicio03 from "@/assets/trabajos/3.jpeg";
-import servicio04 from "@/assets/trabajos/4.jpeg";
-import servicio05 from "@/assets/trabajos/5.jpeg";
-import servicio06 from "@/assets/trabajos/6.jpeg";
-import servicio07 from "@/assets/trabajos/7.jpeg";
-import servicio08 from "@/assets/trabajos/8.jpeg";
-import servicio09 from "@/assets/trabajos/9.jpeg";
-import servicio10 from "@/assets/trabajos/10.jpeg";
-import servicio11 from "@/assets/trabajos/11.jpeg";
-import servicio12 from "@/assets/trabajos/12.jpeg";
+import servicio01 from "@/assets/trabajos/mantenimiento-de-plantas.jpg";
+import servicio02 from "@/assets/trabajos/mantenimiento-de-cesped.jpg";
+import servicio03 from "@/assets/trabajos/plantacion-de-especies.jpg";
+import servicio04 from "@/assets/trabajos/cantero-decorativo.jpg";
+import servicio05 from "@/assets/trabajos/instalacion-de-riego.jpg";
+import servicio06 from "@/assets/trabajos/colocacion-cesped-orejas-de-elefante.jpg";
+import servicio07 from "@/assets/trabajos/paisajismo-jardin.jpg";
+import servicio08 from "@/assets/trabajos/riego-por-goteo-cantero.jpg";
+import servicio09 from "@/assets/trabajos/distribucion-de-caneria-riego.jpg";
+import servicio10 from "@/assets/trabajos/nivelacion-y-colocacion-de-cesped.jpg";
+import servicio11 from "@/assets/trabajos/riego-por-goteo-cerco.jpg";
+import servicio12 from "@/assets/trabajos/instalacion-programador-y-colector.jpg";
 
 
 const ProjectsSection = () => {

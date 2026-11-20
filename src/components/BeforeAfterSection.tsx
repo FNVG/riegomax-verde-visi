@@ -3,14 +3,14 @@ import { ArrowRight, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-import antes_1 from "@/assets/antes_despues/antes 3.jpeg";
-import despues_1 from "@/assets/antes_despues/1 despues.jpeg";
-import antes_2 from "@/assets/antes_despues/5 antes.jpeg";
-import despues_2 from "@/assets/antes_despues/5 después.jpeg";
-import antes_3 from "@/assets/antes_despues/2 antes.jpeg";
-import despues_3 from "@/assets/antes_despues/2 después.jpeg";
-import antes_4 from "@/assets/antes_despues/colector_antes.jpeg";
-import despues_4 from "@/assets/antes_despues/colector_despues.jpeg";
+import antes_1 from "@/assets/antes_despues/recuperacion-espacio-verde-antes.jpg";
+import despues_1 from "@/assets/antes_despues/recuperacion-espacio-verde-despues.jpg";
+import antes_2 from "@/assets/antes_despues/fondo-de-jardin-antes.jpg";
+import despues_2 from "@/assets/antes_despues/fondo-de-jardin-despues.jpg";
+import antes_3 from "@/assets/antes_despues/frente-y-vereda-antes.jpg";
+import despues_3 from "@/assets/antes_despues/frente-y-vereda-despues.jpg";
+import antes_4 from "@/assets/antes_despues/colector-de-riego-antes.jpg";
+import despues_4 from "@/assets/antes_despues/colector-de-riego-despues.jpg";
 
 
 const BeforeAfterSection = () => {

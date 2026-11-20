@@ -1,12 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import Seo from "@/components/Seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { getServicio, servicios, type Seccion } from "@/data/servicios";
-import { servicioSchema } from "@/lib/schema";
+import { breadcrumbSchema, servicioSchema } from "@/lib/schema";
 
 /**
  * Una sección de la página: texto a un lado y, si tiene, la foto o el video que ilustra
@@ -112,6 +113,12 @@ export default function ServicioDetalle() {
   }
 
   const otros = servicios.filter((s) => s.slug !== servicio.slug);
+  const migas = [
+    { nombre: "Inicio", href: "/" },
+    { nombre: "Servicios", href: "/servicios" },
+    { nombre: servicio.titulo },
+  ];
+  const ruta = `/servicios/${servicio.slug}`;
   // Las secciones con imagen alternan de lado; se cuentan solo esas
   let conMedia = 0;
 
@@ -120,9 +127,9 @@ export default function ServicioDetalle() {
       <Seo
         title={servicio.seoTitle}
         description={servicio.seoDescription}
-        path={`/servicios/${servicio.slug}`}
+        path={ruta}
         image={servicio.portada}
-        jsonLd={servicioSchema(servicio)}
+        jsonLd={[servicioSchema(servicio), breadcrumbSchema(migas, ruta)]}
       />
 
       <Header />
@@ -131,13 +138,7 @@ export default function ServicioDetalle() {
         {/* Presentación */}
         <section className="border-b border-border bg-white">
           <div className="mx-auto max-w-5xl px-6 pt-12 pb-10">
-            <Link
-              to="/servicios"
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-            >
-              <ArrowLeft className="size-4" aria-hidden="true" />
-              Todos los servicios
-            </Link>
+            <Breadcrumbs items={migas} />
 
             <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[42px]">
               {servicio.titulo}

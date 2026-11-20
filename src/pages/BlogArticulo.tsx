@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Seo from "@/components/Seo";
-import { articuloSchema } from "@/lib/schema";
+import { articuloSchema, breadcrumbSchema } from "@/lib/schema";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import {
-  ArrowLeft,
   ArrowRight,
   CalendarDays,
   Clock,
@@ -66,7 +66,13 @@ export default function BlogArticulo() {
         image={articulo.imagen}
         type="article"
         keywords={articulo.palabrasClave}
-        jsonLd={articuloSchema(articulo)}
+        jsonLd={[
+          articuloSchema(articulo),
+          breadcrumbSchema(
+            [{ nombre: "Inicio", href: "/" }, { nombre: "Blog", href: "/blog" }, { nombre: articulo.titulo }],
+            `/blog/${articulo.slug}`
+          ),
+        ]}
       />
 
       <main>
@@ -79,19 +85,13 @@ export default function BlogArticulo() {
             <div className="mx-auto max-w-3xl px-6 pt-14 pb-10">
 
 
-              <Link
-                to="/blog"
-                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
-              >
-
-                <ArrowLeft
-                  className="size-4"
-                  aria-hidden="true"
-                />
-
-                Volver al blog
-
-              </Link>
+              <Breadcrumbs
+                items={[
+                  { nombre: "Inicio", href: "/" },
+                  { nombre: "Blog", href: "/blog" },
+                  { nombre: articulo.titulo },
+                ]}
+              />
 
 
 

@@ -37,14 +37,15 @@ export type Servicio = {
   secciones: Seccion[];
 };
 
-const foto = (slug: string, n: number, alt: string): Foto => ({
-  src: `/servicios/${slug}/foto-${n}.jpg`,
+// Los nombres de archivo describen la foto: Google Imágenes los usa para entenderla
+const foto = (slug: string, archivo: string, alt: string): Foto => ({
+  src: `/servicios/${slug}/${archivo}.jpg`,
   alt,
 });
 
-const video = (slug: string, titulo: string): Video => ({
-  src: `/servicios/${slug}/video-1.mp4`,
-  poster: `/servicios/${slug}/video-1.jpg`,
+const video = (slug: string, archivo: string, titulo: string): Video => ({
+  src: `/servicios/${slug}/${archivo}.mp4`,
+  poster: `/servicios/${slug}/${archivo}.jpg`,
   titulo,
 });
 
@@ -59,7 +60,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Instalación de riego automático en zona oeste | Riegomax",
     seoDescription:
       "Diseño e instalación de sistemas de riego automático por aspersión y goteo en Moreno y zona oeste de Buenos Aires. Riego eficiente para tu jardín.",
-    portada: "/servicios/sistemas-de-riego/foto-1.jpg",
+    portada: "/servicios/sistemas-de-riego/instalacion-caneria-riego-zanja-cesped.jpg",
     intro: [
       "Un sistema de riego automático mantiene el jardín verde todo el año sin que tengas que estar pendiente de la manguera. Riega a la hora indicada, la cantidad justa y en el lugar correcto, aunque estés de viaje.",
       "En Riegomax diseñamos e instalamos sistemas de riego por aspersión y por goteo para casas, quintas y barrios de Moreno y toda la zona oeste. Nos ocupamos de todo el proceso: el diseño, la instalación de la cañería y las válvulas, y la programación final.",
@@ -84,7 +85,7 @@ export const servicios: Servicio[] = [
           "Antes de abrir la primera zanja, recorremos el terreno. No necesita la misma agua un césped a pleno sol que un cantero a la sombra de un árbol, así que dividimos el jardín en sectores y cada uno riega con su propio tiempo.",
           "También medimos la presión y el caudal de agua disponibles. Ese dato define cuántos aspersores pueden funcionar a la vez y si hace falta sumar una bomba.",
         ],
-        foto: foto("sistemas-de-riego", 3, "Técnico de Riegomax abriendo la zanja para la cañería de riego junto a un muro de piedra"),
+        foto: foto("sistemas-de-riego", "zanjeo-riego-junto-muro-piedra", "Técnico de Riegomax abriendo la zanja para la cañería de riego junto a un muro de piedra"),
       },
       {
         titulo: "Aspersión o goteo: qué usar en cada lugar",
@@ -92,7 +93,7 @@ export const servicios: Servicio[] = [
           "La aspersión es ideal para el césped: los aspersores emergentes quedan escondidos bajo el pasto y suben solo cuando riegan, cubriendo toda la superficie.",
           "El goteo es mejor para canteros, cercos vivos y huertas. Lleva el agua directo a la raíz de cada planta con una manguera con goteros, sin mojar las hojas ni desperdiciar agua en los caminos. En la mayoría de los jardines combinamos los dos sistemas.",
         ],
-        foto: foto("sistemas-de-riego", 2, "Manguera de riego tendida en la zanja antes de taparla"),
+        foto: foto("sistemas-de-riego", "manguera-riego-en-zanja", "Manguera de riego tendida en la zanja antes de taparla"),
         enlace: { texto: "Leé la comparación completa: riego por goteo vs aspersión", href: "/blog/riego-por-goteo-vs-aspersion" },
       },
       {
@@ -101,8 +102,8 @@ export const servicios: Servicio[] = [
           "Marcamos el recorrido de cada sector y abrimos zanjas angostas, sacando el pasto con cuidado para volver a colocarlo al final. Por esas zanjas va la cañería principal que lleva el agua desde el colector de válvulas hasta cada aspersor.",
           "Una vez conectado todo, probamos cada sector antes de tapar, regulamos el alcance de los aspersores para que no rieguen paredes ni veredas y recién entonces cerramos las zanjas y reponemos el pasto.",
         ],
-        foto: foto("sistemas-de-riego", 1, "Instalación de cañería de riego en una zanja larga abierta en el césped"),
-        video: video("sistemas-de-riego", "Proceso de instalación de un sistema de riego"),
+        foto: foto("sistemas-de-riego", "instalacion-caneria-riego-zanja-cesped", "Instalación de cañería de riego en una zanja larga abierta en el césped"),
+        video: video("sistemas-de-riego", "instalacion-sistema-de-riego", "Proceso de instalación de un sistema de riego"),
       },
       {
         titulo: "Programador, sensor de lluvia y Wifi",
@@ -117,7 +118,7 @@ export const servicios: Servicio[] = [
         parrafos: [
           "Si ya tenés riego pero sumaste un cantero, cambiaste el diseño del jardín o hay un sector que queda seco, no hace falta rehacer todo. Agregamos aspersores, reubicamos los que quedaron mal ubicados y extendemos la cañería a las zonas nuevas.",
         ],
-        foto: foto("sistemas-de-riego", 4, "Zanja con cañería de riego junto al sector de estar del jardín"),
+        foto: foto("sistemas-de-riego", "zanja-caneria-riego-jardin", "Zanja con cañería de riego junto al sector de estar del jardín"),
       },
     ],
   },
@@ -132,7 +133,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Jardinería y corte de césped en zona oeste | Riegomax",
     seoDescription:
       "Corte de césped, poda de cercos y arbustos, plantación y fertilización en Moreno y zona oeste de Buenos Aires. Jardines prolijos todo el año.",
-    portada: "/servicios/jardineria/foto-2.jpg",
+    portada: "/servicios/jardineria/plantacion-cerco-coniferas.jpg",
     intro: [
       "Un jardín lindo no se logra de una vez: necesita cortes regulares, podas en la época justa y plantas que reciban lo que necesitan. Ese cuidado constante es lo que hace la diferencia entre un espacio verde descuidado y uno que da ganas de usar.",
       "En Riegomax nos encargamos de la jardinería de casas y quintas de Moreno y la zona oeste: corte y bordeado del césped, poda de cercos y arbustos, plantación de nuevas especies y fertilización.",
@@ -144,7 +145,7 @@ export const servicios: Servicio[] = [
           "Cortar seguido y a la altura correcta es lo que mantiene el césped denso y verde. Si se corta muy bajo, se debilita y aparecen las malezas; si se deja crecer demasiado, se apelmaza y pierde color.",
           "En cada corte también bordeamos los canteros y caminos y retiramos el pasto cortado, para que el jardín quede prolijo y no queden restos sobre el césped.",
         ],
-        video: video("jardineria", "Corte de césped en una quinta de Ituzaingó"),
+        video: video("jardineria", "corte-de-cesped-quinta-ituzaingo", "Corte de césped en una quinta de Ituzaingó"),
       },
       {
         titulo: "Poda de cercos, arbustos y enredaderas",
@@ -152,14 +153,14 @@ export const servicios: Servicio[] = [
           "Cada planta tiene su momento de poda. Podar a tiempo estimula brotes nuevos, mantiene la forma y evita que cercos y enredaderas invadan caminos o se pongan ralos en la base.",
           "Retiramos ramas secas, hojas amarillas y flores marchitas, y damos forma a los cercos vivos para que crezcan parejos y tupidos.",
         ],
-        foto: foto("jardineria", 1, "Enredadera podada que cubre un muro de forma pareja junto al césped"),
+        foto: foto("jardineria", "poda-enredadera-muro", "Enredadera podada que cubre un muro de forma pareja junto al césped"),
       },
       {
         titulo: "Plantación de cercos y nuevas especies",
         parrafos: [
           "Cuando hace falta privacidad o cubrir un alambrado, un cerco vivo es la mejor opción. Elegimos especies que se adapten al lugar, preparamos el pozo con tierra fértil y dejamos la distancia justa entre plantas para que crezcan sanas y cierren el cerco con el tiempo.",
         ],
-        foto: foto("jardineria", 2, "Plantación de un cerco de coníferas con tierra fértil"),
+        foto: foto("jardineria", "plantacion-cerco-coniferas", "Plantación de un cerco de coníferas con tierra fértil"),
       },
       {
         titulo: "Trasplantes y fertilización",
@@ -167,7 +168,7 @@ export const servicios: Servicio[] = [
           "Si una planta quedó en un lugar donde no prospera, la trasplantamos a uno mejor cuidando sus raíces. También renovamos canteros y sumamos arbustos donde el jardín lo necesita.",
           "La fertilización le devuelve al suelo los nutrientes que el césped y las plantas van consumiendo, y se nota en el color y en el crecimiento.",
         ],
-        foto: foto("jardineria", 3, "Plantación de un arbusto junto a un muro de ladrillo"),
+        foto: foto("jardineria", "plantacion-arbusto-muro-ladrillo", "Plantación de un arbusto junto a un muro de ladrillo"),
       },
       {
         titulo: "Jardinería y riego, juntos",
@@ -189,7 +190,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Paisajismo y diseño de jardines en zona oeste | Riegomax",
     seoDescription:
       "Diseño de jardines, canteros con piedras y chips, nivelación de terreno y colocación de grama bahiana en Moreno y zona oeste de Buenos Aires.",
-    portada: "/servicios/paisajismo/foto-4.jpg",
+    portada: "/servicios/paisajismo/cantero-flores-guardacantero.jpg",
     intro: [
       "El paisajismo transforma un terreno en un espacio para disfrutar. No se trata solo de poner plantas: se trata de elegir las adecuadas para cada lugar y combinarlas con canteros, piedras, césped y caminos para que el jardín funcione y se vea bien todo el año.",
       "En Riegomax hacemos proyectos de paisajismo completos en Moreno y la zona oeste, desde la nivelación del terreno y la colocación del césped hasta el armado de canteros y la plantación final.",
@@ -201,7 +202,7 @@ export const servicios: Servicio[] = [
           "Una planta en el lugar equivocado sufre: se quema al sol, se pudre por exceso de humedad o no florece. Por eso elegimos las especies según la luz, el suelo y el espacio disponible, y pensando en cuánto mantenimiento vas a querer darle al jardín.",
           "Las gramíneas ornamentales, por ejemplo, aportan movimiento y textura con muy poco cuidado, y se adaptan bien a lugares soleados.",
         ],
-        foto: foto("paisajismo", 1, "Gramínea ornamental recién plantada en el césped"),
+        foto: foto("paisajismo", "graminea-ornamental-plantada", "Gramínea ornamental recién plantada en el césped"),
       },
       {
         titulo: "Canteros con flores, piedras y guardacanteros",
@@ -209,14 +210,14 @@ export const servicios: Servicio[] = [
           "Los canteros ordenan el jardín y le dan color. Los delimitamos con guardacanteros para que el césped no los invada, los rellenamos con tierra fértil y combinamos plantas de distintas alturas y floraciones.",
           "Para que el cantero sea fácil de mantener, colocamos una manta antimalezas debajo de las piedras o los chips decorativos. Así no crecen yuyos y la tierra conserva mejor la humedad.",
         ],
-        foto: foto("paisajismo", 4, "Cantero con flores blancas delimitado por un guardacantero"),
+        foto: foto("paisajismo", "cantero-flores-guardacantero", "Cantero con flores blancas delimitado por un guardacantero"),
       },
       {
         titulo: "Manta antimalezas y piedras decorativas",
         parrafos: [
           "En sectores donde no queremos césped, como el costado de la casa o el contorno de un cerco, cubrimos el suelo con manta antimalezas y una capa de piedras. Es una terminación prolija, que deja pasar el agua de lluvia y casi no necesita mantenimiento.",
         ],
-        foto: foto("paisajismo", 6, "Relleno de un cantero lateral con piedras sobre manta antimalezas"),
+        foto: foto("paisajismo", "cantero-piedras-manta-antimalezas", "Relleno de un cantero lateral con piedras sobre manta antimalezas"),
       },
       {
         titulo: "Nivelación y colocación de grama bahiana",
@@ -224,22 +225,22 @@ export const servicios: Servicio[] = [
           "Antes de colocar césped hay que nivelar el terreno: así el agua no se junta en un rincón y el corte queda parejo. Retiramos las malezas, rellenamos los bajos con tierra y dejamos la superficie lista.",
           "La grama bahiana es una de las opciones más elegidas en la zona: resiste bien el sol y el pisoteo y, una vez establecida, forma un césped denso y resistente.",
         ],
-        foto: foto("paisajismo", 2, "Grama bahiana recién colocada a lo largo de un cerco"),
-        video: video("paisajismo", "Plantación de agapanthus en un proyecto de paisajismo"),
+        foto: foto("paisajismo", "grama-bahiana-recien-colocada", "Grama bahiana recién colocada a lo largo de un cerco"),
+        video: video("paisajismo", "plantacion-agapanthus-paisajismo", "Plantación de agapanthus en un proyecto de paisajismo"),
       },
       {
         titulo: "Cercos vivos y árboles",
         parrafos: [
           "Los cercos de coníferas dan privacidad y estructura al jardín. Los plantamos alineados y con la separación justa para que, cuando crezcan, formen una pared verde continua.",
         ],
-        foto: foto("paisajismo", 5, "Hilera de coníferas recién plantadas sobre el césped"),
+        foto: foto("paisajismo", "hilera-coniferas-plantadas", "Hilera de coníferas recién plantadas sobre el césped"),
       },
       {
         titulo: "El resultado: un jardín para disfrutar",
         parrafos: [
           "Con el césped establecido, los canteros armados y las plantas creciendo, el jardín queda listo para usar. Para que se mantenga así, te recomendamos sumarle riego automático y un mantenimiento periódico.",
         ],
-        foto: foto("paisajismo", 3, "Césped de grama bahiana ya establecido junto a la casa"),
+        foto: foto("paisajismo", "cesped-grama-bahiana-establecido", "Césped de grama bahiana ya establecido junto a la casa"),
         enlace: { texto: "Ver mantenimiento de jardines", href: "/servicios/mantenimiento" },
       },
     ],
@@ -255,7 +256,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Mantenimiento de jardines y limpieza de terrenos | Riegomax",
     seoDescription:
       "Limpieza de terrenos, desmalezado, mantenimiento periódico de jardines y reparación de riego en Moreno y zona oeste de Buenos Aires.",
-    portada: "/servicios/mantenimiento/foto-4.jpg",
+    portada: "/servicios/mantenimiento/jardin-limpio-despues-del-mantenimiento.jpg",
     intro: [
       "Un jardín descuidado se recupera. Con una buena limpieza, el terreno vuelve a ser un espacio para usar, y con un mantenimiento periódico se mantiene así.",
       "En Riegomax hacemos limpieza de terrenos, desmalezado y mantenimiento de jardines en Moreno y la zona oeste, y revisamos y reparamos el sistema de riego cuando deja de funcionar bien.",
@@ -266,14 +267,14 @@ export const servicios: Servicio[] = [
         parrafos: [
           "Cuando un terreno estuvo abandonado un tiempo, se llena de yuyos, ramas y restos. Lo despejamos por completo: cortamos la maleza, sacamos ramas y basura y dejamos la tierra lista para lo que venga, sea un jardín nuevo o simplemente un espacio limpio.",
         ],
-        foto: foto("mantenimiento", 3, "Jardín con malezas y pasto crecido antes de la limpieza"),
+        foto: foto("mantenimiento", "jardin-con-malezas-antes-del-mantenimiento", "Jardín con malezas y pasto crecido antes de la limpieza"),
       },
       {
         titulo: "El mismo jardín, después",
         parrafos: [
           "Así quedó ese mismo jardín después del trabajo: el pasto cortado, los bordes definidos y el espacio otra vez disponible para usar. Una limpieza a fondo es muchas veces el primer paso antes de un proyecto de paisajismo.",
         ],
-        foto: foto("mantenimiento", 4, "El mismo jardín limpio y despejado después del mantenimiento"),
+        foto: foto("mantenimiento", "jardin-limpio-despues-del-mantenimiento", "El mismo jardín limpio y despejado después del mantenimiento"),
         enlace: { texto: "Ver paisajismo", href: "/servicios/paisajismo" },
       },
       {
@@ -281,7 +282,7 @@ export const servicios: Servicio[] = [
         parrafos: [
           "En terrenos con ramas, escombros o restos de obra, primero retiramos todo lo que no sirve. Después emparejamos la tierra para que el agua escurra bien y el terreno quede preparado para sembrar o colocar césped.",
         ],
-        foto: foto("mantenimiento", 1, "Terreno con ramas y restos antes de la limpieza"),
+        foto: foto("mantenimiento", "terreno-con-restos-antes-de-limpieza", "Terreno con ramas y restos antes de la limpieza"),
       },
       {
         titulo: "Terreno despejado y desmalezado",
@@ -289,7 +290,7 @@ export const servicios: Servicio[] = [
           "Así quedó ese terreno después del trabajo: sin restos y con la tierra emparejada.",
           "Las malezas compiten con el césped y las plantas por el agua y los nutrientes. Las sacamos de canteros, caminos y bordes, y te recomendamos cómo evitar que vuelvan, por ejemplo con manta antimalezas en los canteros.",
         ],
-        foto: foto("mantenimiento", 2, "Terreno despejado y emparejado después de retirar los restos"),
+        foto: foto("mantenimiento", "terreno-limpio-despues-de-limpieza", "Terreno despejado y emparejado después de retirar los restos"),
       },
       {
         titulo: "Mantenimiento periódico",
@@ -302,7 +303,7 @@ export const servicios: Servicio[] = [
         parrafos: [
           "Un aspersor roto, una pérdida en la cañería o una válvula que no abre hacen que un sector se seque o se encharque. Localizamos la falla, cambiamos la pieza dañada y probamos el sistema para que vuelva a regar parejo.",
         ],
-        video: video("mantenimiento", "Reparación de un sistema de riego"),
+        video: video("mantenimiento", "reparacion-sistema-de-riego", "Reparación de un sistema de riego"),
         enlace: { texto: "Ver sistemas de riego", href: "/servicios/sistemas-de-riego" },
       },
     ],
@@ -362,7 +363,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Tableros eléctricos para riego: armado y mantenimiento | Riegomax",
     seoDescription:
       "Armado desde cero y mantenimiento de tableros eléctricos de riego: conexión de programador, bomba y protecciones. Moreno y zona oeste de Buenos Aires.",
-    portada: "/servicios/tableros-electricos-de-riego/foto-1.jpg",
+    portada: "/servicios/tableros-electricos-de-riego/programador-riego-y-tablero-bomba.jpg",
     intro: [
       "En un sistema de riego con bomba, el tablero eléctrico es la pieza que une todo: recibe la orden del programador y enciende la bomba en el momento justo para que cada sector riegue con la presión necesaria.",
       "En Riegomax armamos tableros eléctricos de riego desde cero y reparamos tableros existentes en Moreno y la zona oeste, para que el sistema funcione de forma segura y automática.",
@@ -374,14 +375,14 @@ export const servicios: Servicio[] = [
           "El programador de riego maneja señales de baja tensión y no puede encender una bomba por sí solo. El tablero es el que recibe esa señal y activa la bomba a través de un contactor, con las protecciones necesarias para que el motor no se dañe.",
           "En la foto se ve un tablero terminado: a la izquierda el programador de riego y a la derecha el tablero de la bomba, cada uno en su caja estanca para protegerlos del agua y la humedad.",
         ],
-        foto: foto("tableros-electricos-de-riego", 1, "Programador de riego y tablero de la bomba instalados en cajas estancas"),
+        foto: foto("tableros-electricos-de-riego", "programador-riego-y-tablero-bomba", "Programador de riego y tablero de la bomba instalados en cajas estancas"),
       },
       {
         titulo: "Armado desde cero",
         parrafos: [
           "Cuando instalamos un sistema nuevo, armamos el tablero completo: elegimos la caja, montamos las protecciones, hacemos el cableado hacia la bomba y el programador, y dejamos todo identificado para que cualquier revisión futura sea simple.",
         ],
-        foto: foto("tableros-electricos-de-riego", 2, "Tablero eléctrico de riego abierto durante el armado y cableado"),
+        foto: foto("tableros-electricos-de-riego", "tablero-electrico-riego-armado", "Tablero eléctrico de riego abierto durante el armado y cableado"),
       },
       {
         titulo: "Protecciones eléctricas",
@@ -400,7 +401,7 @@ export const servicios: Servicio[] = [
         parrafos: [
           "Conectamos el programador al tablero y a las válvulas de cada sector y probamos que la bomba arranque y corte junto con el riego. Así el sistema queda funcionando solo, sin que tengas que encender nada a mano.",
         ],
-        video: video("tableros-electricos-de-riego", "Programador y tablero de riego instalados"),
+        video: video("tableros-electricos-de-riego", "programador-y-tablero-de-riego", "Programador y tablero de riego instalados"),
         enlace: { texto: "Ver sistemas de riego", href: "/servicios/sistemas-de-riego" },
       },
       {
@@ -422,7 +423,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Colocación de césped sintético en zona oeste | Riegomax",
     seoDescription:
       "Colocación de pasto sintético en patios y jardines: preparación del terreno, nivelación, unión de paños y terminación de bordes. Moreno y zona oeste.",
-    portada: "/servicios/cesped-sintetico/foto-4.jpg",
+    portada: "/servicios/cesped-sintetico/patio-cesped-sintetico-terminado.jpg",
     intro: [
       "El césped sintético es la solución para patios con poca luz, espacios chicos o lugares donde el césped natural no crece bien. Se mantiene verde todo el año sin cortar, sin regar y sin barro.",
       "En Riegomax colocamos césped sintético en casas de Moreno y la zona oeste. A continuación te mostramos, con un trabajo real, cómo pasamos de un patio de tierra a un patio verde listo para usar.",
@@ -433,7 +434,7 @@ export const servicios: Servicio[] = [
         parrafos: [
           "Este patio entre medianeras era de tierra. El primer paso fue retirar la tierra suelta y definir el nivel final, usando estacas como referencia.",
         ],
-        foto: foto("cesped-sintetico", 1, "Patio de tierra con estacas para marcar el nivel antes de colocar el césped sintético"),
+        foto: foto("cesped-sintetico", "patio-tierra-estacas-nivel", "Patio de tierra con estacas para marcar el nivel antes de colocar el césped sintético"),
       },
       {
         titulo: "Preparación de la base",
@@ -441,28 +442,28 @@ export const servicios: Servicio[] = [
           "La clave de un buen césped sintético está debajo: si la base no está firme y nivelada, con el tiempo aparecen ondas y pozos que se notan a simple vista. Por eso emparejamos y compactamos la tierra antes de seguir.",
           "También tenemos en cuenta el desagüe, para que el agua de lluvia escurra y no se acumule debajo del césped.",
         ],
-        foto: foto("cesped-sintetico", 2, "Terreno emparejado y compactado como base del césped sintético"),
+        foto: foto("cesped-sintetico", "base-tierra-compactada-cesped-sintetico", "Terreno emparejado y compactado como base del césped sintético"),
       },
       {
         titulo: "Capa de arena nivelada",
         parrafos: [
           "Sobre la tierra compactada colocamos una capa de arena y la nivelamos con regla. Esta capa es la que deja la superficie perfectamente plana y permite que el agua drene a través del césped.",
         ],
-        foto: foto("cesped-sintetico", 3, "Capa de arena nivelada lista para colocar los paños de césped sintético"),
+        foto: foto("cesped-sintetico", "base-arena-nivelada-cesped-sintetico", "Capa de arena nivelada lista para colocar los paños de césped sintético"),
       },
       {
         titulo: "Colocación de los paños",
         parrafos: [
           "Extendemos los paños de césped sintético, todos con la fibra orientada hacia el mismo lado para que el color se vea parejo, y los unimos de forma que las juntas no se noten. Después recortamos y fijamos los bordes contra los muros y el solado.",
         ],
-        video: video("cesped-sintetico", "Césped sintético recién colocado"),
+        video: video("cesped-sintetico", "cesped-sintetico-colocado", "Césped sintético recién colocado"),
       },
       {
         titulo: "El resultado",
         parrafos: [
           "El mismo patio, terminado: una superficie verde, pareja y limpia, que se puede usar todo el año sin mantenimiento de riego ni corte.",
         ],
-        foto: foto("cesped-sintetico", 4, "Patio terminado con césped sintético"),
+        foto: foto("cesped-sintetico", "patio-cesped-sintetico-terminado", "Patio terminado con césped sintético"),
       },
       {
         titulo: "¿Sintético o natural?",
@@ -484,7 +485,7 @@ export const servicios: Servicio[] = [
     seoTitle: "Iluminación de jardines: venta y colocación | Riegomax",
     seoDescription:
       "Venta y colocación de luminarias de exterior para jardines, caminos y canteros en Moreno y zona oeste de Buenos Aires: balizas de pie y spots.",
-    portada: "/servicios/iluminacion-de-jardines/foto-1.jpg",
+    portada: "/servicios/iluminacion-de-jardines/spot-iluminacion-palmera.jpg",
     intro: [
       "Con una buena iluminación, el jardín se puede disfrutar también de noche. La luz resalta árboles y canteros, marca los caminos y suma seguridad en los accesos de la casa.",
       "En Riegomax vendemos e instalamos luminarias de exterior en Moreno y la zona oeste: spots para destacar árboles y plantas, y balizas de pie para caminos y canteros.",
@@ -496,14 +497,14 @@ export const servicios: Servicio[] = [
           "Un spot colocado al pie de un árbol proyecta la luz hacia arriba y resalta la textura del tronco y el follaje. Es una forma simple de que el jardín tenga profundidad y se vea distinto de noche.",
           "En este trabajo instalamos spots al pie de las palmeras, entre las plantas del cantero, para que la luz ilumine el tronco sin encandilar.",
         ],
-        foto: foto("iluminacion-de-jardines", 1, "Spot de exterior iluminando el tronco de una palmera"),
+        foto: foto("iluminacion-de-jardines", "spot-iluminacion-palmera", "Spot de exterior iluminando el tronco de una palmera"),
       },
       {
         titulo: "Luz que se integra al cantero",
         parrafos: [
           "La ubicación es tan importante como la luminaria. Ubicamos cada spot entre las plantas para que de día casi no se vea y de noche ilumine justo lo que queremos destacar.",
         ],
-        foto: foto("iluminacion-de-jardines", 2, "Spot instalado entre las plantas al pie de una palmera"),
+        foto: foto("iluminacion-de-jardines", "spot-entre-plantas-palmera", "Spot instalado entre las plantas al pie de una palmera"),
       },
       {
         titulo: "Balizas de pie para caminos",
@@ -511,15 +512,15 @@ export const servicios: Servicio[] = [
           "Las balizas de pie iluminan hacia abajo y marcan el recorrido de caminos y senderos. Además de ser decorativas, ayudan a circular de noche con seguridad.",
           "Las instalamos sobre una base firme para que queden derechas y estables, con la conexión eléctrica protegida y apta para exterior.",
         ],
-        foto: foto("iluminacion-de-jardines", 3, "Baliza de pie instalada sobre una base en un cantero"),
+        foto: foto("iluminacion-de-jardines", "baliza-de-pie-en-cantero", "Baliza de pie instalada sobre una base en un cantero"),
       },
       {
         titulo: "Iluminación de canteros y cercos",
         parrafos: [
           "Una baliza frente a un cerco verde ilumina las hojas y le da otra presencia al jardín de noche. Combinando balizas y spots se logra una iluminación pareja, sin zonas oscuras.",
         ],
-        foto: foto("iluminacion-de-jardines", 4, "Baliza de pie encendida frente a un cerco verde"),
-        video: video("iluminacion-de-jardines", "Luminarias instaladas en un jardín"),
+        foto: foto("iluminacion-de-jardines", "baliza-de-pie-frente-a-cerco", "Baliza de pie encendida frente a un cerco verde"),
+        video: video("iluminacion-de-jardines", "luminarias-de-jardin", "Luminarias instaladas en un jardín"),
       },
       {
         titulo: "Venta e instalación",

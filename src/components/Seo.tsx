@@ -12,7 +12,7 @@ type SeoProps = {
   image?: string; // ruta relativa ("/images/...") o URL absoluta
   type?: "website" | "article" | "product";
   keywords?: string[];
-  jsonLd?: object; // datos estructurados de la página (ver src/lib/schema.ts)
+  jsonLd?: object | object[]; // datos estructurados de la página (ver src/lib/schema.ts)
 };
 
 // Convierte rutas relativas en absolutas, porque Google, WhatsApp y Facebook
@@ -55,9 +55,12 @@ export default function Seo({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={img} />
 
-      {jsonLd && (
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      )}
+      {jsonLd &&
+        (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).map((bloque, i) => (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(bloque)}
+          </script>
+        ))}
     </Helmet>
   );
 }
