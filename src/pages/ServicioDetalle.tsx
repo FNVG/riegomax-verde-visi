@@ -148,7 +148,7 @@ export default function ServicioDetalle() {
             <Breadcrumbs items={migas} />
 
             <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-[2.625rem]">
-              {servicio.titulo}
+              {servicio.h1 ?? servicio.titulo}
             </h1>
 
             <div className="mt-5 max-w-3xl space-y-4">

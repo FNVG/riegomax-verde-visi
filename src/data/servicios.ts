@@ -27,6 +27,12 @@ export type Servicio = {
   resumen: string;
   /** Lista corta para la tarjeta de la home */
   destacados: string[];
+  /**
+   * Título principal (H1) de la página, si tiene que ser distinto de `titulo`.
+   * `titulo` es corto porque se usa en menús, tarjetas y migas de pan; el H1 puede
+   * incluir la forma en que la gente busca el servicio.
+   */
+  h1?: string;
   // SEO: título (~60 caracteres) y descripción (~155) para Google
   seoTitle: string;
   seoDescription: string;
@@ -57,13 +63,16 @@ export const servicios: Servicio[] = [
     resumen:
       "Diseño e instalación de sistemas de riego automáticos eficientes para jardines y espacios verdes, optimizando el uso del agua.",
     destacados: ["Riego por aspersión", "Riego por goteo", "Programación automática", "Sensores de lluvia", "Módulo Wifi"],
-    seoTitle: "Instalación de riego automático en zona oeste | Riegomax",
+    // Paso 2 SEO: "sistema de riego" se busca ~3 veces más que "riego automático" (Google Trends);
+    // por eso el título y el H1 usan las dos formas.
+    h1: "Sistemas de riego automático para tu jardín",
+    seoTitle: "Sistemas de riego automático en zona oeste | Riegomax",
     seoDescription:
-      "Diseño e instalación de sistemas de riego automático por aspersión y goteo en Moreno y zona oeste de Buenos Aires. Riego eficiente para tu jardín.",
+      "Instalamos sistemas de riego automático por aspersión y goteo para césped y canteros en Moreno y zona oeste. Diseño por sectores, bomba y programador.",
     portada: "/servicios/sistemas-de-riego/instalacion-caneria-riego-zanja-cesped.jpg",
     intro: [
-      "Un sistema de riego automático mantiene el jardín verde todo el año sin que tengas que estar pendiente de la manguera. Riega a la hora indicada, la cantidad justa y en el lugar correcto, aunque estés de viaje.",
-      "En Riegomax diseñamos e instalamos sistemas de riego por aspersión y por goteo para casas, quintas y barrios de Moreno y toda la zona oeste. Nos ocupamos de todo el proceso: el diseño, la instalación de la cañería y las válvulas, y la programación final.",
+      "Si en verano el césped se seca en algunos sectores y se encharca en otros, o pasás las tardes con la manguera en la mano, un sistema de riego automático lo resuelve: riega solo, a la hora indicada, con la cantidad justa de agua y en el lugar correcto, aunque estés de viaje.",
+      "En Riegomax diseñamos e instalamos sistemas de riego por aspersión para el césped y por goteo para canteros y huertas, en casas, quintas y barrios de Moreno y la zona oeste. Nos ocupamos de todo: el diseño por sectores, la cañería, las válvulas, la bomba si hace falta y la programación final.",
     ],
     secciones: [
       {
@@ -86,9 +95,10 @@ export const servicios: Servicio[] = [
           "También medimos la presión y el caudal de agua disponibles. Ese dato define cuántos aspersores pueden funcionar a la vez y si hace falta sumar una bomba.",
         ],
         foto: foto("sistemas-de-riego", "zanjeo-riego-junto-muro-piedra", "Técnico de Riegomax abriendo la zanja para la cañería de riego junto a un muro de piedra"),
+        enlace: { texto: "Cómo elegir el sistema de riego ideal para tu jardín", href: "/blog/como-elegir-sistema-de-riego-ideal" },
       },
       {
-        titulo: "Aspersión o goteo: qué usar en cada lugar",
+        titulo: "Riego por aspersión para el césped y por goteo para canteros",
         parrafos: [
           "La aspersión es ideal para el césped: los aspersores emergentes quedan escondidos bajo el pasto y suben solo cuando riegan, cubriendo toda la superficie.",
           "El goteo es mejor para canteros, cercos vivos y huertas. Lleva el agua directo a la raíz de cada planta con una manguera con goteros, sin mojar las hojas ni desperdiciar agua en los caminos. En la mayoría de los jardines combinamos los dos sistemas.",
@@ -106,6 +116,14 @@ export const servicios: Servicio[] = [
         video: video("sistemas-de-riego", "instalacion-sistema-de-riego", "Proceso de instalación de un sistema de riego"),
       },
       {
+        titulo: "Riego con bomba o desde un tanque",
+        parrafos: [
+          "Muchas casas no tienen presión suficiente en la red para mover varios aspersores a la vez, o riegan con el agua de un tanque. En esos casos el sistema necesita una bomba.",
+          "Elegimos la bomba según la cantidad de aspersores de cada sector y la conectamos al programador a través de un tablero eléctrico, para que arranque y corte sola junto con el riego. Así no tenés que encender nada a mano.",
+        ],
+        enlace: { texto: "Ver instalación de bombas de agua", href: "/servicios/bombas-de-agua" },
+      },
+      {
         titulo: "Programador, sensor de lluvia y Wifi",
         parrafos: [
           "El programador es el cerebro del sistema: decide qué sector riega, a qué hora y durante cuánto tiempo. Lo dejamos configurado según la época del año y te explicamos cómo modificarlo.",
@@ -114,11 +132,19 @@ export const servicios: Servicio[] = [
         enlace: { texto: "Ver tableros eléctricos de riego", href: "/servicios/tableros-electricos-de-riego" },
       },
       {
-        titulo: "Ampliaciones y cambios en sistemas existentes",
+        titulo: "Reparación y ampliación de sistemas existentes",
         parrafos: [
           "Si ya tenés riego pero sumaste un cantero, cambiaste el diseño del jardín o hay un sector que queda seco, no hace falta rehacer todo. Agregamos aspersores, reubicamos los que quedaron mal ubicados y extendemos la cañería a las zonas nuevas.",
+          "Y si el riego dejó de funcionar bien, por ejemplo un aspersor que no sube, una pérdida de agua en el césped o una válvula que no abre, localizamos la falla y la reparamos.",
         ],
         foto: foto("sistemas-de-riego", "zanja-caneria-riego-jardin", "Zanja con cañería de riego junto al sector de estar del jardín"),
+        enlace: { texto: "Ver reparación y mantenimiento del riego", href: "/servicios/mantenimiento" },
+      },
+      {
+        titulo: "Cuándo conviene instalar el riego",
+        parrafos: [
+          "La mayoría de las consultas llegan entre noviembre y enero, cuando el calor empieza a secar el césped. Se puede instalar en cualquier época del año, pero si podés elegir, conviene hacerlo a fines del invierno o en primavera: el pasto que se levanta para abrir las zanjas se recupera más rápido y el sistema queda listo antes del verano.",
+        ],
       },
     ],
   },

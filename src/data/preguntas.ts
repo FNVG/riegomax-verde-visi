@@ -35,6 +35,12 @@ export const preguntasFrecuentes: Record<string, Pregunta[]> = {
       enlace: { texto: "Riego por goteo o aspersión", href: "/blog/riego-por-goteo-vs-aspersion" },
     },
     {
+      pregunta: "¿Se puede poner riego automático si no hay buena presión de agua?",
+      respuesta:
+        "Sí. Si la presión de la red no alcanza, se divide el jardín en más sectores para que cada uno use menos agua a la vez, o se suma una bomba que toma el agua de un tanque y arranca sola junto con el riego.",
+      enlace: { texto: "Instalación de bombas de agua", href: "/servicios/bombas-de-agua" },
+    },
+    {
       pregunta: "¿Para qué sirve el sensor de lluvia?",
       respuesta:
         "Suspende el riego automático cuando llueve y lo vuelve a habilitar cuando el suelo se seca. Evita uno de los desperdicios de agua más comunes: el riego funcionando bajo la lluvia.",
